@@ -8,13 +8,14 @@ const PANEL_SELECTOR = [
 ].join(', ');
 
 /** Watched areas: panels are redrawn there after each change. */
-const WATCHED_SELECTOR = '.lucid-inspector, .lucid-content-card';
+const WATCHED_SELECTOR = '.lucid-inspector, .lucid-content-card, .lucid-main';
 
 /** Heading elements that keep their own click behaviour. */
 const INTERACTIVE_SELECTOR = 'a, button, input, select, [data-action], .dropdown-menu';
 
-/** Reserved name for the "About" card. */
+/** Reserved names for the "About" card and the bottom panels block. */
 const ABOUT = 'lucidAbout';
+const BOTTOM = 'lucidBottom';
 
 const STORAGE_TYPE = 'lucidCollapsedPanels';
 
@@ -103,6 +104,52 @@ export default class PanelCollapse {
         if (aboutTitle && aboutContent) {
             this.decorate(inspector, aboutTitle, aboutTitle.textContent.replace('+', '').trim(), ABOUT);
         }
+
+        this.decorateContentCard(root);
+        this.decorateBottom(root);
+    }
+
+    /**
+     * Classic layout: the fields card has the same "About" title as in Lucid Split.
+     *
+     * @private
+     * @param {HTMLElement} root
+     */
+    decorateContentCard(root) {
+        const card = root.querySelector('.lucid-layout-classic .lucid-content-card');
+        const title = card && card.querySelector(':scope > .lucid-inspector-title');
+
+        if (title) {
+            this.decorate(card, title, title.textContent.replace('+', '').trim(), ABOUT);
+        }
+    }
+
+    /**
+     * Bottom panels block: the tab bar is its heading. The bottom view rebuilds the bar when the
+     * tab changes, so it is decorated again each time. A click on a tab opens a collapsed block.
+     *
+     * @private
+     * @param {HTMLElement} root
+     */
+    decorateBottom(root) {
+        const main = root.querySelector('.lucid-main');
+        const bar = main && main.querySelector('.lucid-tabbar');
+
+        if (!bar) {
+            return;
+        }
+
+        if (!bar.querySelector(':scope > .lucid-collapse')) {
+            bar.addEventListener('click', event => {
+                if (event.target.closest('.lucid-tab') && this.collapsed.has(BOTTOM)) {
+                    this.toggle(BOTTOM);
+                }
+            });
+        }
+
+        const activeLabel = bar.querySelector('.lucid-tab[aria-pressed="true"] .lucid-tab-label');
+
+        this.decorate(main, bar, activeLabel ? activeLabel.textContent : bar.getAttribute('aria-label'), BOTTOM);
     }
 
     /**

@@ -26,10 +26,10 @@ stage moves the record along its pipeline.
 Installing the extension adds two entries to the theme list. They share the same design and features;
 only the arrangement of the record view changes.
 
-| **Lucid** (side by side) | **Lucid Classic** |
+| **Lucid Classic** | **Lucid Split** |
 |---|---|
-| ![Lucid: fields on the left, activity on the right](docs/screenshots/record-lead.png) | ![Lucid Classic: fields and bottom panels on the left, side panels on the right](docs/screenshots/record-lead-classic.png) |
-| Fields on the left, bottom panels on the right: the activity is visible as soon as the record opens | Fields and bottom panels on the left, side panels on the right, as in stock EspoCRM |
+| ![Lucid Classic: fields and bottom panels on the left, side panels on the right](docs/screenshots/record-lead-classic.png) | ![Lucid Split: fields on the left, activity on the right](docs/screenshots/record-lead.png) |
+| Fields and bottom panels on the left, side panels on the right, as in stock EspoCRM | Fields on the left, bottom panels on the right: the activity is visible as soon as the record opens |
 
 The administrator sets the default in **Administration > User Interface**, and each user can pick
 another one in **Preferences**.
@@ -47,7 +47,7 @@ All data in the screenshots is fictitious.
 
 ## Features
 
-- **Side-by-side record view** (Lucid). The **About** card on the left holds the layout panels as a
+- **Side-by-side record view** (Lucid Split). The **About** card on the left holds the layout panels as a
   compact property list (tab breaks become small pill tabs), followed by a **Record info** card
   (assigned user, teams, dates, followers) and the side panels (Activities, History, Tasks…). The
   right column starts with the **Stream** tab — quick actions (Note, Email, Call, Meeting, Task)
@@ -58,8 +58,9 @@ All data in the screenshots is fictitious.
   entities with an active pipeline, the stage path (click a stage to move the record if you may
   edit it). On narrow screens the path folds into the current stage and a progress bar; tap it to
   see every stage.
-- **Collapsible blocks.** About, Record info, the side panels and each layout panel fold like an
-  accordion. The state is remembered per user and record type; everything opens while editing.
+- **Collapsible blocks.** About, Record info, the side panels, each layout panel and the bottom
+  panels block fold like an accordion. The state is remembered per user and record type; everything
+  opens while editing.
 - **Adjustable column.** A handle between the columns sets the width of the narrow column, from 300
   to 720 px (mouse, or arrow keys / Home / End; double-click to reset), remembered per user and per
   layout. The main column keeps at least 480 px.
@@ -98,7 +99,7 @@ Requires EspoCRM 10.0 or later and PHP 8.3+ (tested on 10.0.3 and 10.0.11).
 1. Download `lucid-theme-<version>.zip` from the
    [latest release](https://github.com/AlexisSantin/espocrm-lucid-theme/releases/latest).
 2. In EspoCRM: **Administration > Extensions > Upload**, choose the ZIP, then **Install**.
-3. Select **Lucid** or **Lucid Classic** in **Administration > User Interface > Theme** (default for
+3. Select **Lucid Classic** or **Lucid Split** in **Administration > User Interface > Theme** (default for
    everyone, also used on the login page) or per user in **Preferences**.
 
 Updates install the same way, over the previous version.
@@ -118,8 +119,8 @@ npm run extension     # build build/lucid-theme-<version>.zip
 - The module is bundled: in production EspoCRM loads `lib/module-lucid-theme.js` through
   `lib/init.js`, listed in `app/client.json` `scriptList`. Developer mode loads the transpiled
   sources instead, so test a release on an instance with developer mode off.
-- `Lucid` and `LucidClassic` load the same stylesheet; the handler picks the record template from the
-  theme name (`isClassicLayout` in `src/lucid.js`).
+- The themes `LucidClassic` and `Lucid` (displayed as Lucid Split) load the same stylesheet; the handler
+  picks the record template from the theme name (`isClassicLayout` in `src/lucid.js`).
 - The record view is applied by a `record/detail` view setup handler that derives the bottom view
   configured for the entity instead of replacing it. If it cannot apply (an unexpected EspoCRM
   version, for instance), the record keeps the EspoCRM layout. The module imports no EspoCRM client
@@ -127,7 +128,7 @@ npm run extension     # build build/lucid-theme-<version>.zip
 
 ```
 src/files/custom/Espo/Modules/LucidTheme/Resources/
-    metadata/themes/                    Lucid and LucidClassic: theme parameters, chart and calendar colours
+    metadata/themes/                    LucidClassic and Lucid (Lucid Split): parameters, chart and calendar colours
     metadata/app/client.json            lib/init.js (bundle loader in production)
     metadata/clientDefs/Global.json     view setup handlers
     i18n/en_US, i18n/fr_FR              the theme's own labels

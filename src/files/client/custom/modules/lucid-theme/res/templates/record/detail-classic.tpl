@@ -55,6 +55,7 @@
     <div class="record-grid lucid-record-grid lucid-layout-classic{{#if isWide}} record-grid-wide{{/if}}{{#if isSmall}} record-grid-small{{/if}}">
         <div class="left lucid-content-column">
             <section class="lucid-content-card">
+                <h2 class="lucid-inspector-title"><span class="lucid-plus" aria-hidden="true">+</span>{{translate 'About' category='labels' scope='Global'}}</h2>
                 {{#if hasMiddleTabs}}
                 <div class="tabs middle-tabs btn-group">
                     {{#each middleTabDataList}}

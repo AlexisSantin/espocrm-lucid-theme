@@ -5,7 +5,10 @@
 /** Bottom panels of the Activity tab, below the quick actions. */
 export const ACTIVITY_PANELS = ['stream'];
 
-/** Theme with the classic layout: fields and bottom panels on the left, side panels on the right. */
+/**
+ * Theme with the classic layout: fields and bottom panels on the left, side panels on the right.
+ * The other theme keeps its original key, `Lucid`, and is displayed as Lucid Split.
+ */
 const CLASSIC_THEME = 'LucidClassic';
 
 /**

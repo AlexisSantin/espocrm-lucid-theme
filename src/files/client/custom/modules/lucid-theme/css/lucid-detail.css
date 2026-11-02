@@ -724,7 +724,7 @@ button.lucid-step-inner:focus-visible {
 /* Classic layout: fields and bottom panels on the left, side panels on the right */
 .lucid-layout-classic .lucid-content-card {
     position: relative;
-    padding-top: var(--12px);
+    padding-top: var(--16px);
 }
 
 .lucid-layout-classic > .lucid-inspector > .side {
@@ -924,6 +924,7 @@ body.lucid-resizing * {
 
 /* ===== Main column: tabs ===== */
 .lucid-record .bottom.lucid-bottom {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--20px);
@@ -940,7 +941,7 @@ body.lucid-resizing * {
     align-items: flex-end;
     gap: 2px;
     margin: 0 calc(var(--18px) * -1);
-    padding: 0 var(--14px);
+    padding: 0 44px 0 var(--14px);
     border-bottom: 1px solid var(--lucid-border);
     overflow-x: auto;
 }
@@ -1343,18 +1344,35 @@ body.lucid-resizing * {
     color: var(--lucid-text);
 }
 
+/* No lingering background after a mouse click: keyboard focus stays visible */
+.lucid-record .lucid-collapse:focus:not(:focus-visible):not(:hover) {
+    background: transparent;
+}
+
 .lucid-record .lucid-collapse .fas {
     font-size: 11px;
     transition: transform var(--lucid-fast) var(--lucid-ease);
 }
 
+/* The tab bar scrolls sideways: its chevron is placed from the block, and stays visible */
+.lucid-tabbar > .lucid-collapse {
+    position: absolute;
+    top: 12px;
+    right: var(--14px);
+}
+
 .lucid-collapsed > .panel-heading > .lucid-collapse .fas,
+.lucid-content-card.lucid-collapsed > .lucid-inspector-title .lucid-collapse .fas,
+.lucid-main.lucid-collapsed .lucid-tabbar > .lucid-collapse .fas,
 .lucid-inspector.lucid-collapsed > .lucid-inspector-card .lucid-inspector-title .lucid-collapse .fas {
     transform: rotate(-90deg);
 }
 
 /* Collapsed: only the heading remains. While editing, everything is open and the chevron disappears. */
 .lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .panel.lucid-collapsed > :not(.panel-heading),
+.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-content-card.lucid-collapsed > :not(.lucid-inspector-title),
+.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed > .extra,
+.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed .lucid-bottom > :not(.lucid-tabbar),
 .lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed > .lucid-inspector-card > :not(.lucid-inspector-title),
 .lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed:not(:has(> .lucid-inspector-card > .middle)) > .side > .panel[data-name="default"] {
     display: none;
@@ -1367,8 +1385,17 @@ body.lucid-resizing * {
     box-shadow: var(--lucid-shadow-xs);
 }
 
+.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-content-card.lucid-collapsed > .lucid-inspector-title,
 .lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed > .lucid-inspector-card .lucid-inspector-title {
     margin-bottom: 0;
+}
+
+.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed .bottom.lucid-bottom {
+    padding-bottom: 0;
+}
+
+.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed .lucid-tabbar {
+    border-bottom: 0;
 }
 
 .lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed > .side {
