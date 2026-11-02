@@ -1,4 +1,4 @@
-import {isLucidTheme} from 'lucid-theme:lucid';
+import {isClassicLayout, isLucidTheme} from 'lucid-theme:lucid';
 import RecordBand from 'lucid-theme:helpers/record-band';
 import EmptyFields from 'lucid-theme:helpers/empty-fields';
 import LinkBreaks from 'lucid-theme:helpers/link-breaks';
@@ -41,9 +41,7 @@ export default class RecordDetailHandler {
             return;
         }
 
-        // Static fields on the left in "About", dynamic activity on the right. An article
-        // needs width for its body: its fields move to the top of the main column.
-        view.template = this.hasArticleBody() ? 'lucid-theme:record/detail-content' : 'lucid-theme:record/detail';
+        view.template = this.getTemplate();
         view.bottomView = bottomView;
 
         // build() has already created the original bottom view without waiting for this handler;
@@ -55,6 +53,22 @@ export default class RecordDetailHandler {
         new LinkBreaks(view).init();
         new PanelCollapse(view).init();
         new ColumnResizer(view).init();
+    }
+
+    /**
+     * Static fields on the left in "About", dynamic activity on the right. An article needs width
+     * for its body: its fields move to the top of the main column. The classic layout keeps fields
+     * and bottom panels together on the left, side panels on the right.
+     *
+     * @private
+     * @return {string}
+     */
+    getTemplate() {
+        if (isClassicLayout(this.view)) {
+            return 'lucid-theme:record/detail-classic';
+        }
+
+        return this.hasArticleBody() ? 'lucid-theme:record/detail-content' : 'lucid-theme:record/detail';
     }
 
     /**

@@ -504,7 +504,7 @@ button.lucid-step-inner:focus-visible {
 
 /*
  * Adjustable width (--lucid-inspector-width, set by the script): at least 300 px, and the
- * right column always keeps 480 px.
+ * main column always keeps 480 px.
  */
 .lucid-record .lucid-record-grid > .lucid-inspector {
     flex: 0 0 clamp(300px, var(--lucid-inspector-width, 380px), calc(100% - 480px - var(--20px)));
@@ -578,13 +578,13 @@ button.lucid-step-inner:focus-visible {
     border-top-right-radius: 0;
 }
 
-.lucid-inspector:not(:has(> .lucid-inspector-card > .middle)) > .side > .panel[data-name="default"] {
+.lucid-inspector:has(> .lucid-inspector-card):not(:has(> .lucid-inspector-card > .middle)) > .side > .panel[data-name="default"] {
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-.lucid-inspector:not(:has(> .lucid-inspector-card > .middle)) > .side > .panel[data-name="default"] > .panel-body {
+.lucid-inspector:has(> .lucid-inspector-card):not(:has(> .lucid-inspector-card > .middle)) > .side > .panel[data-name="default"] > .panel-body {
     padding-top: var(--10px);
     border-top: 1px solid var(--lucid-n-100);
 }
@@ -719,6 +719,16 @@ button.lucid-step-inner:focus-visible {
 
 .lucid-content-card {
     padding: var(--4px) var(--20px) var(--12px);
+}
+
+/* Classic layout: fields and bottom panels on the left, side panels on the right */
+.lucid-layout-classic .lucid-content-card {
+    position: relative;
+    padding-top: var(--12px);
+}
+
+.lucid-layout-classic > .lucid-inspector > .side {
+    margin-top: 0;
 }
 
 .lucid-content-card .middle > .panel {
@@ -1059,6 +1069,7 @@ body.lucid-resizing * {
 }
 
 .lucid-composer::before,
+.lucid-layout-classic .lucid-content-card::before,
 .lucid-record .lucid-inspector-card::before {
     content: "";
     position: absolute;

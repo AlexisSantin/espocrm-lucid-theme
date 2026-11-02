@@ -107,7 +107,8 @@ export default class PanelCollapse {
 
     /**
      * Record info (assignee, teams, dates): EspoCRM gives it no title. When it forms a separate
-     * card (the fields being in "About"), it gets a heading so that it can be collapsed.
+     * card, it gets a heading so that it can be collapsed. Only the content variant joins it to
+     * an "About" card without fields, whose title already covers it.
      *
      * @private
      * @param {HTMLElement|null} inspector
@@ -115,7 +116,7 @@ export default class PanelCollapse {
     decorateTracking(inspector) {
         const panel = inspector && inspector.querySelector(':scope > .side > .panel[data-name="default"]');
 
-        if (!panel || !inspector.querySelector(':scope > .lucid-inspector-card > .middle')) {
+        if (!panel || inspector.querySelector(':scope > .lucid-inspector-card:not(:has(> .middle))')) {
             return;
         }
 

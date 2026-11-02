@@ -106,7 +106,8 @@ export default class EmptyFields {
             return;
         }
 
-        const host = root.querySelector('.lucid-inspector-card:has(> .middle)') ||
+        const host = root.querySelector('.lucid-layout-classic .lucid-content-card') ||
+            root.querySelector('.lucid-inspector-card:has(> .middle)') ||
             root.querySelector('.lucid-inspector > .side > .panel[data-name="default"]:not(.hidden)') ||
             root.querySelector('.lucid-inspector-card') ||
             root.querySelector('.lucid-content-card');

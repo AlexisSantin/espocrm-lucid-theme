@@ -1,9 +1,11 @@
-/** Widths of the "About" column, in pixels. */
+import {isClassicLayout} from 'lucid-theme:lucid';
+
+/** Widths of the narrow column, in pixels. */
 const DEFAULT_WIDTH = 380;
 const MIN_WIDTH = 300;
 const MAX_WIDTH = 720;
 
-/** The right column always keeps at least this width. */
+/** The main column always keeps at least this width. */
 const MAIN_MIN_WIDTH = 480;
 
 const STEP = 16;
@@ -12,9 +14,10 @@ const LARGE_STEP = 64;
 const STORAGE_TYPE = 'lucidInspectorWidth';
 
 /**
- * Handle between "About" and the right column: the width is set with the mouse
+ * Handle between the narrow column and the main column: the width is set with the mouse
  * (double-click resets it) or the keyboard (arrows, Home, End).
- * It is remembered per user, in the browser.
+ * It is remembered per user and per layout, in the browser. In the classic layout, the narrow
+ * column is on the right: dragging and arrows work the other way round.
  */
 export default class ColumnResizer {
 
@@ -23,7 +26,8 @@ export default class ColumnResizer {
      */
     constructor(view) {
         this.view = view;
-        this.storageName = view.getUser().id;
+        this.mirrored = isClassicLayout(view);
+        this.storageName = this.mirrored ? `${view.getUser().id}-classic` : view.getUser().id;
         this.width = this.load();
         this.grid = null;
         this.handle = null;
@@ -63,7 +67,7 @@ export default class ColumnResizer {
         event.preventDefault();
 
         const handle = this.handle;
-        const left = this.grid.querySelector(':scope > .lucid-inspector').getBoundingClientRect().left;
+        const {left, right} = this.grid.querySelector(':scope > .lucid-inspector').getBoundingClientRect();
         const offset = handle.offsetWidth / 2;
 
         handle.setPointerCapture(event.pointerId);
@@ -71,7 +75,7 @@ export default class ColumnResizer {
         document.body.classList.add('lucid-resizing');
 
         const onMove = moveEvent => {
-            this.width = this.clamp(moveEvent.clientX - left - offset);
+            this.width = this.clamp((this.mirrored ? right - moveEvent.clientX : moveEvent.clientX - left) - offset);
             this.apply();
         };
 
@@ -96,7 +100,7 @@ export default class ColumnResizer {
      */
     onKeyDown(event) {
         const current = this.currentWidth();
-        const step = event.shiftKey ? LARGE_STEP : STEP;
+        const step = (event.shiftKey ? LARGE_STEP : STEP) * (this.mirrored ? -1 : 1);
 
         const next = {
             ArrowLeft: current - step,

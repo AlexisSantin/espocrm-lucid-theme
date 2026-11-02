@@ -1,6 +1,7 @@
 {
     "themes": {
-        "Lucid": "Lucid"
+        "Lucid": "Lucid",
+        "LucidClassic": "Lucid Classic"
     },
     "labels": {
         "lucidShowEmptyOne": "Zobrazit prázdné pole",
