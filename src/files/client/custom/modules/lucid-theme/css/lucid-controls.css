@@ -185,3 +185,35 @@ select.form-control {
         transform: none;
     }
 }
+
+/*
+ * Rich text editor. EspoCRM builds it as a panel and removes the background and the line of its
+ * toolbar: here it reads as one field, with the toolbar on grey above the text.
+ */
+.note-editor.note-frame.panel {
+    border: 1px solid var(--input-border);
+    border-radius: var(--lucid-radius);
+    box-shadow: var(--lucid-shadow-xs);
+}
+
+.note-editor.note-frame.panel.in-focus {
+    border-color: var(--lucid-brand-ring);
+    box-shadow: var(--lucid-focus-halo);
+}
+
+/* Important: EspoCRM removes this line with !important */
+.panel.note-editor > .note-toolbar {
+    padding: var(--6px) var(--6px) var(--1px);
+    background-color: var(--lucid-n-50);
+    border-bottom: 1px solid var(--lucid-border) !important;
+    border-radius: calc(var(--lucid-radius) - 1px) calc(var(--lucid-radius) - 1px) 0 0;
+}
+
+.note-editor.note-frame .note-editing-area .note-editable {
+    padding: var(--10px) var(--12px);
+    border-radius: 0 0 calc(var(--lucid-radius) - 1px) calc(var(--lucid-radius) - 1px);
+}
+
+.note-editor.note-frame .note-statusbar {
+    background-color: transparent;
+}

@@ -70,6 +70,24 @@
     overscroll-behavior: contain;
 }
 
+/* A dialog holding cards or a list: on the grey of the pages, not white on white */
+.modal-body:has(.panel, .list-container) {
+    background-color: var(--lucid-canvas);
+}
+
+/* The list keeps the dialog's margin, like the cards */
+.modal-body .list-container > .list {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Buttons under the title, above the content: white with the top, a single line below */
+.modal-header + .modal-footer {
+    background-color: var(--lucid-surface);
+    border-top: 0;
+    border-bottom: 1px solid var(--lucid-border);
+}
+
 /* EspoCRM 10 side panel (full height, docked right): rounded on the page side only */
 @media (min-width: 768px) {
     .modal:not(.dialog-confirm):not(.dialog-centered) > .modal-dialog > .modal-content {
@@ -95,18 +113,18 @@
     margin-right: 0;
 }
 
-.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel,
+.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel:not(.note-editor),
 .modal-body > :is(.record, .record-container).no-side-margin .record-grid .left > :is(.middle, .bottom) > .panel {
     border-left: var(--panel-border-width) solid var(--panel-default-border);
     border-right: var(--panel-border-width) solid var(--panel-default-border);
 }
 
-.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel:not(.in-middle, .last) {
+.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel:not(.in-middle, .last, .note-editor) {
     border-top-left-radius: var(--panel-border-radius);
     border-top-right-radius: var(--panel-border-radius);
 }
 
-.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel:not(.in-middle, .first) {
+.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel:not(.in-middle, .first, .note-editor) {
     border-bottom-left-radius: var(--panel-border-radius);
     border-bottom-right-radius: var(--panel-border-radius);
 }
