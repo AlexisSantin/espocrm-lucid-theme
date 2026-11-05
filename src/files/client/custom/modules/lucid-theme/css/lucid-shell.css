@@ -165,9 +165,7 @@ body[data-navbar="side"] #navbar a.minimizer:hover {
 /* ===== Top bar ===== */
 body[data-navbar="side"] #navbar .navbar-right {
     align-items: center;
-    border-bottom: 1px solid var(--lucid-border);
-    -webkit-backdrop-filter: saturate(1.4) blur(10px);
-    backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--lucid-band-divider);
 }
 
 body[data-navbar="side"] #navbar .navbar-right > li {
@@ -225,8 +223,13 @@ body[data-navbar="side"] #navbar .navbar-right .global-search-container a.global
 
 /* ===== Top bar (top navbar mode) ===== */
 body[data-navbar="top"] #navbar .navbar {
-    border-bottom: 1px solid var(--lucid-border);
+    background-color: var(--lucid-band-topbar);
+    border-bottom: 1px solid var(--lucid-band-divider);
     box-shadow: none;
+}
+
+body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
+    background-color: transparent;
 }
 
 /* ===== Page header ===== */

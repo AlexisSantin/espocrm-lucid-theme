@@ -50,17 +50,6 @@ body:has(.lucid-record) #navbar .navbar-right > li.open > a {
     color: var(--lucid-band-text);
 }
 
-body:has(.lucid-record) #navbar .navbar-right input.global-search-input {
-    background: var(--lucid-band-fill-2);
-    border-color: var(--lucid-band-line);
-    color: var(--lucid-band-text);
-    box-shadow: none;
-}
-
-body:has(.lucid-record) #navbar .navbar-right input.global-search-input::placeholder {
-    color: var(--lucid-band-muted);
-}
-
 body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-search-button {
     color: var(--lucid-band-muted);
 }
