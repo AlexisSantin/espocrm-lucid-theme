@@ -115,6 +115,19 @@ body[data-navbar="side"] #navbar ul.tabs > li.tab-divider:has(.lucid-nav-toggle)
     transform: rotate(-90deg);
 }
 
+/* Open group: chevron on hover or keyboard focus. Touch screens have no hover: it stays visible. */
+@media (hover: hover) {
+    .tab-divider:not(.lucid-nav-collapsed) > div > .lucid-nav-toggle {
+        opacity: 0;
+        transition: opacity var(--lucid-fast) ease;
+    }
+
+    .tab-divider:not(.lucid-nav-collapsed) > div:hover > .lucid-nav-toggle,
+    .tab-divider:not(.lucid-nav-collapsed) > div > .lucid-nav-toggle:focus-visible {
+        opacity: 1;
+    }
+}
+
 body[data-navbar="side"]:not(.minimized) #navbar ul.tabs > li.lucid-nav-hidden {
     display: none;
 }
@@ -125,6 +138,7 @@ body.minimized .lucid-nav-toggle {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .tab-divider > div > .lucid-nav-toggle,
     .lucid-nav-toggle .fas {
         transition: none;
     }
