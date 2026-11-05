@@ -272,6 +272,7 @@ body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-
     display: flex;
     flex-wrap: wrap;
     gap: var(--14px);
+    margin-left: auto;
 }
 
 .lucid-pipeline-off-link {
@@ -620,48 +621,59 @@ button.lucid-step-inner:focus-visible {
 }
 
 /*
- * Field tabs from the layout ("About" card or content card): compact pills that wrap
- * cleanly, with a single line below them.
+ * Field tabs from the layout ("About" card or content card): same look as the tab bar of
+ * the main column, with the line running across the card. They wrap in a narrow column.
  */
 .lucid-record .middle-tabs {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: var(--4px);
-    margin: 0 0 var(--4px);
-    padding-bottom: var(--10px);
-    border-bottom: 1px solid var(--lucid-n-100);
+    align-items: flex-end;
+    gap: 2px;
+    margin: 0 calc(var(--20px) * -1) var(--4px);
+    padding: 0 var(--10px);
+    border-bottom: 1px solid var(--lucid-border);
 }
 
 /* ".tabs.middle-tabs": more specific than EspoCRM's ".record .tabs > button.btn" */
 .lucid-record .tabs.middle-tabs > .btn {
     height: auto;
     margin: 0;
-    padding: var(--4px) var(--10px);
+    padding: var(--8px) var(--10px) var(--7px);
     border: 0;
-    border-radius: var(--lucid-radius) !important;
+    border-bottom: 2px solid transparent;
+    border-radius: 0 !important;
     background: transparent;
     box-shadow: none;
     color: var(--lucid-text-secondary);
-    font-size: var(--13px);
+    font-size: inherit;
     font-weight: 500;
     line-height: 1.5;
 }
 
-/* EspoCRM already underlines the active tab: one marker is enough */
+/* The border marks the active tab, as in the main column: one marker is enough */
 .lucid-record .tabs.middle-tabs > .btn::after {
     display: none;
 }
 
 .lucid-record .tabs.middle-tabs > .btn:hover {
-    background: var(--lucid-hover);
+    background: transparent;
     color: var(--lucid-text);
 }
 
+.lucid-record .tabs.middle-tabs > .btn:active {
+    transform: none;
+}
+
 .lucid-record .tabs.middle-tabs > .btn.active {
-    background: var(--lucid-brand-subtle);
-    color: var(--lucid-brand);
+    background: transparent;
+    border-bottom-color: var(--lucid-brand);
+    color: var(--lucid-text);
     font-weight: 600;
+}
+
+/* A tab holding a field that failed validation stays red, even when active */
+.lucid-record .tabs.middle-tabs > .btn.invalid {
+    color: var(--state-danger-text);
 }
 
 /* Below the tabs, no second line: only the following groups get one */
@@ -1002,6 +1014,14 @@ body.lucid-resizing * {
 
 .lucid-bottom > .panel > .panel-body {
     padding: 0;
+}
+
+/*
+ * EspoCRM sizes the margins of a list and its first cell from --panel-padding: with the side
+ * padding of this block, tables run from edge to edge and their text lines up with the title.
+ */
+.lucid-bottom > .panel:not([data-name="stream"]) {
+    --panel-padding: var(--18px);
 }
 
 /* ===== Activity tab: quick actions, activities, tasks, history, stream ===== */
@@ -1444,6 +1464,16 @@ body.lucid-resizing * {
 .lucid-bottom > .panel:is(.panel-danger, .panel-warning, .panel-success, .panel-info, .panel-primary) > .panel-heading .panel-title {
     padding-top: var(--8px);
     padding-bottom: var(--8px);
+}
+
+/* Centred in the band. Lower, this float would stick out and push the table down */
+.lucid-bottom > .panel:is(.panel-danger, .panel-warning, .panel-success, .panel-info, .panel-primary) > .panel-heading > .panel-actions-container {
+    margin-top: var(--3px);
+}
+
+/* First panel of a tab: the band sits right under the tab bar */
+.lucid-bottom > .panel:is(.panel-danger, .panel-warning, .panel-success, .panel-info, .panel-primary):not(.lucid-tab-hidden, .hidden, .panel:not(.lucid-tab-hidden, .hidden) ~ .panel) {
+    margin-top: calc(var(--20px) * -1);
 }
 
 /* Sections of the "About" or content card: the band replaces the separator line */

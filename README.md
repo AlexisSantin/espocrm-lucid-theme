@@ -52,7 +52,7 @@ All data in the screenshots is fictitious.
 ## Features
 
 - **Side-by-side record view** (Lucid Split). The **About** card on the left holds the layout panels as a
-  compact property list (tab breaks become small pill tabs), followed by a **Record info** card
+  compact property list (tab breaks become tabs, styled like those of the main column), followed by a **Record info** card
   (assigned user, teams, dates, followers) and the side panels (Activities, History, Tasks…). The
   right column starts with the **Stream** tab — quick actions (Note, Email, Call, Meeting, Task)
   above the stream as a timeline — then one tab per bottom panel, with its count. Which panels show

@@ -256,43 +256,27 @@ export default class RecordBand {
         const currentIndex = path.findIndex(stage => stage.id === currentId);
         const editable = this.canEditStage();
 
-        const head = el('div', 'lucid-pipeline-head');
-        const summary = el('span', 'lucid-pipeline-summary');
+        const links = el('span', 'lucid-pipeline-off');
 
-        summary.append(this.view.translate('pipeline', 'fields', this.entityType) + ' ');
-        summary.append(el('strong', '', this.model.get('pipelineName') || ''));
+        offPath.forEach(stage => {
 
-        if (currentIndex >= 0) {
-            summary.append(` · ${currentIndex + 1} / ${path.length}`);
-        }
+            if (stage.id === currentId) {
+                links.append(el('span', 'lucid-pipeline-off-current', stage.name));
 
-        head.append(summary);
+                return;
+            }
 
-        if (offPath.length) {
-            const links = el('span', 'lucid-pipeline-off');
+            if (!editable) {
+                return;
+            }
 
-            offPath.forEach(stage => {
+            const button = el('button', 'lucid-pipeline-off-link', stage.name);
 
-                if (stage.id === currentId) {
-                    links.append(el('span', 'lucid-pipeline-off-current', stage.name));
-
-                    return;
-                }
-
-                if (!editable) {
-                    return;
-                }
-
-                const button = el('button', 'lucid-pipeline-off-link', stage.name);
-
-                button.type = 'button';
-                button.title = `${this.view.translate('pipelineStage', 'fields', this.entityType)} : ${stage.name}`;
-                button.addEventListener('click', () => this.setStage(stage.id));
-                links.append(button);
-            });
-
-            head.append(links);
-        }
+            button.type = 'button';
+            button.title = `${this.view.translate('pipelineStage', 'fields', this.entityType)} : ${stage.name}`;
+            button.addEventListener('click', () => this.setStage(stage.id));
+            links.append(button);
+        });
 
         const stageLabel = this.view.translate('pipelineStage', 'fields', this.entityType);
         const stateOf = index => index < currentIndex ? 'done' : index === currentIndex ? 'current' : 'todo';
@@ -357,7 +341,14 @@ export default class RecordBand {
         });
 
         container.classList.remove('lucid-pipeline-open');
-        container.replaceChildren(head, toggle, bar, list);
+        container.replaceChildren(toggle, bar, list);
+
+        if (links.childElementCount) {
+            const head = el('div', 'lucid-pipeline-head');
+
+            head.append(links);
+            container.prepend(head);
+        }
     }
 
     /**
