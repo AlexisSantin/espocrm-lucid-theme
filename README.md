@@ -61,6 +61,9 @@ All data in the screenshots is fictitious.
 - **Collapsible blocks.** About, Record info, the side panels, each layout panel and the bottom
   panels block fold like an accordion. The state is remembered per user and record type; everything
   opens while editing.
+- **Collapsible menu groups.** A click on a title of the side menu (CRM, Activities…) folds the items
+  below it, up to the next title. The page in progress stays visible, the state is remembered per
+  user, and an icons-only menu keeps every item.
 - **Adjustable column.** A handle between the columns sets the width of the narrow column, from 300
   to 720 px (mouse, or arrow keys / Home / End; double-click to reset), remembered per user and per
   layout. The main column keeps at least 480 px.
@@ -144,6 +147,7 @@ src/files/client/custom/modules/lucid-theme/
     src/helpers/panel-collapse.js       collapsible blocks
     src/helpers/column-resizer.js       width handle for About
     src/helpers/empty-fields.js         hides empty fields
+    js/nav-groups.js                    collapsible groups of the side menu (plain script)
     src/mixins/detail-bottom.js         right column: tabs, quick actions, counts
     fonts/                              Lexend (OFL)
 ```

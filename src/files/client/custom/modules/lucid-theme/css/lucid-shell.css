@@ -70,6 +70,66 @@ body[data-navbar="side"] #navbar ul.tabs > li.tab-divider > div > .label-text {
     letter-spacing: 0;
 }
 
+/* Collapsible groups (js/nav-groups.js): the whole title row folds the items below it */
+body[data-navbar="side"] #navbar ul.tabs > li.tab-divider:has(.lucid-nav-toggle) {
+    float: none;
+    display: block;
+    width: 100%;
+}
+
+body[data-navbar="side"] #navbar ul.tabs > li.tab-divider:has(.lucid-nav-toggle) > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: var(--12px);
+    cursor: pointer;
+}
+
+body[data-navbar="side"] #navbar ul.tabs > li.tab-divider:has(.lucid-nav-toggle) > div:hover > .label-text {
+    color: var(--lucid-sidebar-text);
+}
+
+.lucid-nav-toggle {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--lucid-radius-sm);
+    background: transparent;
+    color: var(--lucid-sidebar-muted);
+    cursor: pointer;
+}
+
+.lucid-nav-toggle .fas {
+    font-size: 10px;
+    transition: transform var(--lucid-fast) var(--lucid-ease);
+}
+
+.lucid-nav-collapsed .lucid-nav-toggle .fas {
+    transform: rotate(-90deg);
+}
+
+body[data-navbar="side"]:not(.minimized) #navbar ul.tabs > li.lucid-nav-hidden {
+    display: none;
+}
+
+/* Icons-only menu: every item stays available */
+body.minimized .lucid-nav-toggle {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lucid-nav-toggle .fas {
+        transition: none;
+    }
+}
+
 /*
  * Side menu submenus (tab groups, "…"): EspoCRM removes the top and bottom padding, so the
  * highlight of the first and last items touched the frame.
