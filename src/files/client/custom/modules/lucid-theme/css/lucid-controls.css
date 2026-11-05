@@ -10,16 +10,20 @@
                 border-color var(--lucid-fast) ease,
                 color var(--lucid-fast) ease,
                 box-shadow var(--lucid-fast) ease,
-                transform var(--lucid-fast) var(--lucid-ease);
-    transform-origin: center;
+                transform var(--lucid-fast) ease;
 }
 
+/* Press: the button sinks by one pixel, without any scaling that would blur its text */
 .btn:active:not(:disabled):not(.disabled) {
-    transform: scale(0.98);
+    transform: translateY(1px);
 }
 
 .btn-default {
     box-shadow: var(--lucid-shadow-xs);
+}
+
+.btn-default:hover:not(:disabled):not(.disabled) {
+    box-shadow: var(--lucid-shadow-sm);
 }
 
 .btn-default:active,
@@ -32,6 +36,20 @@
 .btn-success,
 .btn-danger,
 .btn-warning {
+    box-shadow: var(--lucid-shadow-primary);
+}
+
+.btn-primary:hover:not(:disabled):not(.disabled),
+.btn-success:hover:not(:disabled):not(.disabled),
+.btn-danger:hover:not(:disabled):not(.disabled),
+.btn-warning:hover:not(:disabled):not(.disabled) {
+    box-shadow: var(--lucid-shadow-primary-hover);
+}
+
+.btn-primary:active:not(:disabled):not(.disabled),
+.btn-success:active:not(:disabled):not(.disabled),
+.btn-danger:active:not(:disabled):not(.disabled),
+.btn-warning:active:not(:disabled):not(.disabled) {
     box-shadow: var(--lucid-shadow-primary);
 }
 
@@ -100,8 +118,19 @@ select.form-control {
 
 /* Grouped fields don't double the shadow */
 .input-group .form-control:not(:focus),
-.input-group-btn > .btn {
+.input-group-btn > .btn,
+.input-group-btn > .btn:hover:not(:disabled):not(.disabled) {
     box-shadow: none;
+}
+
+/* A field and its side buttons read as one control: same border as the field */
+.input-group-btn > .btn:not(.btn-text),
+.input-group-addon {
+    border-color: var(--lucid-border-input);
+}
+
+.input-group-btn > .btn:not(.btn-text):hover:not(:disabled):not(.disabled) {
+    border-color: var(--lucid-n-500);
 }
 
 /* ===== Form labels ===== */

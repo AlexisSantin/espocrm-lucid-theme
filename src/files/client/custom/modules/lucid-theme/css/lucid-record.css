@@ -47,6 +47,7 @@
 .panel-heading .btn-group > .btn:hover,
 .panel-heading .btn-group.open > .btn {
     background-color: var(--lucid-hover);
+    box-shadow: none;
     color: var(--lucid-text);
 }
 

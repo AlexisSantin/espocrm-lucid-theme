@@ -78,6 +78,7 @@
     --lucid-shadow-md: 0 4px 12px -2px rgba(20, 22, 31, 0.08), 0 2px 4px -2px rgba(20, 22, 31, 0.04);
     --lucid-shadow-lg: 0 16px 40px -8px rgba(20, 22, 31, 0.16), 0 4px 10px -4px rgba(20, 22, 31, 0.06);
     --lucid-shadow-primary: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 1px 2px rgba(20, 22, 31, 0.2);
+    --lucid-shadow-primary-hover: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 3px 8px -1px rgba(20, 22, 31, 0.35);
 
     /* Focus: keyboard ring and field glow */
     --lucid-focus-outline: 2px solid var(--lucid-brand-ring);
@@ -95,7 +96,9 @@
     --lucid-band-line: rgba(10, 25, 43, 0.16);
     --lucid-band-gradient: linear-gradient(90deg, #eef5f9 0%, #e6f0f7 55%, #dce9f3 100%);
     --lucid-band-glow: radial-gradient(60rem 22rem at 100% 0%, rgba(0, 182, 237, 0.18), transparent 60%);
+    --lucid-band-topbar: rgba(238, 245, 249, 0.85);
     --lucid-band-overlap: var(--24px);
+    --lucid-band-divider: rgba(10, 25, 43, 0.08);
     --lucid-band-fill-1: rgba(10, 25, 43, 0.05);
     --lucid-band-fill-2: rgba(10, 25, 43, 0.08);
     --lucid-band-fill-3: rgba(10, 25, 43, 0.12);

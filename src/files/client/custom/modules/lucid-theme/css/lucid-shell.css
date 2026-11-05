@@ -166,6 +166,8 @@ body[data-navbar="side"] #navbar a.minimizer:hover {
 body[data-navbar="side"] #navbar .navbar-right {
     align-items: center;
     border-bottom: 1px solid var(--lucid-border);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    backdrop-filter: saturate(1.4) blur(10px);
 }
 
 body[data-navbar="side"] #navbar .navbar-right > li {
@@ -197,11 +199,15 @@ body[data-navbar="side"] #navbar .navbar-right input.global-search-input {
     max-height: var(--34px);
     width: var(--300px);
     padding-left: var(--12px);
-    background-color: var(--lucid-n-50);
-    border: 1px solid var(--lucid-border-input);
+    background-color: var(--lucid-n-0);
+    border: 1px solid var(--lucid-border-strong);
     border-radius: var(--lucid-radius) !important;
-    box-shadow: none;
+    box-shadow: var(--lucid-shadow-xs);
     font-size: var(--13px);
+}
+
+body[data-navbar="side"] #navbar .navbar-right input.global-search-input:hover {
+    border-color: var(--lucid-n-300);
 }
 
 
@@ -267,6 +273,11 @@ body[data-navbar="top"] #navbar .navbar {
 .page-header .header-buttons .btn[data-name="create"]:hover {
     background-color: var(--lucid-brand-hover);
     border-color: var(--lucid-brand-hover);
+    box-shadow: var(--lucid-shadow-primary-hover);
+}
+
+.page-header .header-buttons .btn[data-name="create"]:active {
+    box-shadow: var(--lucid-shadow-primary);
 }
 
 .page-header .header-buttons .btn[data-name="create"] .fas {

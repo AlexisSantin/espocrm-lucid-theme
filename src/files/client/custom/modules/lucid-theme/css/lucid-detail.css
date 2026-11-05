@@ -34,6 +34,37 @@ body.lucid-band-page {
     padding-bottom: 0;
 }
 
+/* Top bar laid over the band */
+body:has(.lucid-record) #navbar .navbar-right {
+    background: var(--lucid-band-topbar);
+    border-bottom-color: var(--lucid-band-divider);
+}
+
+body:has(.lucid-record) #navbar .navbar-right > li > a {
+    color: var(--lucid-band-muted);
+}
+
+body:has(.lucid-record) #navbar .navbar-right > li > a:hover,
+body:has(.lucid-record) #navbar .navbar-right > li.open > a {
+    background-color: var(--lucid-band-fill-2);
+    color: var(--lucid-band-text);
+}
+
+body:has(.lucid-record) #navbar .navbar-right input.global-search-input {
+    background: var(--lucid-band-fill-2);
+    border-color: var(--lucid-band-line);
+    color: var(--lucid-band-text);
+    box-shadow: none;
+}
+
+body:has(.lucid-record) #navbar .navbar-right input.global-search-input::placeholder {
+    color: var(--lucid-band-muted);
+}
+
+body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-search-button {
+    color: var(--lucid-band-muted);
+}
+
 #main:has(> .record > .lucid-record) > .page-header .header-title {
     font-size: var(--14px);
     font-weight: 500;
@@ -1072,11 +1103,16 @@ body.lucid-resizing * {
     font: inherit;
     font-weight: 500;
     cursor: pointer;
+    transition: background-color var(--lucid-fast) ease, color var(--lucid-fast) ease, transform var(--lucid-fast) ease;
 }
 
 .lucid-composer-button:hover {
     background: var(--lucid-hover);
     color: var(--lucid-text);
+}
+
+.lucid-composer-button:active {
+    transform: translateY(1px);
 }
 
 .lucid-composer-button[data-kind="note"] {
@@ -1382,6 +1418,10 @@ body.lucid-resizing * {
 @media (prefers-reduced-motion: reduce) {
     .lucid-record .lucid-collapse .fas {
         transition: none;
+    }
+
+    .lucid-composer-button:active {
+        transform: none;
     }
 }
 
