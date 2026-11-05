@@ -21,6 +21,10 @@ stage moves the record along its pipeline.
 | ![Resizing the About column and folding a section](docs/screenshots/demo-resize-collapse.gif) | ![Showing and hiding empty fields](docs/screenshots/demo-empty-fields.gif) |
 | Drag the handle between the columns to widen About; fold the sections you don't need | Empty fields stay out of the way until you ask for them |
 
+![Folding and unfolding the groups of the side menu](docs/screenshots/demo-menu-groups.gif)
+
+A click on a title of the side menu folds its group; the page you are on stays visible.
+
 ## Two layouts, one extension
 
 Installing the extension adds two entries to the theme list. They share the same design and features;
