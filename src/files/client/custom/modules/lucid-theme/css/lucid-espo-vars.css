@@ -158,7 +158,7 @@
     /* Side menu (inverse navbar) and top bar (navbar) */
     --navbar-border-width: var(--1px);
     --navbar-box-shadow: none;
-    --navbar-bg: var(--lucid-band-topbar);
+    --navbar-bg: #eef5f9;
     --navbar-link-color: var(--lucid-n-500);
     --navbar-link-hover-color: var(--lucid-text);
     --navbar-link-hover-bg: var(--lucid-hover);

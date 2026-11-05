@@ -35,11 +35,6 @@ body.lucid-band-page {
 }
 
 /* Top bar laid over the band */
-body:has(.lucid-record) #navbar .navbar-right {
-    background: var(--lucid-band-topbar);
-    border-bottom-color: var(--lucid-band-divider);
-}
-
 body:has(.lucid-record) #navbar .navbar-right > li > a {
     color: var(--lucid-band-muted);
 }

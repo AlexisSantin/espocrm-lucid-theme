@@ -96,7 +96,8 @@
     --lucid-band-line: rgba(10, 25, 43, 0.16);
     --lucid-band-gradient: linear-gradient(90deg, #eef5f9 0%, #e6f0f7 55%, #dce9f3 100%);
     --lucid-band-glow: radial-gradient(60rem 22rem at 100% 0%, rgba(0, 182, 237, 0.18), transparent 60%);
-    --lucid-band-topbar: var(--lucid-table-head-hover);
+    /* Top bar: a translucent layer over the band's glow and gradient, on every page */
+    --lucid-topbar-bg: linear-gradient(rgba(238, 245, 249, 0.85), rgba(238, 245, 249, 0.85)), var(--lucid-band-glow), var(--lucid-band-gradient);
     --lucid-band-overlap: var(--24px);
     --lucid-band-divider: rgba(10, 25, 43, 0.08);
     --lucid-band-fill-1: rgba(10, 25, 43, 0.05);

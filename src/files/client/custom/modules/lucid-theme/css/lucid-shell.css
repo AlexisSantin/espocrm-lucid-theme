@@ -165,6 +165,8 @@ body[data-navbar="side"] #navbar a.minimizer:hover {
 /* ===== Top bar ===== */
 body[data-navbar="side"] #navbar .navbar-right {
     align-items: center;
+    background: var(--lucid-topbar-bg);
+    background-attachment: fixed;
     border-bottom: 1px solid var(--lucid-band-divider);
 }
 
@@ -223,7 +225,8 @@ body[data-navbar="side"] #navbar .navbar-right .global-search-container a.global
 
 /* ===== Top bar (top navbar mode) ===== */
 body[data-navbar="top"] #navbar .navbar {
-    background-color: var(--lucid-band-topbar);
+    background: var(--lucid-topbar-bg);
+    background-attachment: fixed;
     border-bottom: 1px solid var(--lucid-band-divider);
     box-shadow: none;
 }
