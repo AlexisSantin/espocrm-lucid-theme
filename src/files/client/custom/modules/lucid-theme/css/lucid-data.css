@@ -1,5 +1,5 @@
 /**
- * Data: lists as cards, quiet column headers, status badges.
+ * Data: lists as cards, marked column headers, status badges.
  */
 
 /* ===== Main list: a card ===== */
@@ -44,14 +44,29 @@
 }
 
 .list > table > thead > tr > th {
-    background-color: var(--lucid-surface-sunken);
-    border-bottom: 1px solid var(--lucid-border);
-    color: var(--lucid-text-muted);
-    font-size: var(--13px);
-    font-weight: 500;
-    letter-spacing: 0;
-    text-transform: none;
+    background-color: var(--lucid-table-head-bg);
+    border-right: 1px solid var(--lucid-table-head-line);
+    border-bottom: 1px solid var(--lucid-table-head-line);
+    color: var(--lucid-text-secondary);
+    font-size: var(--12px);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     vertical-align: middle;
+    transition: background-color var(--lucid-fast) ease;
+}
+
+.list > table > thead > tr > th:last-child {
+    border-right: 0;
+}
+
+.list > table > thead > tr > th:hover {
+    background-color: var(--lucid-table-head-hover);
+}
+
+.list > table > thead > tr > th:not(:first-child),
+.list > table > tbody > tr > td:not(:first-child) {
+    padding-left: var(--14px);
 }
 
 .list > table > thead > tr > th a.sort {
@@ -80,7 +95,7 @@
 }
 
 .list > table > tbody > tr:hover > td {
-    background-color: var(--lucid-n-25);
+    background-color: var(--lucid-table-row-hover);
 }
 
 .list > table > tbody > tr.active > td,

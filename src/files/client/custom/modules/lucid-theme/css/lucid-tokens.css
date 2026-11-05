@@ -95,9 +95,7 @@
     --lucid-band-line: rgba(10, 25, 43, 0.16);
     --lucid-band-gradient: linear-gradient(90deg, #eef5f9 0%, #e6f0f7 55%, #dce9f3 100%);
     --lucid-band-glow: radial-gradient(60rem 22rem at 100% 0%, rgba(0, 182, 237, 0.18), transparent 60%);
-    --lucid-band-topbar: rgba(238, 245, 249, 0.85);
     --lucid-band-overlap: var(--24px);
-    --lucid-band-divider: rgba(10, 25, 43, 0.08);
     --lucid-band-fill-1: rgba(10, 25, 43, 0.05);
     --lucid-band-fill-2: rgba(10, 25, 43, 0.08);
     --lucid-band-fill-3: rgba(10, 25, 43, 0.12);
@@ -110,6 +108,12 @@
     --lucid-band-primary-bg: var(--lucid-brand);
     --lucid-band-primary-hover: var(--lucid-brand-hover);
     --lucid-band-primary-text: #ffffff;
+
+    /* Tables: tinted column headers with vertical lines, cyan on hover */
+    --lucid-table-head-bg: #eef1f5;
+    --lucid-table-head-line: #d5dae3;
+    --lucid-table-head-hover: #e0f4fb;
+    --lucid-table-row-hover: #f1f4f8;
 
     /* Side menu: white, with a discreet cyan glow at the bottom */
     --lucid-sidebar-bg: #ffffff;

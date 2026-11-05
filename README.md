@@ -41,7 +41,7 @@ another one in **Preferences**.
 | ![Contact record](docs/screenshots/record-contact.png) | ![Account record](docs/screenshots/record-account.png) |
 | Contact: About card, Record info card, quick actions and stream | Account: layout panels on the left, relationship tabs on the right |
 | ![Opportunity list](docs/screenshots/list-opportunities.png) | ![Create call side panel](docs/screenshots/create-call.png) |
-| List as a card, coloured record links, stage badges | Native EspoCRM side panel, detached from the page |
+| List as a card, marked column headers, coloured record links, stage badges | Native EspoCRM side panel, detached from the page |
 
 All data in the screenshots is fictitious.
 
@@ -70,8 +70,10 @@ All data in the screenshots is fictitious.
 - **Empty fields hidden** behind a "Show N empty fields" link, all shown while editing.
 - **Readability.** One typeface, Lexend, for text and titles; labels as large as values; record
   links coloured so that what is clickable stands out; comfortable form fields.
-- **Light palette.** White sidebar, ice-blue record band, cards with a cyan corner mark. Colours
-  are CSS tokens (`--lucid-band-*`, `--lucid-sidebar-*`), easy to retune.
+- **Light palette.** White sidebar and top bar, ice-blue record band, cards with a cyan corner mark.
+  Colours are CSS tokens (`--lucid-band-*`, `--lucid-sidebar-*`, `--lucid-table-*`), easy to retune.
+- **Marked table columns.** Tinted uppercase headers with vertical lines, a cyan tint when hovering a
+  column, and a clearer row hover, in lists and in the tables of a record.
 - **Speaks every EspoCRM language.** Labels come from EspoCRM's own translations; only the
   empty-fields link and the Record info title are the theme's own, translated into every language
   EspoCRM ships.
