@@ -167,6 +167,16 @@ select.form-control {
     border-color: var(--lucid-n-500);
 }
 
+/*
+ * Text buttons after a field (filters and reset of the search): EspoCRM pulls them 1px over the
+ * field, which shows once their hover has a background. They stand apart, with rounded corners.
+ */
+.input-group > .input-group-btn:not(:first-child) > .btn.btn-text {
+    margin-left: var(--4px);
+    /* Important: EspoCRM squares the left corners with !important */
+    border-radius: var(--lucid-radius) !important;
+}
+
 /* ===== Form labels ===== */
 .edit .cell > label.control-label,
 .modal .edit .cell > label.control-label {
