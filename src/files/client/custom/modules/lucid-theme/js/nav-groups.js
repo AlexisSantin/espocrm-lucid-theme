@@ -8,7 +8,9 @@
 (() => {
     const MENU_SELECTOR = '#navbar ul.tabs';
     const THEME_SELECTOR = 'link[href*="modules/lucid-theme/css/lucid.css"]';
-    const USER_SELECTOR = '#navbar a[href^="#User/view/"]';
+    // The user's own link, in the top right menu. The Last Viewed panel, also in the navbar, can
+    // hold links to other users, whose stored state must not be read.
+    const USER_SELECTOR = '#navbar .menu-container a[href^="#User/view/"]';
     const STORAGE_PREFIX = 'lucid-nav-groups-';
 
     let scheduled = false;

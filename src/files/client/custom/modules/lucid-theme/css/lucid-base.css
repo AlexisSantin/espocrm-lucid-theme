@@ -64,6 +64,12 @@ input[type="radio"] {
     accent-color: var(--lucid-brand);
 }
 
+/* Proportional: a fixed radius makes the small list checkboxes look like radio buttons */
+input[type="checkbox"] {
+    --border-radius: 27%;
+    --border-radius-small: 27%;
+}
+
 /* Thin scrollbars */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }

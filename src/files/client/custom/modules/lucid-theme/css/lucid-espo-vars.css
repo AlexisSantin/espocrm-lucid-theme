@@ -72,14 +72,14 @@
     --brand-danger-lighten-20: var(--lucid-danger-border);
     --brand-warning: var(--lucid-warning-solid);
     --brand-warning-10: var(--lucid-warning);
-    --brand-info: var(--lucid-n-500);
-    --brand-info-10: var(--lucid-n-600);
+    --brand-info: var(--lucid-info);
+    --brand-info-10: #5a3ab0;
 
     --state-default-bg: var(--lucid-n-100);
     --state-default-text: var(--lucid-n-600);
     --state-primary-bg: var(--lucid-brand-subtle);
     --state-primary-text: var(--lucid-brand);
-    --state-primary-border: var(--lucid-info-border);
+    --state-primary-border: var(--lucid-brand-border);
     --state-info-bg: var(--lucid-info-bg);
     --state-info-text: var(--lucid-info);
     --state-info-border: var(--lucid-info-border);

@@ -195,9 +195,12 @@ body[data-navbar="side"] #navbar .navbar-right > li.open > a {
 
 /* Global search */
 body[data-navbar="side"] #navbar .navbar-right input.global-search-input {
+    width: var(--300px);
+}
+
+:is(body[data-navbar="side"], body[data-navbar="top"]) #navbar .navbar-right input.global-search-input {
     min-height: var(--34px);
     max-height: var(--34px);
-    width: var(--300px);
     padding-left: var(--12px);
     background-color: var(--lucid-n-0);
     border: 1px solid var(--lucid-border-strong);
@@ -206,17 +209,17 @@ body[data-navbar="side"] #navbar .navbar-right input.global-search-input {
     font-size: var(--13px);
 }
 
-body[data-navbar="side"] #navbar .navbar-right input.global-search-input:hover {
+:is(body[data-navbar="side"], body[data-navbar="top"]) #navbar .navbar-right input.global-search-input:hover {
     border-color: var(--lucid-n-300);
 }
 
 
-body[data-navbar="side"] #navbar .navbar-right input.global-search-input:focus {
+:is(body[data-navbar="side"], body[data-navbar="top"]) #navbar .navbar-right input.global-search-input:focus {
     border-color: var(--lucid-brand-ring);
     box-shadow: var(--lucid-focus-halo);
 }
 
-body[data-navbar="side"] #navbar .navbar-right .global-search-container a.global-search-button {
+:is(body[data-navbar="side"], body[data-navbar="top"]) #navbar .navbar-right .global-search-container a.global-search-button {
     display: flex;
     align-items: center;
     height: var(--34px);
@@ -241,6 +244,7 @@ body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
     margin-bottom: var(--16px);
 }
 
+.page-header h3,
 .page-header .header-title {
     font-size: var(--22px);
     font-weight: 600;
@@ -248,13 +252,37 @@ body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
     color: var(--lucid-text);
 }
 
-.page-header .header-breadcrumbs .breadcrumb-item a {
+/* The start of a trail is always grey: a link in the administration, plain text in Preferences */
+.page-header .header-breadcrumbs .breadcrumb-item a,
+.page-header .header-breadcrumbs .breadcrumb-item:not(:last-child),
+.page-header h3 > a {
     color: var(--lucid-text-muted);
+    font-weight: 400;
     text-decoration: none;
 }
 
-.page-header .header-breadcrumbs .breadcrumb-item a:hover {
+.page-header .header-breadcrumbs .breadcrumb-item a:hover,
+.page-header h3 > a:hover {
     color: var(--lucid-text);
+}
+
+/* EspoCRM writes "create" in lower case; record names (.title) stay as typed */
+.page-header .header-breadcrumbs .breadcrumb-item:last-child > span:not(.title) {
+    display: inline-block;
+}
+
+.page-header .header-breadcrumbs .breadcrumb-item:last-child > span:not(.title)::first-letter {
+    text-transform: uppercase;
+}
+
+/* Side lists (email folders): the active item looks like the active item of the menu */
+.list-group-side {
+    --brand-danger: var(--lucid-signature);
+    --state-danger-text: var(--lucid-brand);
+}
+
+.list-group-side > .list-group-item.selected {
+    background-color: var(--lucid-sidebar-active);
 }
 
 .page-header .header-breadcrumbs .breadcrumb-separator > span {

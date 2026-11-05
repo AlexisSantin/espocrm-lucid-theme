@@ -22,6 +22,7 @@ export default class RecordBand {
         this.view.listenTo(this.view, 'after:render', () => {
             this.render();
             this.watchBandHeight();
+            this.watchActions();
         });
 
         this.view.listenTo(this.model, 'sync change', () => {
@@ -70,8 +71,83 @@ export default class RecordBand {
         update();
     }
 
+    /**
+     * The buttons of the page header are laid over the line of the record buttons: each needs
+     * the width of the other. They change with the mode (Edit, then Save and Cancel) and with
+     * the header's own rendering (Follow, then Followed).
+     *
+     * @private
+     */
+    watchActions() {
+        this.stopWatchingActions();
+
+        const main = document.querySelector('#main');
+        const header = main && main.querySelector(':scope > .page-header');
+        const containers = this.view.element ?
+            [...this.view.element.querySelectorAll('.lucid-band .detail-button-container')] : [];
+
+        if (!header || !containers.length) {
+            return;
+        }
+
+        const update = () => {
+            const current = containers.find(item => item.offsetWidth > 0);
+
+            // Stuck to the top while scrolling, it takes the full width: keep the last measure.
+            if (current && current.classList.contains('stick-sub')) {
+                return;
+            }
+
+            const buttons = header.querySelector('.header-buttons');
+
+            // A user who cannot edit has no record buttons: nothing to leave room for.
+            main.style.setProperty('--lucid-band-actions-width', `${current ? Math.ceil(current.offsetWidth) : 0}px`);
+            main.style.setProperty('--lucid-band-actions-gap', current ? 'var(--8px)' : '0px');
+            main.style.setProperty(
+                '--lucid-band-header-actions-width',
+                `${buttons ? Math.ceil(buttons.offsetWidth) : 0}px`
+            );
+        };
+
+        this.actionsObserver = new ResizeObserver(update);
+        containers.forEach(item => this.actionsObserver.observe(item));
+
+        this.headerObserver = new MutationObserver(update);
+        this.headerObserver.observe(header, {
+            attributes: true,
+            attributeFilter: ['class'],
+            childList: true,
+            subtree: true,
+        });
+
+        update();
+        main.classList.add('lucid-band-inline-actions');
+    }
+
+    /** @private */
+    stopWatchingActions() {
+        if (this.actionsObserver) {
+            this.actionsObserver.disconnect();
+        }
+
+        if (this.headerObserver) {
+            this.headerObserver.disconnect();
+        }
+
+        const main = document.querySelector('#main');
+
+        if (main) {
+            main.classList.remove('lucid-band-inline-actions');
+            main.style.removeProperty('--lucid-band-actions-width');
+            main.style.removeProperty('--lucid-band-actions-gap');
+            main.style.removeProperty('--lucid-band-header-actions-width');
+        }
+    }
+
     /** @private */
     releaseBackground() {
+        this.stopWatchingActions();
+
         if (this.resizeObserver) {
             this.resizeObserver.disconnect();
         }

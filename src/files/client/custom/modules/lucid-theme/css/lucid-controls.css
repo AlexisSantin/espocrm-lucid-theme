@@ -69,6 +69,40 @@
     opacity: 0.9;
 }
 
+/* Active tabs and view switches: the marker of the record tabs */
+.btn-group > .btn-text.active {
+    color: var(--lucid-text);
+    font-weight: 600;
+}
+
+.btn-group > .btn-text.active::after {
+    height: var(--2px);
+    background-color: var(--lucid-brand);
+}
+
+/* Field tabs of the forms: same size as those of a record */
+.record .tabs > button.btn {
+    height: var(--38px);
+    font-size: var(--14px);
+}
+
+@media screen and (min-width: 768px) {
+    .record .side.tabs-margin {
+        margin-top: var(--38px);
+    }
+}
+
+/* EspoCRM draws these in red, which means deleting or an error everywhere else */
+.btn-danger[data-name="composeEmail"],
+.btn-danger[data-name="reply"] {
+    --btn-danger-bg: var(--btn-primary-bg);
+    --btn-danger-border: var(--btn-primary-border);
+    --btn-danger-hover-bg: var(--btn-primary-hover-bg);
+    --btn-danger-hover-border: var(--btn-primary-hover-border);
+    --btn-danger-active-bg: var(--btn-primary-active-bg);
+    --btn-danger-active-border: var(--btn-primary-active-border);
+}
+
 /* Groups: detached buttons, 6px apart */
 .btn-group > .btn,
 .btn-group > .btn:first-child:not(:last-child),

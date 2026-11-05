@@ -8,8 +8,8 @@
 .lucid-record > .lucid-band {
     margin-left: calc(var(--container-padding) * -1);
     margin-right: calc(var(--container-padding) * -1);
-    padding-left: var(--28px);
-    padding-right: var(--28px);
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
     background: transparent;
     color: var(--lucid-band-text);
 }
@@ -56,7 +56,9 @@ body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-
     color: var(--lucid-band-muted);
 }
 
-#main:has(> .record > .lucid-record) > .page-header .header-title .color-icon {
+/* The icon and the space that follows it, which would shift the trail from the name */
+#main:has(> .record > .lucid-record) > .page-header .header-title .color-icon,
+#main:has(> .record > .lucid-record) > .page-header .header-title .color-icon + span {
     display: none;
 }
 
@@ -73,23 +75,7 @@ body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-
     border-color: var(--lucid-band-muted);
 }
 
-/* Buttons on the band */
-#main:has(> .record > .lucid-record) > .page-header .btn-default,
-.lucid-band .btn-default {
-    background: var(--lucid-band-fill-2);
-    border-color: var(--lucid-band-line);
-    color: var(--lucid-band-text);
-    box-shadow: none;
-}
-
-#main:has(> .record > .lucid-record) > .page-header .btn-default:hover,
-.lucid-band .btn-default:hover,
-.lucid-band .open > .btn-default.dropdown-toggle {
-    background: var(--lucid-band-fill-3);
-    border-color: var(--lucid-band-line-strong);
-    color: var(--lucid-band-text);
-}
-
+/* Buttons on the band: default buttons stay white, as everywhere else */
 #main:has(> .record > .lucid-record) > .page-header .btn-text,
 .lucid-band .btn-text {
     color: var(--lucid-band-muted);
@@ -158,12 +144,61 @@ body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-
     display: none;
 }
 
+/* No gap left by an empty group: the buttons end at the same place in every mode */
+.lucid-band .detail-button-container .sub-container > .btn-group:empty {
+    display: none;
+}
+
+/* The buttons are on the right of the page: their menu opens towards the left */
+.lucid-band .detail-button-container .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+/*
+ * Follow, Convert...: the buttons of the page header sit on the line of the record buttons,
+ * whose width the script measures. The name stays in place whichever buttons are shown.
+ */
+@media screen and (min-width: 768px) {
+    #main.lucid-band-inline-actions > .page-header {
+        position: relative;
+    }
+
+    #main.lucid-band-inline-actions > .page-header .header-buttons {
+        position: absolute;
+        z-index: 1;
+        top: calc(100% + var(--4px));
+        right: calc(var(--container-padding) + var(--lucid-band-actions-width, 0px) + var(--lucid-band-actions-gap, 0px));
+        margin: 0;
+    }
+
+    #main.lucid-band-inline-actions > .record .lucid-band-row {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    #main.lucid-band-inline-actions > .record .lucid-band-identity {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    #main.lucid-band-inline-actions > .record .lucid-band .detail-button-container:not(.stick-sub) {
+        flex: none;
+        margin-left: var(--lucid-band-header-actions-width, 0px);
+    }
+}
+
 /* Button bar stuck to the top while scrolling: it keeps the band background */
 .lucid-band .detail-button-container.stick-sub {
     background: var(--lucid-band-glow), var(--lucid-band-gradient);
     background-attachment: fixed;
     border-bottom: 1px solid var(--lucid-band-line);
-    padding: var(--8px) var(--28px);
+    padding: var(--8px) 0;
+}
+
+/* Stuck, the buttons stay on the right, where they are in the band */
+.lucid-band .detail-button-container.stick-sub .sub-container {
+    justify-content: flex-end;
 }
 
 /* Identity */
@@ -244,6 +279,11 @@ body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-
     color: var(--lucid-band-avatar-text);
     font-size: 10px;
     font-weight: 700;
+}
+
+/* EspoCRM limits the cards to 1300px: without it they end where the band and the lists end */
+.lucid-record .lucid-record-grid {
+    max-width: none;
 }
 
 /* Pipeline path */
@@ -503,7 +543,7 @@ button.lucid-step-inner:focus-visible {
 
 .lucid-inspector-card {
     position: relative;
-    padding: var(--16px) var(--20px) var(--8px);
+    padding: var(--12px) var(--20px) var(--8px);
     background: var(--lucid-surface);
     border: 1px solid var(--lucid-border);
     border-radius: var(--lucid-radius-lg);
@@ -720,7 +760,7 @@ button.lucid-step-inner:focus-visible {
 /* Classic layout: fields and bottom panels on the left, side panels on the right */
 .lucid-layout-classic .lucid-content-card {
     position: relative;
-    padding-top: var(--16px);
+    padding-top: var(--12px);
 }
 
 .lucid-layout-classic > .lucid-inspector > .side {
@@ -748,9 +788,11 @@ button.lucid-step-inner:focus-visible {
 }
 
 .lucid-content-card .middle > .panel > .panel-heading .panel-title {
-    font-family: var(--lucid-font-display);
-    font-size: var(--15px);
-    font-weight: 700;
+    font-family: var(--lucid-font);
+    font-size: var(--13px);
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--lucid-brand);
 }
 
 .lucid-content-card .middle > .panel > .panel-body {
@@ -813,6 +855,8 @@ body.lucid-resizing * {
     display: flex;
     align-items: center;
     gap: var(--8px);
+    /* The height of the collapse button, hidden while editing: the card does not move */
+    min-height: 26px;
     margin: 0 0 var(--8px);
     font-family: var(--lucid-font-display);
     font-size: var(--15px);
@@ -924,7 +968,7 @@ body.lucid-resizing * {
     display: flex;
     flex-direction: column;
     gap: var(--20px);
-    padding: 0 var(--18px) var(--18px);
+    padding: 0 var(--20px) var(--20px);
 }
 
 .lucid-tab-hidden {
@@ -936,8 +980,8 @@ body.lucid-resizing * {
     display: flex;
     align-items: flex-end;
     gap: 2px;
-    margin: 0 calc(var(--18px) * -1);
-    padding: 0 44px 0 var(--14px);
+    margin: 0 calc(var(--20px) * -1);
+    padding: 0 50px 0 var(--10px);
     border-bottom: 1px solid var(--lucid-border);
     overflow-x: auto;
 }
@@ -1021,7 +1065,7 @@ body.lucid-resizing * {
  * padding of this block, tables run from edge to edge and their text lines up with the title.
  */
 .lucid-bottom > .panel:not([data-name="stream"]) {
-    --panel-padding: var(--18px);
+    --panel-padding: var(--20px);
 }
 
 /* ===== Activity tab: quick actions, activities, tasks, history, stream ===== */
@@ -1073,7 +1117,6 @@ body.lucid-resizing * {
     border-radius: var(--lucid-radius-lg) var(--lucid-radius-lg) 0 0;
 }
 
-.lucid-composer::before,
 .lucid-layout-classic .lucid-content-card::before,
 .lucid-record .lucid-inspector-card::before {
     content: "";
@@ -1367,7 +1410,7 @@ body.lucid-resizing * {
 .lucid-tabbar > .lucid-collapse {
     position: absolute;
     top: 12px;
-    right: var(--14px);
+    right: var(--20px);
 }
 
 .lucid-collapsed > .panel-heading > .lucid-collapse .fas,
@@ -1456,8 +1499,8 @@ body.lucid-resizing * {
  */
 .lucid-bottom > .panel:is(.panel-danger, .panel-warning, .panel-success, .panel-info, .panel-primary) > .panel-heading {
     min-height: 0;
-    margin: 0 calc(var(--18px) * -1) var(--panel-padding);
-    padding: 0 var(--18px);
+    margin: 0 calc(var(--20px) * -1) var(--panel-padding);
+    padding: 0 var(--20px);
     border-radius: 0;
 }
 

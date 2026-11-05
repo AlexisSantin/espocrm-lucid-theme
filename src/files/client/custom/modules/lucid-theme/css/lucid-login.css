@@ -28,7 +28,7 @@ body:has(#login) {
 }
 
 #login.panel .logo-container {
-    text-align: center;
+    text-align: left;
 }
 
 /* Cyan corner, the Lucid card signature */

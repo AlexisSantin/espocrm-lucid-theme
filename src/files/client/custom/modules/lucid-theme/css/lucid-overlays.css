@@ -95,8 +95,35 @@
     margin-right: 0;
 }
 
+.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel,
+.modal-body > :is(.record, .record-container).no-side-margin .record-grid .left > :is(.middle, .bottom) > .panel {
+    border-left: var(--panel-border-width) solid var(--panel-default-border);
+    border-right: var(--panel-border-width) solid var(--panel-default-border);
+}
+
+.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel:not(.in-middle, .last) {
+    border-top-left-radius: var(--panel-border-radius);
+    border-top-right-radius: var(--panel-border-radius);
+}
+
+.modal-body > :is(.record, .record-container).no-side-margin .record-grid .panel:not(.in-middle, .first) {
+    border-bottom-left-radius: var(--panel-border-radius);
+    border-bottom-right-radius: var(--panel-border-radius);
+}
+
 .modal-backdrop.in {
     backdrop-filter: blur(3px);
+}
+
+/* Search field of a menu: a regular field, inset from the menu's rounded edges */
+.dropdown-menu .quick-search-list-item {
+    padding: var(--2px) var(--4px) var(--4px);
+}
+
+.dropdown-menu .quick-search-list-item input {
+    border-left: 1px solid var(--input-border);
+    border-right: 1px solid var(--input-border);
+    border-radius: var(--lucid-radius) !important;
 }
 
 /* ===== Tooltips and popovers ===== */

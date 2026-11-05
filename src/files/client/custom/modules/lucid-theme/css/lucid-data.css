@@ -43,7 +43,8 @@
     font-variant-numeric: tabular-nums;
 }
 
-.list > table > thead > tr > th {
+.list > table > thead > tr > th,
+:where(#main) .table > thead > tr > th {
     background-color: var(--lucid-table-head-bg);
     border-right: 1px solid var(--lucid-table-head-line);
     border-bottom: 1px solid var(--lucid-table-head-line);
@@ -56,12 +57,18 @@
     transition: background-color var(--lucid-fast) ease;
 }
 
-.list > table > thead > tr > th:last-child {
+.list > table > thead > tr > th:last-child,
+:where(#main) .table > thead > tr > th:last-child {
     border-right: 0;
 }
 
 .list > table > thead > tr > th:hover {
     background-color: var(--lucid-table-head-hover);
+}
+
+/* In a panel, the list has no frame of its own: the header gets a line on top as well */
+.panel-body > div > .list > table.table > thead > tr > th {
+    border-top: 1px solid var(--lucid-table-head-line);
 }
 
 .list > table > thead > tr > th:not(:first-child),
@@ -132,11 +139,41 @@
     font-variant-numeric: tabular-nums;
 }
 
+/*
+ * Kanban: pastel headers with the title in colour, the tints of the panel headings. They go
+ * through EspoCRM's own variables, which its very specific rules read.
+ */
+div.list-kanban th.group-header {
+    --label-default-bg: var(--lucid-n-150);
+    --brand-primary: var(--panel-primary-bg);
+    --brand-info: var(--panel-info-bg);
+    --brand-success: var(--panel-success-bg);
+    --brand-warning: var(--panel-warning-bg);
+    --brand-danger: var(--panel-danger-bg);
+    --text-white-color: var(--lucid-text-secondary);
+}
+
+div.list-kanban th.group-header-primary { --text-white-color: var(--panel-primary-text); }
+div.list-kanban th.group-header-info { --text-white-color: var(--panel-info-text); }
+div.list-kanban th.group-header-success { --text-white-color: var(--panel-success-text); }
+div.list-kanban th.group-header-warning { --text-white-color: var(--panel-warning-text); }
+div.list-kanban th.group-header-danger { --text-white-color: var(--panel-danger-text); }
+
+div.list-kanban th.group-header .kanban-group-label {
+    font-weight: 600;
+}
+
 /* ===== Badges ===== */
 .label {
     border-radius: var(--lucid-radius-pill);
     font-weight: 500;
     letter-spacing: 0;
+}
+
+.label.label-md:not(.label-state) {
+    padding: var(--2px) var(--8px);
+    font-size: var(--12px);
+    line-height: 1.5;
 }
 
 .label.label-state {

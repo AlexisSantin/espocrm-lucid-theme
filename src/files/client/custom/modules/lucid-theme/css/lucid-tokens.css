@@ -23,6 +23,7 @@
     --lucid-brand-hover: #1f2158;
     --lucid-brand-active: #171946;
     --lucid-brand-subtle: #eceefa;
+    --lucid-brand-border: #cfd3f3;
     --lucid-brand-subtle-hover: #e2e5f7;
     --lucid-brand-ring: #5a5fd0;
     --lucid-signature: #00b6ed;
@@ -34,18 +35,18 @@
     --lucid-success: #067647;
     --lucid-success-bg: #ecfdf3;
     --lucid-success-border: #abefc6;
-    --lucid-success-solid: #079455;
+    --lucid-success-solid: #068549;
     --lucid-warning: #b54708;
     --lucid-warning-bg: #fffaeb;
     --lucid-warning-border: #fedf89;
-    --lucid-warning-solid: #dc6803;
+    --lucid-warning-solid: #bb5806;
     --lucid-danger: #b42318;
     --lucid-danger-bg: #fef3f2;
     --lucid-danger-border: #fecdca;
     --lucid-danger-solid: #d92d20;
-    --lucid-info: #3e4196;
-    --lucid-info-bg: #eef0fb;
-    --lucid-info-border: #cfd3f3;
+    --lucid-info: #6941c6;
+    --lucid-info-bg: #f4f1fd;
+    --lucid-info-border: #dcd3f5;
 
     /* Surfaces */
     --lucid-canvas: var(--lucid-n-50);
@@ -114,7 +115,7 @@
     --lucid-band-primary-text: #ffffff;
 
     /* Tables: tinted column headers with vertical lines, cyan on hover */
-    --lucid-table-head-bg: #eef1f5;
+    --lucid-table-head-bg: #f6f7fa;
     --lucid-table-head-line: #d5dae3;
     --lucid-table-head-hover: #e0f4fb;
     --lucid-table-row-hover: #f1f4f8;
