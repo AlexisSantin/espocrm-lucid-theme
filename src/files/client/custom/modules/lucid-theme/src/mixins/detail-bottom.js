@@ -168,17 +168,11 @@ export default function lucidDetailBottom(Base) {
                 this.lucidTab = tabs[0].id;
             }
 
-            let bar = this.lucidBuildTabBar(tabs, tabs.length);
+            const bar = this.lucidBuildTabBar(tabs, tabs.length);
 
             root.prepend(bar);
 
-            // As many tabs as the width allows, the rest under "More".
-            for (let count = tabs.length - 1; count >= 1 && bar.scrollWidth > bar.clientWidth + 1; count--) {
-                const smaller = this.lucidBuildTabBar(tabs, count);
-
-                bar.replaceWith(smaller);
-                bar = smaller;
-            }
+            this.lucidFitTabBar(tabs, bar);
 
             const composer = this.lucidBuildComposer();
 
@@ -189,6 +183,41 @@ export default function lucidDetailBottom(Base) {
             this.lucidApplyTab(tabs);
             this.lucidBindCounts(tabs);
             this.lucidUpdateCounts();
+        }
+
+        /**
+         * As many tabs as the width allows, the rest under "More". Decided once the browser has
+         * laid out the bar, before it is painted: measuring earlier would force an extra layout.
+         *
+         * @private
+         * @param {{id: string, label: string, names: string[]}[]} tabs
+         * @param {HTMLElement} firstBar
+         */
+        lucidFitTabBar(tabs, firstBar) {
+            if (this.lucidFitObserver) {
+                this.lucidFitObserver.disconnect();
+            }
+
+            this.lucidFitObserver = new ResizeObserver(() => {
+                this.lucidFitObserver.disconnect();
+
+                if (!firstBar.isConnected || firstBar.scrollWidth <= firstBar.clientWidth + 1) {
+                    return;
+                }
+
+                let bar = firstBar;
+
+                for (let count = tabs.length - 1; count >= 1 && bar.scrollWidth > bar.clientWidth + 1; count--) {
+                    const smaller = this.lucidBuildTabBar(tabs, count);
+
+                    bar.replaceWith(smaller);
+                    bar = smaller;
+                }
+
+                this.lucidUpdateCounts();
+            });
+
+            this.lucidFitObserver.observe(firstBar);
         }
 
         /**

@@ -53,6 +53,19 @@ export default class ColumnResizer {
         this.handle.addEventListener('dblclick', () => this.setWidth(null));
 
         this.apply();
+
+        const inspector = this.grid.querySelector(':scope > .lucid-inspector');
+
+        if (this.valueObserver) {
+            this.valueObserver.disconnect();
+        }
+
+        if (inspector) {
+            // Called once the layout is done, whenever the width changes for any reason.
+            this.valueObserver = new ResizeObserver(() => this.updateValue());
+            this.valueObserver.observe(inspector);
+            this.view.once('remove', () => this.valueObserver && this.valueObserver.disconnect());
+        }
     }
 
     /**
@@ -138,6 +151,13 @@ export default class ColumnResizer {
             this.grid.style.setProperty('--lucid-inspector-width', `${this.width}px`);
         } else {
             this.grid.style.removeProperty('--lucid-inspector-width');
+        }
+    }
+
+    /** @private */
+    updateValue() {
+        if (!this.grid || !this.handle) {
+            return;
         }
 
         const width = this.currentWidth();

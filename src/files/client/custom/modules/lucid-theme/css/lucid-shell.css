@@ -317,3 +317,44 @@ body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
 .page-header .header-buttons .btn[data-name="create"] .fas {
     color: inherit;
 }
+
+/*
+ * Activity bar (js/activity-bar.js). It grows quickly, then waits without moving: while an animation
+ * runs, each style recalculation of the page costs more, and EspoCRM forces many while it renders
+ * (about 20% more work to open a Call panel with an animation lasting through the whole wait).
+ */
+.lucid-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2100;
+    height: 3px;
+    background-color: var(--lucid-signature);
+    opacity: 0;
+    pointer-events: none;
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+
+/* The short delay keeps very fast actions from flashing it */
+.lucid-progress.lucid-progress-on {
+    opacity: 1;
+    transform: scaleX(0.9);
+    transition:
+        opacity 80ms linear 60ms,
+        transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.lucid-progress.lucid-progress-done {
+    opacity: 0;
+    transform: scaleX(1);
+    transition:
+        opacity 180ms linear 120ms,
+        transform 160ms ease-out;
+}
+
+/* The bar replaces EspoCRM's spinner message, once its script is known to run */
+.lucid-activity-ready #notification:has(> .message > .fa-spinner) {
+    display: none;
+}

@@ -4,7 +4,7 @@
  */
 
 /* ===== Band: page header + identity + pipeline ===== */
-#main:has(> .record > .lucid-record) > .page-header,
+body.lucid-band-page #main > .page-header,
 .lucid-record > .lucid-band {
     margin-left: calc(var(--container-padding) * -1);
     margin-right: calc(var(--container-padding) * -1);
@@ -27,7 +27,7 @@ body.lucid-band-page {
 }
 
 /* The band slides under the top bar: it fills the whole top of the screen. */
-#main:has(> .record > .lucid-record) > .page-header {
+body.lucid-band-page #main > .page-header {
     margin-top: calc(var(--top-bar-height) * -1);
     margin-bottom: 0;
     padding-top: calc(var(--top-bar-height) + var(--10px));
@@ -35,21 +35,21 @@ body.lucid-band-page {
 }
 
 /* Top bar laid over the band */
-body:has(.lucid-record) #navbar .navbar-right > li > a {
+body.lucid-band-page #navbar .navbar-right > li > a {
     color: var(--lucid-band-muted);
 }
 
-body:has(.lucid-record) #navbar .navbar-right > li > a:hover,
-body:has(.lucid-record) #navbar .navbar-right > li.open > a {
+body.lucid-band-page #navbar .navbar-right > li > a:hover,
+body.lucid-band-page #navbar .navbar-right > li.open > a {
     background-color: var(--lucid-band-fill-2);
     color: var(--lucid-band-text);
 }
 
-body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-search-button {
+body.lucid-band-page #navbar .navbar-right .global-search-container a.global-search-button {
     color: var(--lucid-band-muted);
 }
 
-#main:has(> .record > .lucid-record) > .page-header .header-title {
+body.lucid-band-page #main > .page-header .header-title {
     font-size: var(--14px);
     font-weight: 500;
     letter-spacing: 0;
@@ -57,37 +57,37 @@ body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-
 }
 
 /* The icon and the space that follows it, which would shift the trail from the name */
-#main:has(> .record > .lucid-record) > .page-header .header-title .color-icon,
-#main:has(> .record > .lucid-record) > .page-header .header-title .color-icon + span {
+body.lucid-band-page #main > .page-header .header-title .color-icon,
+body.lucid-band-page #main > .page-header .header-title .color-icon + span {
     display: none;
 }
 
-#main:has(> .record > .lucid-record) > .page-header .header-breadcrumbs .breadcrumb-item a,
-#main:has(> .record > .lucid-record) > .page-header .header-breadcrumbs .breadcrumb-item {
+body.lucid-band-page #main > .page-header .header-breadcrumbs .breadcrumb-item a,
+body.lucid-band-page #main > .page-header .header-breadcrumbs .breadcrumb-item {
     color: var(--lucid-band-muted);
 }
 
-#main:has(> .record > .lucid-record) > .page-header .header-breadcrumbs .breadcrumb-item:last-child {
+body.lucid-band-page #main > .page-header .header-breadcrumbs .breadcrumb-item:last-child {
     color: var(--lucid-band-text);
 }
 
-#main:has(> .record > .lucid-record) > .page-header .header-breadcrumbs .breadcrumb-separator > span {
+body.lucid-band-page #main > .page-header .header-breadcrumbs .breadcrumb-separator > span {
     border-color: var(--lucid-band-muted);
 }
 
 /* Buttons on the band: default buttons stay white, as everywhere else */
-#main:has(> .record > .lucid-record) > .page-header .btn-text,
+body.lucid-band-page #main > .page-header .btn-text,
 .lucid-band .btn-text {
     color: var(--lucid-band-muted);
 }
 
-#main:has(> .record > .lucid-record) > .page-header .btn-text:hover,
+body.lucid-band-page #main > .page-header .btn-text:hover,
 .lucid-band .btn-text:hover {
     background: var(--lucid-band-fill-2);
     color: var(--lucid-band-text);
 }
 
-#main:has(> .record > .lucid-record) > .page-header .btn-primary,
+body.lucid-band-page #main > .page-header .btn-primary,
 .lucid-band .btn-primary {
     background: var(--lucid-band-primary-bg);
     border-color: var(--lucid-band-primary-bg);
@@ -96,14 +96,14 @@ body:has(.lucid-record) #navbar .navbar-right .global-search-container a.global-
     box-shadow: none;
 }
 
-#main:has(> .record > .lucid-record) > .page-header .btn-primary:hover,
+body.lucid-band-page #main > .page-header .btn-primary:hover,
 .lucid-band .btn-primary:hover {
     background: var(--lucid-band-primary-hover);
     border-color: var(--lucid-band-primary-hover);
     color: var(--lucid-band-primary-text);
 }
 
-#main:has(> .record > .lucid-record) > .page-header .btn:focus-visible,
+body.lucid-band-page #main > .page-header .btn:focus-visible,
 .lucid-band .btn:focus-visible,
 .lucid-band button:focus-visible {
     outline-color: var(--lucid-band-focus);
@@ -950,13 +950,13 @@ body.lucid-resizing * {
 }
 
 /* While editing, the label goes back above the field */
-.lucid-record:has(.edit-buttons:not(.hidden)) .lucid-inspector .panel-body > .row > .cell,
+.lucid-record.lucid-editing .lucid-inspector .panel-body > .row > .cell,
 .lucid-inspector .panel-body > .row > .cell:has(.inline-save-link) {
     display: block;
     padding-right: 0;
 }
 
-.lucid-record:has(.edit-buttons:not(.hidden)) .lucid-inspector .panel-body > .row > .cell > label.control-label,
+.lucid-record.lucid-editing .lucid-inspector .panel-body > .row > .cell > label.control-label,
 .lucid-inspector .panel-body > .row > .cell:has(.inline-save-link) > label.control-label {
     display: block;
     margin-bottom: var(--4px);
@@ -1421,44 +1421,44 @@ body.lucid-resizing * {
 }
 
 /* Collapsed: only the heading remains. While editing, everything is open and the chevron disappears. */
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .panel.lucid-collapsed > :not(.panel-heading),
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-content-card.lucid-collapsed > :not(.lucid-inspector-title),
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed > .extra,
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed .lucid-bottom > :not(.lucid-tabbar),
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed > .lucid-inspector-card > :not(.lucid-inspector-title),
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed:not(:has(> .lucid-inspector-card > .middle)) > .side > .panel[data-name="default"] {
+.lucid-record:not(.lucid-editing) .panel.lucid-collapsed > :not(.panel-heading),
+.lucid-record:not(.lucid-editing) .lucid-content-card.lucid-collapsed > :not(.lucid-inspector-title),
+.lucid-record:not(.lucid-editing) .lucid-main.lucid-collapsed > .extra,
+.lucid-record:not(.lucid-editing) .lucid-main.lucid-collapsed .lucid-bottom > :not(.lucid-tabbar),
+.lucid-record:not(.lucid-editing) .lucid-inspector.lucid-collapsed > .lucid-inspector-card > :not(.lucid-inspector-title),
+.lucid-record:not(.lucid-editing) .lucid-inspector.lucid-collapsed:not(:has(> .lucid-inspector-card > .middle)) > .side > .panel[data-name="default"] {
     display: none;
 }
 
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed:not(:has(> .lucid-inspector-card > .middle)):has(> .side > .panel[data-name="default"]) > .lucid-inspector-card {
+.lucid-record:not(.lucid-editing) .lucid-inspector.lucid-collapsed:not(:has(> .lucid-inspector-card > .middle)):has(> .side > .panel[data-name="default"]) > .lucid-inspector-card {
     padding-bottom: var(--8px);
     border-bottom: 1px solid var(--lucid-border);
     border-radius: var(--lucid-radius-lg);
     box-shadow: var(--lucid-shadow-xs);
 }
 
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-content-card.lucid-collapsed > .lucid-inspector-title,
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed > .lucid-inspector-card .lucid-inspector-title {
+.lucid-record:not(.lucid-editing) .lucid-content-card.lucid-collapsed > .lucid-inspector-title,
+.lucid-record:not(.lucid-editing) .lucid-inspector.lucid-collapsed > .lucid-inspector-card .lucid-inspector-title {
     margin-bottom: 0;
 }
 
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed .bottom.lucid-bottom {
+.lucid-record:not(.lucid-editing) .lucid-main.lucid-collapsed .bottom.lucid-bottom {
     padding-bottom: 0;
 }
 
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-main.lucid-collapsed .lucid-tabbar {
+.lucid-record:not(.lucid-editing) .lucid-main.lucid-collapsed .lucid-tabbar {
     border-bottom: 0;
 }
 
-.lucid-record:not(:has(.lucid-band .edit-buttons:not(.hidden))) .lucid-inspector.lucid-collapsed > .side {
+.lucid-record:not(.lucid-editing) .lucid-inspector.lucid-collapsed > .side {
     margin-top: var(--16px);
 }
 
-.lucid-record:has(.lucid-band .edit-buttons:not(.hidden)) .lucid-collapse {
+.lucid-record.lucid-editing .lucid-collapse {
     display: none;
 }
 
-.lucid-record:has(.lucid-band .edit-buttons:not(.hidden)) .lucid-collapsible {
+.lucid-record.lucid-editing .lucid-collapsible {
     cursor: auto;
 }
 

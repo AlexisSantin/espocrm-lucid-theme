@@ -3,14 +3,14 @@
  * Layers: stock light theme -> Lucid tokens -> EspoCRM variables -> components.
  */
 @import "../../../../css/espo/light.css";
-@import "lucid-fonts.css?v=0.18.2";
-@import "lucid-tokens.css?v=0.18.2";
-@import "lucid-espo-vars.css?v=0.18.2";
-@import "lucid-base.css?v=0.18.2";
-@import "lucid-shell.css?v=0.18.2";
-@import "lucid-controls.css?v=0.18.2";
-@import "lucid-data.css?v=0.18.2";
-@import "lucid-record.css?v=0.18.2";
-@import "lucid-detail.css?v=0.18.2";
-@import "lucid-overlays.css?v=0.18.2";
-@import "lucid-login.css?v=0.18.2";
+@import "lucid-fonts.css?v=0.19.0";
+@import "lucid-tokens.css?v=0.19.0";
+@import "lucid-espo-vars.css?v=0.19.0";
+@import "lucid-base.css?v=0.19.0";
+@import "lucid-shell.css?v=0.19.0";
+@import "lucid-controls.css?v=0.19.0";
+@import "lucid-data.css?v=0.19.0";
+@import "lucid-record.css?v=0.19.0";
+@import "lucid-detail.css?v=0.19.0";
+@import "lucid-overlays.css?v=0.19.0";
+@import "lucid-login.css?v=0.19.0";

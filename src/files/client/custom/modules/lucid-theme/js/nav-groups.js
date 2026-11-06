@@ -14,6 +14,7 @@
     const STORAGE_PREFIX = 'lucid-nav-groups-';
 
     let scheduled = false;
+    let observed = null;
 
     const storageKey = () => {
         const link = document.querySelector(USER_SELECTOR);
@@ -69,6 +70,8 @@
     };
 
     function update() {
+        watch();
+
         const menu = document.querySelector(MENU_SELECTOR);
 
         if (!menu || !document.querySelector(THEME_SELECTOR)) {
@@ -118,6 +121,21 @@
     };
 
     // EspoCRM redraws the menu and moves the current page marker without any event to listen to.
-    new MutationObserver(schedule).observe(document.documentElement, {childList: true, subtree: true});
+    const observer = new MutationObserver(schedule);
+
+    // Only the header holds the menu: the rest of the page changes far more often. Until it exists
+    // (and if it gets replaced), the whole document is watched.
+    function watch() {
+        const header = document.querySelector('#header');
+        const target = header || document.documentElement;
+
+        if (target !== observed) {
+            observer.disconnect();
+            observer.observe(target, {childList: true, subtree: true});
+            observed = target;
+        }
+    }
+
+    watch();
     window.addEventListener('hashchange', schedule);
 })();

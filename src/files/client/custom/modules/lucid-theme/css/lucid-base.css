@@ -48,8 +48,8 @@ label.attach-file-label:focus-visible,
 /* Side menu and record top bar: the ring takes the sidebar focus colour */
 body[data-navbar="side"] #navbar > .navbar a:focus-visible,
 body[data-navbar="side"] #navbar > .navbar button:focus-visible,
-body:has(.lucid-record) #navbar .navbar-right a:focus-visible,
-body:has(.lucid-record) #navbar .navbar-right input:focus-visible {
+body.lucid-band-page #navbar .navbar-right a:focus-visible,
+body.lucid-band-page #navbar .navbar-right input:focus-visible {
     outline-color: var(--lucid-sidebar-focus);
 }
 

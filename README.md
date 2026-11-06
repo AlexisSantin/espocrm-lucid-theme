@@ -78,6 +78,8 @@ All data in the screenshots is fictitious.
   Colours are CSS tokens (`--lucid-band-*`, `--lucid-sidebar-*`, `--lucid-table-*`), easy to retune.
 - **Marked table columns.** Tinted uppercase headers with vertical lines, a cyan tint when hovering a
   column, and a clearer row hover, in lists and in the tables of a record.
+- **Feels quicker.** A thin bar at the top of the page starts as soon as you act and replaces the
+  spinner message.
 - **Speaks every EspoCRM language.** Labels come from EspoCRM's own translations; only the
   empty-fields link and the Record info title are the theme's own, translated into every language
   EspoCRM ships.
@@ -154,6 +156,7 @@ src/files/client/custom/modules/lucid-theme/
     src/helpers/column-resizer.js       width handle for About
     src/helpers/empty-fields.js         hides empty fields
     js/nav-groups.js                    collapsible groups of the side menu (plain script)
+    js/activity-bar.js                  progress bar while EspoCRM works (plain script)
     src/mixins/detail-bottom.js         right column: tabs, quick actions, counts
     fonts/                              Lexend (OFL)
 ```

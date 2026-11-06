@@ -23,7 +23,10 @@ export default class RecordBand {
             this.render();
             this.watchBandHeight();
             this.watchActions();
+            this.updateEditingState();
         });
+
+        this.view.listenTo(this.view, 'after:mode-change', () => this.updateEditingState());
 
         this.view.listenTo(this.model, 'sync change', () => {
             if (this.view.isRendered()) {
@@ -51,15 +54,17 @@ export default class RecordBand {
             return;
         }
 
-        const update = () => {
+        document.body.dataset.lucidBandOwner = this.view.cid;
+        document.body.classList.add('lucid-band-page');
+
+        // The first call comes once the browser has laid out the page, just before painting it:
+        // measuring then costs nothing, whereas measuring here would force an extra layout.
+        this.resizeObserver = new ResizeObserver(() => {
             const bottom = band.getBoundingClientRect().bottom + window.scrollY;
 
             document.body.style.setProperty('--lucid-band-height', `${Math.round(bottom)}px`);
-            document.body.dataset.lucidBandOwner = this.view.cid;
-            document.body.classList.add('lucid-band-page');
-        };
+        });
 
-        this.resizeObserver = new ResizeObserver(update);
         this.resizeObserver.observe(band);
 
         const header = document.querySelector('#main > .page-header');
@@ -67,8 +72,19 @@ export default class RecordBand {
         if (header) {
             this.resizeObserver.observe(header);
         }
+    }
 
-        update();
+    /**
+     * The stylesheet relies on this class to open every block while editing.
+     *
+     * @private
+     */
+    updateEditingState() {
+        const record = this.view.element && this.view.element.querySelector('.lucid-record');
+
+        if (record) {
+            record.classList.toggle('lucid-editing', this.view.mode === 'edit');
+        }
     }
 
     /**
@@ -109,18 +125,24 @@ export default class RecordBand {
             );
         };
 
+        // The first call comes once the layout is done, before the page is painted (see above).
         this.actionsObserver = new ResizeObserver(update);
         containers.forEach(item => this.actionsObserver.observe(item));
 
-        this.headerObserver = new MutationObserver(update);
-        this.headerObserver.observe(header, {
-            attributes: true,
-            attributeFilter: ['class'],
-            childList: true,
-            subtree: true,
-        });
+        const observeButtons = () => {
+            const buttons = header.querySelector('.header-buttons');
 
-        update();
+            if (buttons) {
+                this.actionsObserver.observe(buttons);
+            }
+        };
+
+        observeButtons();
+
+        // The header replaces its buttons when it renders again.
+        this.headerObserver = new MutationObserver(observeButtons);
+        this.headerObserver.observe(header, {childList: true, subtree: true});
+
         main.classList.add('lucid-band-inline-actions');
     }
 

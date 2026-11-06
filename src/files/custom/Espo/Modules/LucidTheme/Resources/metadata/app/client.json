@@ -2,10 +2,12 @@
     "scriptList": [
         "__APPEND__",
         "client/custom/modules/lucid-theme/lib/init.js",
-        "client/custom/modules/lucid-theme/js/nav-groups.js"
+        "client/custom/modules/lucid-theme/js/nav-groups.js",
+        "client/custom/modules/lucid-theme/js/activity-bar.js"
     ],
     "developerModeScriptList": [
         "__APPEND__",
-        "client/custom/modules/lucid-theme/js/nav-groups.js"
+        "client/custom/modules/lucid-theme/js/nav-groups.js",
+        "client/custom/modules/lucid-theme/js/activity-bar.js"
     ]
 }
