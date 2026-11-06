@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Zobraziť prázdne pole",
         "lucidShowEmptyMany": "Zobraziť prázdne polia ({count})",
         "lucidHideEmpty": "Skryť prázdne polia",
-        "lucidRecordInfo": "Informácie o zázname"
+        "lucidRecordInfo": "Informácie o zázname",
+        "lucidScheme": "Vzhľad",
+        "lucidSchemeLight": "Svetlý",
+        "lucidSchemeDark": "Tmavý",
+        "lucidSchemeSystem": "Podľa systému"
     }
 }

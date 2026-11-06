@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Rodyti tuščią lauką",
         "lucidShowEmptyMany": "Rodyti tuščius laukus ({count})",
         "lucidHideEmpty": "Slėpti tuščius laukus",
-        "lucidRecordInfo": "Įrašo informacija"
+        "lucidRecordInfo": "Įrašo informacija",
+        "lucidScheme": "Išvaizda",
+        "lucidSchemeLight": "Šviesi",
+        "lucidSchemeDark": "Tamsi",
+        "lucidSchemeSystem": "Pagal sistemą"
     }
 }

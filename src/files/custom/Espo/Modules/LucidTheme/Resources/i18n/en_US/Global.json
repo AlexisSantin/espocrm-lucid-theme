@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Show the empty field",
         "lucidShowEmptyMany": "Show {count} empty fields",
         "lucidHideEmpty": "Hide empty fields",
-        "lucidRecordInfo": "Record info"
+        "lucidRecordInfo": "Record info",
+        "lucidScheme": "Appearance",
+        "lucidSchemeLight": "Light",
+        "lucidSchemeDark": "Dark",
+        "lucidSchemeSystem": "System"
     }
 }

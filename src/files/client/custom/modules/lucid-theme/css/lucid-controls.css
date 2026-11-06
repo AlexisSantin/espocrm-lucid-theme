@@ -146,7 +146,7 @@
 }
 
 select.form-control {
-    background-color: var(--lucid-n-0);
+    background-color: var(--input-bg);
     color: var(--lucid-text);
 }
 

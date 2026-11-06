@@ -1,0 +1,24 @@
+/**
+ * Lucid theme: iframe stylesheet in the dark palette (e-mail bodies shown in a record).
+ * EspoCRM uses it when the dark palette is on; e-mails that bring their own colours keep the
+ * light stylesheet (lucid-iframe.css), as with EspoCRM's own dark theme.
+ */
+@import "../../../../css/espo/light-iframe.css";
+@import "lucid-fonts.css?v=0.20.0";
+@import "lucid-tokens.css?v=0.20.0";
+@import "lucid-espo-vars.css?v=0.20.0";
+
+:root {
+    color-scheme: dark;
+    --panel-bg: #161930;
+    --text-color: #eceef7;
+    --text-link-color: #5ccbf5;
+    --text-link-hover-color: #8ad9f8;
+    --default-border-color: #2a2e4d;
+    --blockquote-border-color: #454b6c;
+    --code-bg: #0d0f1e;
+    --code-border-color: #2a2e4d;
+    --code-color: #c9cde0;
+    --scroll-bg: transparent;
+    --scroll-thumb-bg: #454b6c;
+}

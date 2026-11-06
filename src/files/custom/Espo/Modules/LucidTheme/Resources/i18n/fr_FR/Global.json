@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Afficher le champ vide",
         "lucidShowEmptyMany": "Afficher les {count} champs vides",
         "lucidHideEmpty": "Masquer les champs vides",
-        "lucidRecordInfo": "Infos de la fiche"
+        "lucidRecordInfo": "Infos de la fiche",
+        "lucidScheme": "Apparence",
+        "lucidSchemeLight": "Clair",
+        "lucidSchemeDark": "Sombre",
+        "lucidSchemeSystem": "Système"
     }
 }

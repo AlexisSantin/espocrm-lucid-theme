@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Mostra il campo vuoto",
         "lucidShowEmptyMany": "Mostra {count} campi vuoti",
         "lucidHideEmpty": "Nascondi i campi vuoti",
-        "lucidRecordInfo": "Info record"
+        "lucidRecordInfo": "Info record",
+        "lucidScheme": "Aspetto",
+        "lucidSchemeLight": "Chiaro",
+        "lucidSchemeDark": "Scuro",
+        "lucidSchemeSystem": "Sistema"
     }
 }

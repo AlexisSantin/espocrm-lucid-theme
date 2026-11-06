@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "空のフィールドを表示",
         "lucidShowEmptyMany": "空のフィールドを表示 ({count})",
         "lucidHideEmpty": "空のフィールドを非表示",
-        "lucidRecordInfo": "レコード情報"
+        "lucidRecordInfo": "レコード情報",
+        "lucidScheme": "外観",
+        "lucidSchemeLight": "ライト",
+        "lucidSchemeDark": "ダーク",
+        "lucidSchemeSystem": "システム設定"
     }
 }

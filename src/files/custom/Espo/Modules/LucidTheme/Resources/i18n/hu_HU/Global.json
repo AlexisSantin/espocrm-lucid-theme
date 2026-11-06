@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Az üres mező megjelenítése",
         "lucidShowEmptyMany": "{count} üres mező megjelenítése",
         "lucidHideEmpty": "Üres mezők elrejtése",
-        "lucidRecordInfo": "Rekordadatok"
+        "lucidRecordInfo": "Rekordadatok",
+        "lucidScheme": "Megjelenés",
+        "lucidSchemeLight": "Világos",
+        "lucidSchemeDark": "Sötét",
+        "lucidSchemeSystem": "Rendszer"
     }
 }

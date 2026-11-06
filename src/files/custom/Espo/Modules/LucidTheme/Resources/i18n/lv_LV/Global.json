@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Rādīt tukšo lauku",
         "lucidShowEmptyMany": "Rādīt tukšos laukus ({count})",
         "lucidHideEmpty": "Paslēpt tukšos laukus",
-        "lucidRecordInfo": "Ieraksta informācija"
+        "lucidRecordInfo": "Ieraksta informācija",
+        "lucidScheme": "Izskats",
+        "lucidSchemeLight": "Gaišs",
+        "lucidSchemeDark": "Tumšs",
+        "lucidSchemeSystem": "Atbilstoši sistēmai"
     }
 }

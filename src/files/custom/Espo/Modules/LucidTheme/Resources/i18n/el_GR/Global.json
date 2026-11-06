@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Εμφάνιση του κενού πεδίου",
         "lucidShowEmptyMany": "Εμφάνιση {count} κενών πεδίων",
         "lucidHideEmpty": "Απόκρυψη κενών πεδίων",
-        "lucidRecordInfo": "Πληροφορίες εγγραφής"
+        "lucidRecordInfo": "Πληροφορίες εγγραφής",
+        "lucidScheme": "Εμφάνιση",
+        "lucidSchemeLight": "Φωτεινό",
+        "lucidSchemeDark": "Σκοτεινό",
+        "lucidSchemeSystem": "Σύστημα"
     }
 }

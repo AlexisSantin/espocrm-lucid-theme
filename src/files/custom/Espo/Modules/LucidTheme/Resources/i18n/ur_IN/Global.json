@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "خالی فیلڈ دکھائیں",
         "lucidShowEmptyMany": "خالی فیلڈز دکھائیں ({count})",
         "lucidHideEmpty": "خالی فیلڈز چھپائیں",
-        "lucidRecordInfo": "ریکارڈ کی معلومات"
+        "lucidRecordInfo": "ریکارڈ کی معلومات",
+        "lucidScheme": "ظاہری شکل",
+        "lucidSchemeLight": "روشن",
+        "lucidSchemeDark": "تاریک",
+        "lucidSchemeSystem": "سسٹم کے مطابق"
     }
 }

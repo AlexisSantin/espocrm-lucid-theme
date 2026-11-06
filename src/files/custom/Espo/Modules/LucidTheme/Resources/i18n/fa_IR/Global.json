@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "نمایش فیلد خالی",
         "lucidShowEmptyMany": "نمایش {count} فیلد خالی",
         "lucidHideEmpty": "پنهان کردن فیلدهای خالی",
-        "lucidRecordInfo": "اطلاعات رکورد"
+        "lucidRecordInfo": "اطلاعات رکورد",
+        "lucidScheme": "ظاهر",
+        "lucidSchemeLight": "روشن",
+        "lucidSchemeDark": "تیره",
+        "lucidSchemeSystem": "مطابق سیستم"
     }
 }

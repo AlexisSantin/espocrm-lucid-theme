@@ -202,7 +202,7 @@ body[data-navbar="side"] #navbar .navbar-right input.global-search-input {
     min-height: var(--34px);
     max-height: var(--34px);
     padding-left: var(--12px);
-    background-color: var(--lucid-n-0);
+    background-color: var(--input-bg);
     border: 1px solid var(--lucid-border-strong);
     border-radius: var(--lucid-radius) !important;
     box-shadow: var(--lucid-shadow-xs);
@@ -371,4 +371,24 @@ body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
 
 @keyframes lucid-spin {
     to { transform: rotate(360deg); }
+}
+
+/* Appearance button of the top bar: Light, Dark and System, the current choice ticked */
+.lucid-scheme-menu > li > a {
+    display: flex;
+    align-items: center;
+    gap: var(--10px);
+    cursor: pointer;
+}
+
+.lucid-scheme-menu .lucid-scheme-icon {
+    width: 1.15em;
+    text-align: center;
+    color: var(--lucid-text-muted);
+}
+
+.lucid-scheme-menu .lucid-scheme-check {
+    margin-left: auto;
+    padding-left: var(--20px);
+    color: var(--lucid-brand);
 }

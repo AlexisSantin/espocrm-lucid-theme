@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Hiện trường trống",
         "lucidShowEmptyMany": "Hiện {count} trường trống",
         "lucidHideEmpty": "Ẩn các trường trống",
-        "lucidRecordInfo": "Thông tin bản ghi"
+        "lucidRecordInfo": "Thông tin bản ghi",
+        "lucidScheme": "Giao diện",
+        "lucidSchemeLight": "Sáng",
+        "lucidSchemeDark": "Tối",
+        "lucidSchemeSystem": "Theo hệ thống"
     }
 }

@@ -333,7 +333,7 @@ body.lucid-band-page #main > .page-header .btn:focus-visible,
     padding: 1px var(--10px);
     border-radius: var(--lucid-radius-pill);
     background: var(--lucid-signature);
-    color: var(--lucid-n-900);
+    color: var(--lucid-on-signature);
     font-weight: 600;
 }
 
@@ -397,7 +397,7 @@ body.lucid-band-page #main > .page-header .btn:focus-visible,
 
 .lucid-step[data-state="current"] .lucid-step-inner {
     background: var(--lucid-signature);
-    color: var(--lucid-n-900);
+    color: var(--lucid-on-signature);
     font-weight: 700;
 }
 
@@ -444,7 +444,7 @@ button.lucid-step-inner:focus-visible {
         border: 0;
         border-radius: 8px;
         background: var(--lucid-signature);
-        color: var(--lucid-n-900);
+        color: var(--lucid-on-signature);
         font: inherit;
         font-weight: 700;
         text-align: left;
@@ -1164,7 +1164,7 @@ body.lucid-resizing * {
 
 .lucid-composer-button[data-kind="note"] {
     background: var(--lucid-brand);
-    color: #ffffff;
+    color: var(--lucid-on-brand);
 }
 
 .lucid-composer-icon {

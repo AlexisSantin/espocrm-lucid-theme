@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Показване на празното поле",
         "lucidShowEmptyMany": "Показване на {count} празни полета",
         "lucidHideEmpty": "Скриване на празните полета",
-        "lucidRecordInfo": "Информация за записа"
+        "lucidRecordInfo": "Информация за записа",
+        "lucidScheme": "Изглед",
+        "lucidSchemeLight": "Светъл",
+        "lucidSchemeDark": "Тъмен",
+        "lucidSchemeSystem": "Според системата"
     }
 }

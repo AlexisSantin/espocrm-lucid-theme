@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Vis det tomme feltet",
         "lucidShowEmptyMany": "Vis {count} tomme felt",
         "lucidHideEmpty": "Skjul tomme felt",
-        "lucidRecordInfo": "Postinformasjon"
+        "lucidRecordInfo": "Postinformasjon",
+        "lucidScheme": "Utseende",
+        "lucidSchemeLight": "Lys",
+        "lucidSchemeDark": "Mørk",
+        "lucidSchemeSystem": "System"
     }
 }

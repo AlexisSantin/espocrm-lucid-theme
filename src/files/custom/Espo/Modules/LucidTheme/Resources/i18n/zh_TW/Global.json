@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "顯示空白欄位",
         "lucidShowEmptyMany": "顯示 {count} 個空白欄位",
         "lucidHideEmpty": "隱藏空白欄位",
-        "lucidRecordInfo": "記錄資訊"
+        "lucidRecordInfo": "記錄資訊",
+        "lucidScheme": "外觀",
+        "lucidSchemeLight": "淺色",
+        "lucidSchemeDark": "深色",
+        "lucidSchemeSystem": "跟隨系統"
     }
 }

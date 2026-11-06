@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Toon het lege veld",
         "lucidShowEmptyMany": "Toon {count} lege velden",
         "lucidHideEmpty": "Verberg lege velden",
-        "lucidRecordInfo": "Recordinfo"
+        "lucidRecordInfo": "Recordinfo",
+        "lucidScheme": "Weergave",
+        "lucidSchemeLight": "Licht",
+        "lucidSchemeDark": "Donker",
+        "lucidSchemeSystem": "Systeem"
     }
 }

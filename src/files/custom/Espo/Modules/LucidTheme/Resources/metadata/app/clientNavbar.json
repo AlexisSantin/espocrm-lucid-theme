@@ -1,0 +1,10 @@
+{
+    "items": {
+        "lucidColorScheme": {
+            "view": "lucid-theme:views/navbar/color-scheme",
+            "class": "dropdown lucid-scheme-container",
+            "order": 12,
+            "disabled": false
+        }
+    }
+}

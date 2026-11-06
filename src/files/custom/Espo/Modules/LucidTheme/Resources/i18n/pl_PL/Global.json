@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Pokaż puste pole",
         "lucidShowEmptyMany": "Pokaż puste pola ({count})",
         "lucidHideEmpty": "Ukryj puste pola",
-        "lucidRecordInfo": "Informacje o rekordzie"
+        "lucidRecordInfo": "Informacje o rekordzie",
+        "lucidScheme": "Wygląd",
+        "lucidSchemeLight": "Jasny",
+        "lucidSchemeDark": "Ciemny",
+        "lucidSchemeSystem": "Systemowy"
     }
 }

@@ -1,0 +1,182 @@
+/**
+ * Dark palette ("Nuit indigo"): surfaces tinted towards the brand indigo, periwinkle for actions
+ * with dark text on it, cyan kept for the signature and links.
+ *
+ * It applies when js/color-scheme.js sets data-lucid-scheme="dark" on the document, from the
+ * user's choice (Light, Dark or System). The attribute sits on the root element because the
+ * EspoCRM variables are declared there from the Lucid tokens: redefining the tokens on the same
+ * element makes every variable follow. Text contrast is at least 4.5:1 and field borders at
+ * least 3:1, as in the light palette.
+ */
+:root[data-lucid-scheme="dark"] {
+    color-scheme: dark;
+
+    /* Neutrals: from the card (0) to the text (900); the page itself is darker than the cards */
+    --lucid-n-0: #161930;
+    --lucid-n-25: #141729;
+    --lucid-n-50: #0d0f1e;
+    --lucid-n-100: #20243f;
+    --lucid-n-150: #2a2e4d;
+    --lucid-n-200: #343958;
+    --lucid-n-300: #454b6c;
+    --lucid-n-400: #6b7194;
+    --lucid-n-500: #9298b5;
+    --lucid-n-600: #b1b6cf;
+    --lucid-n-700: #c9cde0;
+    --lucid-n-800: #dadced;
+    --lucid-n-900: #eceef7;
+
+    /* Brand: periwinkle, the indigo lightened, readable as text and as a button with dark text */
+    --lucid-brand: #8f93ff;
+    --lucid-brand-hover: #a3a6ff;
+    --lucid-brand-active: #7c80f0;
+    --lucid-brand-subtle: #252a55;
+    --lucid-brand-border: #3d4380;
+    --lucid-brand-subtle-hover: #2c3263;
+    --lucid-brand-ring: #9da1ff;
+    --lucid-on-brand: #0d0f1e;
+    --lucid-on-signature: #07131a;
+    --lucid-selection: rgba(143, 147, 255, 0.35);
+    --lucid-link: #5ccbf5;
+    --lucid-link-hover: #8ad9f8;
+
+    /* States: light text on a translucent tint; solid colours keep white text */
+    --lucid-success: #47cd89;
+    --lucid-success-bg: rgba(7, 148, 85, 0.16);
+    --lucid-success-border: rgba(71, 205, 137, 0.35);
+    --lucid-success-solid: #079455;
+    --lucid-warning: #fdb022;
+    --lucid-warning-bg: rgba(247, 144, 9, 0.14);
+    --lucid-warning-border: rgba(253, 176, 34, 0.35);
+    --lucid-warning-solid: #bb5806;
+    --lucid-danger: #f97066;
+    --lucid-danger-bg: rgba(217, 45, 32, 0.16);
+    --lucid-danger-border: rgba(249, 112, 102, 0.38);
+    --lucid-danger-solid: #d92d20;
+    --lucid-info: #b39ef7;
+    --lucid-info-bg: rgba(122, 90, 248, 0.16);
+    --lucid-info-border: rgba(179, 158, 247, 0.35);
+
+    /* Surfaces and text */
+    --lucid-canvas: #0d0f1e;
+    --lucid-surface: #161930;
+    --lucid-surface-sunken: #141729;
+    --lucid-border-input: #6e7499;
+    --lucid-text-faint: #8d93b0;
+
+    /* Shadows: darker, the page being dark */
+    --lucid-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --lucid-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.2);
+    --lucid-shadow-md: 0 6px 16px -2px rgba(0, 0, 0, 0.45), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --lucid-shadow-lg: 0 18px 44px -8px rgba(0, 0, 0, 0.6), 0 4px 10px -4px rgba(0, 0, 0, 0.35);
+    --lucid-shadow-primary: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 1px 2px rgba(0, 0, 0, 0.4);
+    --lucid-shadow-primary-hover: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 3px 10px -1px rgba(0, 0, 0, 0.55);
+    --lucid-focus-halo: 0 0 0 3px rgba(143, 147, 255, 0.28);
+
+    /* Record band and top bar: deep indigo with the cyan glow */
+    --lucid-band-bg: #181b38;
+    --lucid-band-text: #eceef7;
+    --lucid-band-muted: #a9aec8;
+    --lucid-band-line: rgba(255, 255, 255, 0.14);
+    --lucid-band-gradient: linear-gradient(90deg, #15182f 0%, #1a1e3d 55%, #1d2347 100%);
+    --lucid-band-glow: radial-gradient(60rem 22rem at 100% 0%, rgba(0, 182, 237, 0.2), transparent 60%);
+    --lucid-topbar-bg: linear-gradient(rgba(21, 24, 47, 0.82), rgba(21, 24, 47, 0.82)), var(--lucid-band-glow), var(--lucid-band-gradient);
+    --lucid-band-divider: rgba(255, 255, 255, 0.08);
+    --lucid-band-fill-1: rgba(255, 255, 255, 0.04);
+    --lucid-band-fill-2: rgba(255, 255, 255, 0.07);
+    --lucid-band-fill-3: rgba(255, 255, 255, 0.11);
+    --lucid-band-fill-4: rgba(255, 255, 255, 0.16);
+    --lucid-band-line-strong: rgba(255, 255, 255, 0.3);
+
+    /* Tables */
+    --lucid-table-head-bg: #1b1e38;
+    --lucid-table-head-line: #30355a;
+    --lucid-table-head-hover: #15324d;
+    --lucid-table-row-hover: #1c2040;
+
+    /* Side menu */
+    --lucid-sidebar-bg: #12152a;
+    --lucid-sidebar-text: #c9cde0;
+    --lucid-sidebar-muted: #9298b5;
+    --lucid-sidebar-glow: radial-gradient(28rem 20rem at 0% 100%, rgba(0, 182, 237, 0.1), transparent 65%);
+    --lucid-sidebar-scroll: rgba(255, 255, 255, 0.18);
+    --lucid-sidebar-logo-filter: brightness(0) invert(1);
+    --lucid-sidebar-logo-opacity: 0.88;
+
+    /* EspoCRM variables that the light palette sets with fixed values */
+    --brand-primary-lighten-10: #a3a6ff;
+    --brand-primary-lighten-30: #3d4380;
+    --brand-primary-lighten-50: #252a55;
+    --brand-info-10: #c7b7fa;
+    --navbar-bg: #181b38;
+    --input-bg: #11142a;
+    --input-bg-disabled: #141729;
+    --input-border-focus-rgba: rgba(143, 147, 255, 0.28);
+    --btn-default-bg: #1d2140;
+    --btn-default-hover-bg: var(--lucid-n-150);
+    --btn-default-active-bg: var(--lucid-n-200);
+    --modal-backdrop-bg: rgba(3, 4, 10, 0.62);
+    --modal-border-width: var(--1px);
+    --tooltip-bg: var(--lucid-n-800);
+    --tooltip-color: #0d0f1e;
+    --main-gray-lighten-40: var(--lucid-surface);
+    --select-item-active-text-color: var(--lucid-brand);
+    /* Text on coloured badges, and the light box behind e-mails that bring their own colours */
+    --white-color: #ffffff;
+
+    /* EspoCRM variables the light palette leaves to EspoCRM's light values */
+    --table-bg: var(--lucid-surface);
+    --text-white-color: var(--lucid-n-900);
+    --text-solid-color: var(--lucid-n-700);
+    --label-color: var(--lucid-n-900);
+    --code-color: var(--lucid-n-700);
+    --blockquote-border-color: var(--lucid-n-300);
+    --gray-light-5: #656b8c;
+    --gray-light-7: #5f6585;
+    --gray-light-10: #585e7d;
+    --gray-light-12: #525776;
+    --gray-light-17: #474c6a;
+    --gray-light-25: #383d5a;
+    --gray-light-40: #10132a;
+    --navbar-inverse-toggle-hover-bg: var(--lucid-n-100);
+    --navbar-inverse-bg-7: var(--lucid-n-25);
+    --panel-primary-bg: var(--lucid-brand-subtle);
+    --panel-primary-border: var(--lucid-brand-subtle);
+    --panel-success-bg: var(--lucid-success-bg);
+    --panel-success-border: var(--lucid-success-bg);
+    --panel-warning-bg: var(--lucid-warning-bg);
+    --panel-warning-border: var(--lucid-warning-bg);
+    --panel-danger-bg: var(--lucid-danger-bg);
+    --panel-danger-border: var(--lucid-danger-bg);
+    --panel-info-bg: var(--lucid-info-bg);
+    --panel-info-border: var(--lucid-info-bg);
+    --state-danger-bg-5: rgba(217, 45, 32, 0.24);
+    --state-danger-bg-10: rgba(217, 45, 32, 0.32);
+    --state-danger-text-10: #fda29b;
+    --state-danger-text-10l: #fecdca;
+    --state-info-bg-5: rgba(122, 90, 248, 0.24);
+    --state-info-bg-10: rgba(122, 90, 248, 0.32);
+    --state-info-text-10: #d9d0fb;
+    --state-success-bg-5: rgba(7, 148, 85, 0.24);
+    --state-success-text-10: #75e0a7;
+    --state-success-text-10l: #abefc6;
+    --state-warning-bg-5: rgba(247, 144, 9, 0.22);
+    --state-warning-bg-10: rgba(247, 144, 9, 0.3);
+    --state-warning-text-10: #fec84b;
+    --state-warning-text-10l: #fedf89;
+    --btn-info-bg: #7a5af8;
+    --btn-info-border: #7a5af8;
+    --btn-info-hover-bg: #6941c6;
+    --btn-info-hover-border: #6941c6;
+    --btn-info-active-bg: #5b37b7;
+    --btn-info-active-border: #5b37b7;
+    --calendar-busy-bg: rgba(249, 112, 102, 0.22);
+    --collapsed-modal-bg: var(--lucid-n-100);
+    --collapsed-modal-text-color: var(--lucid-n-900);
+}
+
+/* The default EspoCRM logo turns white, in the side menu, the top menu and on the login page */
+:root[data-lucid-scheme="dark"] :is(#navbar .navbar-brand, #login) img[src*="img/logo-light.svg"] {
+    filter: var(--lucid-sidebar-logo-filter);
+    opacity: var(--lucid-sidebar-logo-opacity);
+}

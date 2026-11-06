@@ -38,5 +38,24 @@
         "Meeting": "#292b6b",
         "Task": "#079455"
     },
-    "isDark": false
+    "isDark": false,
+    "lucidDark": {
+        "isDark": true,
+        "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-dark.css",
+        "stylesheetIframeFallback": "client/custom/modules/lucid-theme/css/lucid-iframe.css",
+        "textColor": "#dadced",
+        "hoverColor": "#a3a6ff",
+        "chartGridColor": "#2a2e4d",
+        "chartTickColor": "#20243f",
+        "chartSuccessColor": "#47cd89",
+        "chartColorList": ["#8f93ff", "#00b6ed", "#47cd89", "#fdb022", "#f97066", "#b39ef7", "#f670c7", "#9298b5", "#5ccbf5"],
+        "chartColorAlternativeList": ["#8f93ff", "#00b6ed", "#fdb022", "#47cd89", "#f97066"],
+        "calendarColors": {
+            "": "#6f73c4a0",
+            "bg": "#252a55b3",
+            "Call": "#a3362d",
+            "Meeting": "#454aa8",
+            "Task": "#1f7a4d"
+        }
+    }
 }

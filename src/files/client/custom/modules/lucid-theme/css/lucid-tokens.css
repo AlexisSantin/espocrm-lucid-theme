@@ -27,6 +27,10 @@
     --lucid-brand-subtle-hover: #e2e5f7;
     --lucid-brand-ring: #5a5fd0;
     --lucid-signature: #00b6ed;
+    /* Text on the brand and on the signature (they stay readable in the dark palette too) */
+    --lucid-on-brand: #ffffff;
+    --lucid-on-signature: #14161f;
+    --lucid-selection: rgba(41, 43, 107, 0.14);
     --lucid-signature-gradient: linear-gradient(180deg, #292b6b, #00b6ed);
     --lucid-link: #0b6f96;
     --lucid-link-hover: #085677;
@@ -108,11 +112,11 @@
     --lucid-band-line-strong: rgba(10, 25, 43, 0.35);
     --lucid-band-focus: var(--lucid-brand-ring);
     --lucid-band-avatar-bg: var(--lucid-brand);
-    --lucid-band-avatar-text: #ffffff;
+    --lucid-band-avatar-text: var(--lucid-on-brand);
     /* Band primary action: indigo as everywhere else (cyan on a dark palette) */
     --lucid-band-primary-bg: var(--lucid-brand);
     --lucid-band-primary-hover: var(--lucid-brand-hover);
-    --lucid-band-primary-text: #ffffff;
+    --lucid-band-primary-text: var(--lucid-on-brand);
 
     /* Tables: tinted column headers with vertical lines, cyan on hover */
     --lucid-table-head-bg: #f6f7fa;

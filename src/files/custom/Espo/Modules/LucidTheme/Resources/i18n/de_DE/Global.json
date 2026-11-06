@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Leeres Feld anzeigen",
         "lucidShowEmptyMany": "{count} leere Felder anzeigen",
         "lucidHideEmpty": "Leere Felder ausblenden",
-        "lucidRecordInfo": "Datensatzinfo"
+        "lucidRecordInfo": "Datensatzinfo",
+        "lucidScheme": "Darstellung",
+        "lucidSchemeLight": "Hell",
+        "lucidSchemeDark": "Dunkel",
+        "lucidSchemeSystem": "System"
     }
 }

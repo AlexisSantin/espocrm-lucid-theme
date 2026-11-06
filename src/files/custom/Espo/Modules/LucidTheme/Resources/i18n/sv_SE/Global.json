@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Visa det tomma fältet",
         "lucidShowEmptyMany": "Visa {count} tomma fält",
         "lucidHideEmpty": "Dölj tomma fält",
-        "lucidRecordInfo": "Postinformation"
+        "lucidRecordInfo": "Postinformation",
+        "lucidScheme": "Utseende",
+        "lucidSchemeLight": "Ljust",
+        "lucidSchemeDark": "Mörkt",
+        "lucidSchemeSystem": "System"
     }
 }

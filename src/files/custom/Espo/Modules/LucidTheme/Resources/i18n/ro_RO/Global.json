@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Afișează câmpul gol",
         "lucidShowEmptyMany": "Afișează câmpurile goale ({count})",
         "lucidHideEmpty": "Ascunde câmpurile goale",
-        "lucidRecordInfo": "Informații înregistrare"
+        "lucidRecordInfo": "Informații înregistrare",
+        "lucidScheme": "Aspect",
+        "lucidSchemeLight": "Luminos",
+        "lucidSchemeDark": "Întunecat",
+        "lucidSchemeSystem": "Sistem"
     }
 }

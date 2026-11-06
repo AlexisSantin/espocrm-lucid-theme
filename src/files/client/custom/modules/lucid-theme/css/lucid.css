@@ -1,16 +1,17 @@
 /**
  * Lucid theme for EspoCRM: entry point.
- * Layers: stock light theme -> Lucid tokens -> EspoCRM variables -> components.
+ * Layers: stock light theme -> Lucid tokens -> EspoCRM variables -> components -> dark palette.
  */
 @import "../../../../css/espo/light.css";
-@import "lucid-fonts.css?v=0.19.1";
-@import "lucid-tokens.css?v=0.19.1";
-@import "lucid-espo-vars.css?v=0.19.1";
-@import "lucid-base.css?v=0.19.1";
-@import "lucid-shell.css?v=0.19.1";
-@import "lucid-controls.css?v=0.19.1";
-@import "lucid-data.css?v=0.19.1";
-@import "lucid-record.css?v=0.19.1";
-@import "lucid-detail.css?v=0.19.1";
-@import "lucid-overlays.css?v=0.19.1";
-@import "lucid-login.css?v=0.19.1";
+@import "lucid-fonts.css?v=0.20.0";
+@import "lucid-tokens.css?v=0.20.0";
+@import "lucid-espo-vars.css?v=0.20.0";
+@import "lucid-base.css?v=0.20.0";
+@import "lucid-shell.css?v=0.20.0";
+@import "lucid-controls.css?v=0.20.0";
+@import "lucid-data.css?v=0.20.0";
+@import "lucid-record.css?v=0.20.0";
+@import "lucid-detail.css?v=0.20.0";
+@import "lucid-overlays.css?v=0.20.0";
+@import "lucid-login.css?v=0.20.0";
+@import "lucid-dark.css?v=0.20.0";

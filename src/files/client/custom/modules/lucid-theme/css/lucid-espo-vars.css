@@ -59,7 +59,7 @@
 
     /* Brand and states */
     --brand-primary: var(--lucid-brand);
-    --brand-primary-text: #ffffff;
+    --brand-primary-text: var(--lucid-on-brand);
     --brand-primary-5: var(--lucid-brand-hover);
     --brand-primary-10: var(--lucid-brand-active);
     --brand-primary-lighten-10: #3b3e8a;
@@ -113,7 +113,7 @@
 
     --btn-primary-bg: var(--lucid-brand);
     --btn-primary-border: var(--lucid-brand);
-    --btn-primary-color: #ffffff;
+    --btn-primary-color: var(--lucid-on-brand);
     --btn-primary-hover-bg: var(--lucid-brand-hover);
     --btn-primary-hover-border: var(--lucid-brand-hover);
     --btn-primary-active-bg: var(--lucid-brand-active);

@@ -4,8 +4,8 @@ Lucid is a light, readable theme for [EspoCRM](https://www.espocrm.com/) with a 
 It reworks the record view — fields on one side, activity on the other, or the classic EspoCRM
 arrangement, your choice — adds a band with the record's owner and pipeline stages, and makes every
 block collapsible.
-It uses a deep indigo (`#292B6B`) for actions and cyan (`#00B6ED`) as the signature accent, and
-targets WCAG 2.1 AA / RGAA.
+It uses a deep indigo (`#292B6B`) for actions and cyan (`#00B6ED`) as the signature accent, comes
+with a dark palette that can follow the operating system, and targets WCAG 2.1 AA / RGAA.
 
 ![Lead record with the stage band, the About card and the activity stream](docs/screenshots/record-lead.png)
 
@@ -76,6 +76,13 @@ All data in the screenshots is fictitious.
   links coloured so that what is clickable stands out; comfortable form fields.
 - **Light palette.** White sidebar, ice-blue top bar and record band, cards with a cyan corner mark.
   Colours are CSS tokens (`--lucid-band-*`, `--lucid-sidebar-*`, `--lucid-table-*`), easy to retune.
+- **Dark palette.** A button in the top bar (next to the notifications; in the menu on a phone)
+  offers Light, Dark and System, which follows the operating system, even when it switches at
+  nightfall. The change is immediate and saved in the user's preferences; pages then open directly
+  in the chosen palette. Light is the default. The dark palette tints its surfaces towards the
+  indigo and uses periwinkle for actions. E-mail bodies, code editors, charts and the calendar turn
+  dark as with EspoCRM's own Dark theme, and e-mails that bring their own colours stay on a light
+  background. The button is hidden when the administrator has disabled the choice of theme.
 - **Marked table columns.** Tinted uppercase headers with vertical lines, a cyan tint when hovering a
   column, and a clearer row hover, in lists and in the tables of a record.
 - **Quiet loading indicator.** EspoCRM's spinner becomes a small white pill with a turning cyan ring
@@ -92,7 +99,8 @@ block with the title in colour, in the About card, the side cards and the main c
 
 ## Accessibility
 
-- Text contrast of at least 4.5:1 and form field borders of at least 3:1, checked for every colour;
+- Text contrast of at least 4.5:1 and form field borders of at least 3:1, checked for every colour
+  of both palettes;
   titles and action icons on coloured panel headings (Danger, Warning…) are darkened to stay above
   4.5:1 on their tint.
 - Visible keyboard focus, including on dark areas; reduced motion when the system asks for it.
@@ -134,13 +142,24 @@ npm run extension     # build build/lucid-theme-<version>.zip
   picks the record template from the theme name (`isClassicLayout` in `src/lucid.js`).
 - The record view is applied by a `record/detail` view setup handler that derives the bottom view
   configured for the entity instead of replacing it. If it cannot apply (an unexpected EspoCRM
-  version, for instance), the record keeps the EspoCRM layout. The module imports no EspoCRM client
-  module, and never uses admin-only translation scopes (they are not sent to regular users).
+  version, for instance), the record keeps the EspoCRM layout. Apart from the top bar button, an
+  EspoCRM view, the module imports no EspoCRM client module, and it never uses admin-only
+  translation scopes (they are not sent to regular users).
+- The dark palette (`css/lucid-dark.css`) redefines the tokens on `:root[data-lucid-scheme="dark"]`.
+  `js/color-scheme.js`, a plain script listed before the stylesheet, sets that attribute from the
+  choice remembered by the browser, so a page never flashes the light palette; the top bar button
+  stores the choice in the `lucidColorScheme` preference. EspoCRM reads `isDark`, the e-mail
+  stylesheets and the chart and calendar colours from theme parameters: while the dark palette is
+  on, the theme manager returns the values of the theme's `lucidDark` block instead
+  (`src/helpers/color-scheme.js`). If that cannot apply, those elements keep their light look.
 
 ```
 src/files/custom/Espo/Modules/LucidTheme/Resources/
-    metadata/themes/                    LucidClassic and Lucid (Lucid Split): parameters, chart and calendar colours
-    metadata/app/client.json            lib/init.js (bundle loader in production)
+    metadata/themes/                    LucidClassic and Lucid (Lucid Split): parameters, chart and calendar colours,
+                                        their dark values (lucidDark)
+    metadata/app/client.json            js/color-scheme.js, lib/init.js (bundle loader in production)
+    metadata/app/clientNavbar.json      top bar button (Light, Dark, System)
+    metadata/entityDefs/Preferences.json  the lucidColorScheme preference
     metadata/clientDefs/Global.json     view setup handlers
     i18n/en_US, i18n/fr_FR              the theme's own labels
 src/files/client/custom/modules/lucid-theme/
@@ -148,6 +167,8 @@ src/files/client/custom/modules/lucid-theme/
     css/lucid-tokens.css                colours, radii, shadows, band and sidebar tokens
     css/lucid-espo-vars.css             EspoCRM variables mapped to the tokens
     css/lucid-*.css                     base, shell, controls, data, record, detail, overlays, login
+    css/lucid-dark.css                  dark palette
+    css/lucid-iframe-dark.css           e-mail bodies in the dark palette
     res/templates/record/detail*.tpl    record view templates
     src/handlers/record-detail.js       applies the record view
     src/handlers/page-a11y.js           document language and zoom
@@ -156,6 +177,9 @@ src/files/client/custom/modules/lucid-theme/
     src/helpers/column-resizer.js       width handle for About
     src/helpers/empty-fields.js         hides empty fields
     js/nav-groups.js                    collapsible groups of the side menu (plain script)
+    js/color-scheme.js                  applies the palette before the page shows (plain script)
+    src/views/navbar/color-scheme.js    top bar button: Light, Dark, System
+    src/helpers/color-scheme.js         EspoCRM's dark parameters while the dark palette is on
     src/mixins/detail-bottom.js         right column: tabs, quick actions, counts
     fonts/                              Lexend (OFL)
 ```

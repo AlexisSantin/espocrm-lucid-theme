@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Tampilkan kolom kosong",
         "lucidShowEmptyMany": "Tampilkan {count} kolom kosong",
         "lucidHideEmpty": "Sembunyikan kolom kosong",
-        "lucidRecordInfo": "Info rekaman"
+        "lucidRecordInfo": "Info rekaman",
+        "lucidScheme": "Tampilan",
+        "lucidSchemeLight": "Terang",
+        "lucidSchemeDark": "Gelap",
+        "lucidSchemeSystem": "Sistem"
     }
 }

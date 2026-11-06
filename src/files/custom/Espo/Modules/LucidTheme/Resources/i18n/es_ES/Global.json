@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Mostrar el campo vacío",
         "lucidShowEmptyMany": "Mostrar {count} campos vacíos",
         "lucidHideEmpty": "Ocultar campos vacíos",
-        "lucidRecordInfo": "Información del registro"
+        "lucidRecordInfo": "Información del registro",
+        "lucidScheme": "Apariencia",
+        "lucidSchemeLight": "Claro",
+        "lucidSchemeDark": "Oscuro",
+        "lucidSchemeSystem": "Sistema"
     }
 }

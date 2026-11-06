@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Boş alanı göster",
         "lucidShowEmptyMany": "{count} boş alanı göster",
         "lucidHideEmpty": "Boş alanları gizle",
-        "lucidRecordInfo": "Kayıt bilgileri"
+        "lucidRecordInfo": "Kayıt bilgileri",
+        "lucidScheme": "Görünüm",
+        "lucidSchemeLight": "Açık",
+        "lucidSchemeDark": "Koyu",
+        "lucidSchemeSystem": "Sistem"
     }
 }

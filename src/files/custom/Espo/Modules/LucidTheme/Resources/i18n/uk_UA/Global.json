@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Показати порожнє поле",
         "lucidShowEmptyMany": "Показати порожні поля ({count})",
         "lucidHideEmpty": "Приховати порожні поля",
-        "lucidRecordInfo": "Відомості про запис"
+        "lucidRecordInfo": "Відомості про запис",
+        "lucidScheme": "Вигляд",
+        "lucidSchemeLight": "Світла",
+        "lucidSchemeDark": "Темна",
+        "lucidSchemeSystem": "Як у системі"
     }
 }

@@ -7,6 +7,10 @@
         "lucidShowEmptyOne": "Prikaži prazno polje",
         "lucidShowEmptyMany": "Prikaži prazna polja ({count})",
         "lucidHideEmpty": "Skrij prazna polja",
-        "lucidRecordInfo": "Podatki o zapisu"
+        "lucidRecordInfo": "Podatki o zapisu",
+        "lucidScheme": "Videz",
+        "lucidSchemeLight": "Svetlo",
+        "lucidSchemeDark": "Temno",
+        "lucidSchemeSystem": "Po sistemu"
     }
 }
