@@ -86,7 +86,8 @@ All data in the screenshots is fictitious.
   in the chosen palette. Light is the default. The dark palette tints its surfaces towards the
   indigo and uses periwinkle for actions. E-mail bodies, code editors, charts and the calendar turn
   dark as with EspoCRM's own Dark theme, and e-mails that bring their own colours stay on a light
-  background. The button is hidden when the administrator has disabled the choice of theme.
+  background. The button stays available when the administrator imposes the theme: the palette
+  is each user's own choice.
 - **Marked table columns.** Tinted uppercase headers with vertical lines, a cyan tint when hovering a
   column, and a clearer row hover, in lists and in the tables of a record.
 - **Quiet loading indicator.** EspoCRM's spinner becomes a small white pill with a turning cyan ring

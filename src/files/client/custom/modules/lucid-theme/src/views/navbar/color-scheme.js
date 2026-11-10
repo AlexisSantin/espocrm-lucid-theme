@@ -12,8 +12,8 @@ const MODES = [
  * Button of the top bar choosing the palette: Light, Dark or System (follows the operating
  * system). The choice is the user's preference (`lucidColorScheme`) and applies at once.
  *
- * Shown under the Lucid themes only, and only when users may choose their theme: when the
- * administrator has disabled that, everyone keeps the light palette.
+ * Shown under the Lucid themes only. It stays available when the administrator imposes the theme
+ * (users may not choose their theme): the palette is a personal choice, like the language.
  */
 export default class LucidColorSchemeNavbarView extends View {
 
@@ -62,16 +62,14 @@ export default class LucidColorSchemeNavbarView extends View {
     }
 
     setup() {
-        const isLucid = isLucidTheme(this);
+        this.enabled = isLucidTheme(this);
 
-        this.enabled = isLucid && !this.getConfig().get('userThemesDisabled');
-
-        if (!isLucid) {
+        if (!this.enabled) {
             return;
         }
 
         // The stored preference wins over what the browser remembered from a previous session.
-        applyColorScheme(this.enabled ? this.getMode() : 'light');
+        applyColorScheme(this.getMode());
 
         installDarkParams(this.getThemeManager(), () => isLucidTheme(this) && isDarkScheme());
 
