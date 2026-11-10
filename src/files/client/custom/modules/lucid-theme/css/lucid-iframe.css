@@ -1,7 +1,21 @@
 /**
- * Lucid theme: iframe stylesheet (rich text editor).
+ * Lucid theme: iframe stylesheet (rich text shown in a frame: e-mail bodies and, since EspoCRM
+ * 10.1, knowledge base articles and other rich text fields).
  */
 @import "../../../../css/espo/light-iframe.css";
-@import "lucid-fonts.css?v=0.20.0";
-@import "lucid-tokens.css?v=0.20.0";
-@import "lucid-espo-vars.css?v=0.20.0";
+@import "lucid-fonts.css?v=0.20.1";
+@import "lucid-tokens.css?v=0.20.1";
+@import "lucid-espo-vars.css?v=0.20.1";
+
+/* Headings as in the page: medium weight, Lucid's tight spacing */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: var(--lucid-tracking-tight);
+    text-wrap: balance;
+}
+
+h1 { font-size: var(--30px); }
+h2 { font-size: var(--26px); }
+h3 { font-size: var(--22px); }
+h4 { font-size: var(--18px); }

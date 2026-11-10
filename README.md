@@ -113,7 +113,7 @@ checkboxes) and are outside the scope of a theme.
 
 ## Install
 
-Requires EspoCRM 10.0 or later and PHP 8.3+ (tested on 10.0.3 and 10.0.11).
+Requires EspoCRM 10.0 or later and PHP 8.3+ (tested on 10.0.3, 10.0.11 and 10.1.0).
 
 1. Download `lucid-theme-<version>.zip` from the
    [latest release](https://github.com/AlexisSantin/espocrm-lucid-theme/releases/latest).

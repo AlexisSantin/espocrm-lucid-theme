@@ -1229,9 +1229,28 @@ body.lucid-resizing * {
     grid-column: 1;
     grid-row: 1 / span 4;
     order: -1;
+    /* Top of the column: EspoCRM 10.1 makes this line a flex row centred vertically */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+    align-content: flex-start;
+    column-gap: var(--4px);
     margin: 0;
     padding-top: 1px;
     text-align: right;
+}
+
+.lucid-bottom.lucid-tab-activity .list-container[data-role="stream"] li.list-group-item > .stream-date-container > .reactions-container {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    width: auto;
+    margin-left: 0;
+}
+
+/* Empty, it would push the date to the left of the column */
+.lucid-bottom.lucid-tab-activity .list-container[data-role="stream"] li.list-group-item > .stream-date-container > .reactions-container:empty {
+    display: none;
 }
 
 .lucid-bottom.lucid-tab-activity .list-container[data-role="stream"] li.list-group-item > .stream-date-container a {
