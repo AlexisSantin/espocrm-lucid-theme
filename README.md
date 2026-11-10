@@ -25,6 +25,10 @@ stage moves the record along its pipeline.
 
 A click on a title of the side menu folds its group; the page you are on stays visible.
 
+![Switching between Light, Dark and System from the top bar](docs/screenshots/demo-dark-mode.gif)
+
+The button next to the notifications switches the palette at once; System follows the operating system.
+
 ## Two layouts, one extension
 
 Installing the extension adds two entries to the theme list. They share the same design and features;
