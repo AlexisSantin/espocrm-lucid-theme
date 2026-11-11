@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "顯示空白欄位",
@@ -11,6 +10,16 @@
         "lucidScheme": "外觀",
         "lucidSchemeLight": "淺色",
         "lucidSchemeDark": "深色",
-        "lucidSchemeSystem": "跟隨系統"
+        "lucidSchemeSystem": "跟隨系統",
+        "lucidStyle": "風格",
+        "lucidMode": "模式",
+        "lucidDensity": "密度",
+        "lucidDensityComfortable": "寬鬆",
+        "lucidDensityCompact": "緊湊",
+        "lucidDefault": "預設",
+        "lucidLayout": "版面",
+        "lucidLayoutSplit": "分欄",
+        "lucidLayoutClassic": "經典",
+        "lucidMakeDefault": "將我的風格和版面設為所有人的預設"
     }
 }

@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "خالی فیلڈ دکھائیں",
@@ -11,6 +10,16 @@
         "lucidScheme": "ظاہری شکل",
         "lucidSchemeLight": "روشن",
         "lucidSchemeDark": "تاریک",
-        "lucidSchemeSystem": "سسٹم کے مطابق"
+        "lucidSchemeSystem": "سسٹم کے مطابق",
+        "lucidStyle": "انداز",
+        "lucidMode": "موڈ",
+        "lucidDensity": "کثافت",
+        "lucidDensityComfortable": "آرام دہ",
+        "lucidDensityCompact": "مختصر",
+        "lucidDefault": "طے شدہ",
+        "lucidLayout": "ترتیب",
+        "lucidLayoutSplit": "منقسم",
+        "lucidLayoutClassic": "کلاسیکی",
+        "lucidMakeDefault": "میرا انداز اور ترتیب سب کے لیے طے شدہ بنائیں"
     }
 }

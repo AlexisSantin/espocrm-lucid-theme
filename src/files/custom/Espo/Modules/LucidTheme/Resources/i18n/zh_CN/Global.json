@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "显示空字段",
@@ -11,6 +10,16 @@
         "lucidScheme": "外观",
         "lucidSchemeLight": "浅色",
         "lucidSchemeDark": "深色",
-        "lucidSchemeSystem": "跟随系统"
+        "lucidSchemeSystem": "跟随系统",
+        "lucidStyle": "风格",
+        "lucidMode": "模式",
+        "lucidDensity": "密度",
+        "lucidDensityComfortable": "宽松",
+        "lucidDensityCompact": "紧凑",
+        "lucidDefault": "默认",
+        "lucidLayout": "布局",
+        "lucidLayoutSplit": "分栏",
+        "lucidLayoutClassic": "经典",
+        "lucidMakeDefault": "将我的风格和布局设为所有人的默认"
     }
 }

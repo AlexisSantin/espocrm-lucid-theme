@@ -1,0 +1,20 @@
+/**
+ * Lucid theme: iframe stylesheet for the Brut style in the dark palette. E-mails that bring their
+ * own colours keep the light one (lucid-iframe-brut.css).
+ */
+@import "lucid-iframe-brut.css?v=0.21.0";
+
+:root {
+    color-scheme: dark;
+    --panel-bg: #1f1f1f;
+    --text-color: #f5f5f0;
+    --text-link-color: #8fd3ff;
+    --text-link-hover-color: #ffd23f;
+    --default-border-color: #f5f5f0;
+    --blockquote-border-color: #ffd23f;
+    --code-bg: #161616;
+    --code-border-color: #f5f5f0;
+    --code-color: #e2e2dc;
+    --scroll-bg: transparent;
+    --scroll-thumb-bg: #4d4d4d;
+}

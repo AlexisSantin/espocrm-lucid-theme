@@ -1,0 +1,21 @@
+{
+    "fields": {
+        "lucidStyle": {
+            "type": "enum",
+            "options": [
+                "lucid",
+                "monochrome",
+                "brut"
+            ],
+            "default": "lucid"
+        },
+        "lucidLayout": {
+            "type": "enum",
+            "options": [
+                "split",
+                "classic"
+            ],
+            "default": "split"
+        }
+    }
+}

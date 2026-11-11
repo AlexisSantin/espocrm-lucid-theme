@@ -1,7 +1,7 @@
 {
     "module": "LucidTheme",
     "name": "Lucid Theme",
-    "description": "Lucid: a light, readable theme for EspoCRM. Record view with an owner and pipeline band, collapsible blocks, adjustable columns and an activity stream, in two layouts: Lucid Classic and Lucid Split (fields beside activity). Accessible (WCAG 2.1 AA / RGAA). https://github.com/AlexisSantin/espocrm-lucid-theme",
+    "description": "Lucid: a light, readable theme for EspoCRM. Record view with an owner and pipeline band, collapsible blocks, adjustable columns and an activity stream, in two layouts (Split, fields beside activity, or Classic), three styles (Lucid, Monochrome, Brut), light and dark palettes and two densities, chosen from the top bar. Accessible (WCAG 2.1 AA / RGAA). https://github.com/AlexisSantin/espocrm-lucid-theme",
     "author": "Alexis SANTIN",
     "bundled": true,
     "acceptableVersions": [

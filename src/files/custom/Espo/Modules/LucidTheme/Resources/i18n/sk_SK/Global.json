@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Zobraziť prázdne pole",
@@ -11,6 +10,16 @@
         "lucidScheme": "Vzhľad",
         "lucidSchemeLight": "Svetlý",
         "lucidSchemeDark": "Tmavý",
-        "lucidSchemeSystem": "Podľa systému"
+        "lucidSchemeSystem": "Podľa systému",
+        "lucidStyle": "Štýl",
+        "lucidMode": "Režim",
+        "lucidDensity": "Hustota",
+        "lucidDensityComfortable": "Pohodlná",
+        "lucidDensityCompact": "Kompaktná",
+        "lucidDefault": "predvolený",
+        "lucidLayout": "Rozloženie",
+        "lucidLayoutSplit": "Rozdelené",
+        "lucidLayoutClassic": "Klasické",
+        "lucidMakeDefault": "Použiť môj štýl a rozloženie ako predvolené pre všetkých"
     }
 }

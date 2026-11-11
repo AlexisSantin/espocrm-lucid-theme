@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Rodyti tuščią lauką",
@@ -11,6 +10,16 @@
         "lucidScheme": "Išvaizda",
         "lucidSchemeLight": "Šviesi",
         "lucidSchemeDark": "Tamsi",
-        "lucidSchemeSystem": "Pagal sistemą"
+        "lucidSchemeSystem": "Pagal sistemą",
+        "lucidStyle": "Stilius",
+        "lucidMode": "Režimas",
+        "lucidDensity": "Tankis",
+        "lucidDensityComfortable": "Patogus",
+        "lucidDensityCompact": "Kompaktiškas",
+        "lucidDefault": "numatytasis",
+        "lucidLayout": "Išdėstymas",
+        "lucidLayoutSplit": "Padalytas",
+        "lucidLayoutClassic": "Klasikinis",
+        "lucidMakeDefault": "Naudoti mano stilių ir išdėstymą kaip numatytuosius visiems"
     }
 }

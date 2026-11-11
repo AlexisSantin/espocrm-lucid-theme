@@ -77,7 +77,7 @@
 
 .btn-group > .btn-text.active::after {
     height: var(--2px);
-    background-color: var(--lucid-brand);
+    background-color: var(--lucid-brand-mark);
 }
 
 /* Field tabs of the forms: same size as those of a record */

@@ -27,6 +27,10 @@
     --lucid-brand-subtle-hover: #e2e5f7;
     --lucid-brand-ring: #5a5fd0;
     --lucid-signature: #00b6ed;
+    /* The brand as text, and as a thin mark (active tab, current item): a style whose action colour
+       is too light for text sets them apart */
+    --lucid-brand-text: var(--lucid-brand);
+    --lucid-brand-mark: var(--lucid-brand);
     /* Text on the brand and on the signature (they stay readable in the dark palette too) */
     --lucid-on-brand: #ffffff;
     --lucid-on-signature: #14161f;

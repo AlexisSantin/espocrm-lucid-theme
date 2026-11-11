@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Εμφάνιση του κενού πεδίου",
@@ -11,6 +10,16 @@
         "lucidScheme": "Εμφάνιση",
         "lucidSchemeLight": "Φωτεινό",
         "lucidSchemeDark": "Σκοτεινό",
-        "lucidSchemeSystem": "Σύστημα"
+        "lucidSchemeSystem": "Σύστημα",
+        "lucidStyle": "Στυλ",
+        "lucidMode": "Λειτουργία",
+        "lucidDensity": "Πυκνότητα",
+        "lucidDensityComfortable": "Άνετη",
+        "lucidDensityCompact": "Συμπαγής",
+        "lucidDefault": "προεπιλογή",
+        "lucidLayout": "Διάταξη",
+        "lucidLayoutSplit": "Διαιρεμένη",
+        "lucidLayoutClassic": "Κλασική",
+        "lucidMakeDefault": "Χρήση του στυλ και της διάταξής μου ως προεπιλογή για όλους"
     }
 }

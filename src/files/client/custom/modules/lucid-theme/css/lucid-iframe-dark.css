@@ -3,7 +3,7 @@
  * EspoCRM uses it when the dark palette is on; e-mails that bring their own colours keep the
  * light stylesheet (lucid-iframe.css), as with EspoCRM's own dark theme.
  */
-@import "lucid-iframe.css?v=0.20.2";
+@import "lucid-iframe.css?v=0.21.0";
 
 :root {
     color-scheme: dark;

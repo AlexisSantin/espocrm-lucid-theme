@@ -278,7 +278,7 @@ body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
 /* Side lists (email folders): the active item looks like the active item of the menu */
 .list-group-side {
     --brand-danger: var(--lucid-signature);
-    --state-danger-text: var(--lucid-brand);
+    --state-danger-text: var(--lucid-brand-text);
 }
 
 .list-group-side > .list-group-item.selected {
@@ -373,7 +373,11 @@ body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
     to { transform: rotate(360deg); }
 }
 
-/* Appearance button of the top bar: Light, Dark and System, the current choice ticked */
+/* Appearance button of the top bar: style, palette and density, the current choices ticked */
+.lucid-scheme-menu {
+    min-width: var(--240px);
+}
+
 .lucid-scheme-menu > li > a {
     display: flex;
     align-items: center;
@@ -390,5 +394,32 @@ body[data-navbar="top"] #navbar .navbar ul.tabs li.tab-group {
 .lucid-scheme-menu .lucid-scheme-check {
     margin-left: auto;
     padding-left: var(--20px);
-    color: var(--lucid-brand);
+    color: var(--lucid-brand-text);
+}
+
+/* A small swatch shows each style */
+.lucid-scheme-menu .lucid-style-swatch {
+    flex: none;
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.lucid-scheme-menu .lucid-style-swatch[data-style="lucid"] {
+    background: linear-gradient(135deg, #292b6b 50%, #00b6ed 50%);
+}
+
+.lucid-scheme-menu .lucid-style-swatch[data-style="monochrome"] {
+    background: linear-gradient(135deg, #1c1d1f 50%, #ffffff 50%);
+}
+
+.lucid-scheme-menu .lucid-style-swatch[data-style="brut"] {
+    background: linear-gradient(135deg, #ffd23f 50%, #ff5ca8 50%);
+    box-shadow: inset 0 0 0 2px #111111;
+}
+
+.lucid-scheme-menu .lucid-scheme-note {
+    color: var(--lucid-text-muted);
+    font-size: var(--12px);
 }

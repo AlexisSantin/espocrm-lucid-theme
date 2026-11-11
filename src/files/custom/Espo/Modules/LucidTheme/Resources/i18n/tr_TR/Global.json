@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Boş alanı göster",
@@ -11,6 +10,16 @@
         "lucidScheme": "Görünüm",
         "lucidSchemeLight": "Açık",
         "lucidSchemeDark": "Koyu",
-        "lucidSchemeSystem": "Sistem"
+        "lucidSchemeSystem": "Sistem",
+        "lucidStyle": "Stil",
+        "lucidMode": "Mod",
+        "lucidDensity": "Yoğunluk",
+        "lucidDensityComfortable": "Rahat",
+        "lucidDensityCompact": "Sıkı",
+        "lucidDefault": "varsayılan",
+        "lucidLayout": "Düzen",
+        "lucidLayoutSplit": "Bölünmüş",
+        "lucidLayoutClassic": "Klasik",
+        "lucidMakeDefault": "Stilimi ve düzenimi herkes için varsayılan yap"
     }
 }

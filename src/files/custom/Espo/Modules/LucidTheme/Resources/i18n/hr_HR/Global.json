@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Prikaži prazno polje",
@@ -11,6 +10,16 @@
         "lucidScheme": "Izgled",
         "lucidSchemeLight": "Svijetlo",
         "lucidSchemeDark": "Tamno",
-        "lucidSchemeSystem": "Prema sustavu"
+        "lucidSchemeSystem": "Prema sustavu",
+        "lucidStyle": "Stil",
+        "lucidMode": "Način",
+        "lucidDensity": "Gustoća",
+        "lucidDensityComfortable": "Udobna",
+        "lucidDensityCompact": "Kompaktna",
+        "lucidDefault": "zadano",
+        "lucidLayout": "Raspored",
+        "lucidLayoutSplit": "Podijeljeni",
+        "lucidLayoutClassic": "Klasični",
+        "lucidMakeDefault": "Koristi moj stil i raspored kao zadane za sve"
     }
 }

@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Vis det tomme felt",
@@ -11,6 +10,16 @@
         "lucidScheme": "Udseende",
         "lucidSchemeLight": "Lys",
         "lucidSchemeDark": "Mørk",
-        "lucidSchemeSystem": "System"
+        "lucidSchemeSystem": "System",
+        "lucidStyle": "Stil",
+        "lucidMode": "Tilstand",
+        "lucidDensity": "Tæthed",
+        "lucidDensityComfortable": "Komfortabel",
+        "lucidDensityCompact": "Kompakt",
+        "lucidDefault": "standard",
+        "lucidLayout": "Layout",
+        "lucidLayoutSplit": "Delt",
+        "lucidLayoutClassic": "Klassisk",
+        "lucidMakeDefault": "Brug min stil og mit layout som standard for alle"
     }
 }

@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Tampilkan kolom kosong",
@@ -11,6 +10,16 @@
         "lucidScheme": "Tampilan",
         "lucidSchemeLight": "Terang",
         "lucidSchemeDark": "Gelap",
-        "lucidSchemeSystem": "Sistem"
+        "lucidSchemeSystem": "Sistem",
+        "lucidStyle": "Gaya",
+        "lucidMode": "Mode",
+        "lucidDensity": "Kepadatan",
+        "lucidDensityComfortable": "Nyaman",
+        "lucidDensityCompact": "Ringkas",
+        "lucidDefault": "bawaan",
+        "lucidLayout": "Tata letak",
+        "lucidLayoutSplit": "Terbagi",
+        "lucidLayoutClassic": "Klasik",
+        "lucidMakeDefault": "Gunakan gaya dan tata letak saya sebagai bawaan untuk semua"
     }
 }

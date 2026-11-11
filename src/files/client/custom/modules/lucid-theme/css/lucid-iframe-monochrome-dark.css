@@ -1,0 +1,20 @@
+/**
+ * Lucid theme: iframe stylesheet for the Monochrome style in the dark palette. E-mails that bring
+ * their own colours keep the light one (lucid-iframe-monochrome.css).
+ */
+@import "lucid-iframe-monochrome.css?v=0.21.0";
+
+:root {
+    color-scheme: dark;
+    --panel-bg: #161618;
+    --text-color: #f2f2f4;
+    --text-link-color: #f2f2f4;
+    --text-link-hover-color: #8fb2ff;
+    --default-border-color: #26262a;
+    --blockquote-border-color: #3d3d43;
+    --code-bg: #0f0f11;
+    --code-border-color: #26262a;
+    --code-color: #d4d4d9;
+    --scroll-bg: transparent;
+    --scroll-thumb-bg: #3d3d43;
+}

@@ -1,0 +1,242 @@
+/**
+ * Brut style (neo-brutalism): thick outlines, hard offset shadows, yellow and pink, and the Space
+ * Grotesk typeface. It applies when js/appearance.js sets data-lucid-style="brut" on the root
+ * element, from the user's choice or the administrator's default.
+ *
+ * The light block does not apply in the dark palette: the dark block then sets every value on top
+ * of css/lucid-dark.css, with light outlines and yellow shadows. Text contrast is at least 4.5:1.
+ */
+:root[data-lucid-style="brut"] {
+    --lucid-font: "Lucid Space Grotesk", "Lucid Inter", -apple-system, "Segoe UI", sans-serif;
+    --lucid-radius-sm: 4px;
+    --lucid-radius: 6px;
+    --lucid-radius-md: 6px;
+    --lucid-radius-lg: 8px;
+    --lucid-signature: #ffd23f;
+    --lucid-on-signature: #111111;
+    --lucid-brand: #ff5ca8;
+    --lucid-brand-hover: #ff4597;
+    --lucid-brand-active: #f0358a;
+    --lucid-on-brand: #111111;
+    --lucid-shadow-xs: 4px 4px 0 var(--lucid-brut-ink);
+    --lucid-shadow-sm: 4px 4px 0 var(--lucid-brut-ink);
+    --lucid-shadow-md: 6px 6px 0 var(--lucid-brut-ink);
+    --lucid-shadow-lg: 8px 8px 0 var(--lucid-brut-ink);
+    --lucid-shadow-primary: 3px 3px 0 var(--lucid-brut-ink);
+    --lucid-shadow-primary-hover: 4px 4px 0 var(--lucid-brut-ink);
+    --lucid-band-glow: linear-gradient(transparent, transparent);
+    --lucid-sidebar-glow: linear-gradient(transparent, transparent);
+    --lucid-band-primary-bg: #ff5ca8;
+    --lucid-band-primary-hover: #ff4597;
+    --lucid-band-primary-text: #111111;
+    --lucid-band-avatar-bg: #8fd3ff;
+    --lucid-band-avatar-text: #111111;
+    --lucid-table-head-bg: #ffe066;
+    --lucid-table-head-hover: #ffd23f;
+    --lucid-sidebar-active: #ffd23f;
+    --lucid-sidebar-strong: #111111;
+}
+
+:root[data-lucid-style="brut"]:not([data-lucid-scheme="dark"]) {
+    --lucid-canvas: #fdf6e3;
+    --lucid-surface: #ffffff;
+    --lucid-surface-sunken: #fffdf6;
+    --lucid-border: #111111;
+    --lucid-border-strong: #111111;
+    --lucid-border-input: #111111;
+    --lucid-text: #111111;
+    --lucid-text-secondary: #2b2b2b;
+    --lucid-text-muted: #4a4a4a;
+    --lucid-text-faint: #4a4a4a;
+    --lucid-brand-subtle: #ffe066;
+    --lucid-brand-border: #111111;
+    --lucid-brand-subtle-hover: #ffd23f;
+    --lucid-brand-ring: #111111;
+    --lucid-selection: rgba(255, 92, 168, 0.3);
+    --lucid-link: #1a3fd1;
+    --lucid-link-hover: #111111;
+    /* Pink is a fill only: text and thin marks in the brand colour are black (pink reaches 2.9:1) */
+    --lucid-brand-text: #111111;
+    --lucid-brand-mark: #111111;
+    --lucid-focus-halo: 0 0 0 3px rgba(17, 17, 17, 0.25);
+
+    --lucid-band-bg: #fdf6e3;
+    --lucid-band-text: #111111;
+    --lucid-band-muted: #2b2b2b;
+    --lucid-band-line: #111111;
+    --lucid-band-gradient: linear-gradient(#fdf6e3, #fdf6e3);
+    --lucid-topbar-bg: #fdf6e3;
+    --lucid-band-fill-1: #fff3c4;
+    --lucid-band-fill-2: #ffe99a;
+    --lucid-band-fill-3: #ffffff;
+    --lucid-band-fill-4: #ffe066;
+
+    --lucid-table-head-line: #111111;
+    --lucid-table-row-hover: #fff6cf;
+
+    --lucid-sidebar-bg: #ffffff;
+    --lucid-sidebar-line: #111111;
+    --lucid-sidebar-text: #111111;
+    --lucid-sidebar-muted: #111111;
+    --lucid-sidebar-hover: #fff3c4;
+    --lucid-sidebar-logo-filter: grayscale(1) brightness(0);
+    --lucid-sidebar-logo-opacity: 1;
+
+    --navbar-bg: #fdf6e3;
+    --input-border: #111111;
+    --input-border-focus-rgba: rgba(17, 17, 17, 0.25);
+
+    /* The style's own values */
+    --lucid-brut-ink: #111111;
+    --lucid-brut-box: #ffffff;
+}
+
+:root[data-lucid-style="brut"][data-lucid-scheme="dark"] {
+    --lucid-n-0: #1f1f1f;
+    --lucid-n-25: #1a1a1a;
+    --lucid-n-50: #161616;
+    --lucid-n-100: #2a2a2a;
+    --lucid-n-150: #333333;
+    --lucid-n-200: #3d3d3d;
+    --lucid-n-300: #4d4d4d;
+    --lucid-n-400: #7a7a75;
+    --lucid-n-500: #a8a8a2;
+    --lucid-n-600: #c4c4bd;
+    --lucid-n-700: #dcdcd5;
+    --lucid-n-800: #ebebe5;
+    --lucid-n-900: #f5f5f0;
+
+    --lucid-canvas: #161616;
+    --lucid-surface: #1f1f1f;
+    --lucid-surface-sunken: #1a1a1a;
+    --lucid-border: #f5f5f0;
+    --lucid-border-strong: #f5f5f0;
+    --lucid-border-input: #f5f5f0;
+    --lucid-text: #f5f5f0;
+    --lucid-text-secondary: #e2e2dc;
+    --lucid-text-muted: #c4c4bd;
+    --lucid-text-faint: #c4c4bd;
+    --lucid-brand-subtle: #3a3216;
+    --lucid-brand-border: #f5f5f0;
+    --lucid-brand-subtle-hover: #4a3f12;
+    --lucid-brand-ring: #ffd23f;
+    --lucid-selection: rgba(255, 210, 63, 0.3);
+    --lucid-link: #8fd3ff;
+    --lucid-link-hover: #ffd23f;
+    --lucid-focus-halo: 0 0 0 3px rgba(255, 210, 63, 0.35);
+
+    --lucid-band-bg: #161616;
+    --lucid-band-text: #f5f5f0;
+    --lucid-band-muted: #e2e2dc;
+    --lucid-band-line: #f5f5f0;
+    --lucid-band-gradient: linear-gradient(#161616, #161616);
+    --lucid-topbar-bg: #161616;
+    --lucid-band-fill-1: #2a2614;
+    --lucid-band-fill-2: #3a3216;
+    --lucid-band-fill-3: #1f1f1f;
+    --lucid-band-fill-4: #4a3f12;
+
+    --lucid-table-head-line: #f5f5f0;
+    --lucid-table-row-hover: #262214;
+
+    --lucid-sidebar-bg: #111111;
+    --lucid-sidebar-line: #f5f5f0;
+    --lucid-sidebar-text: #f5f5f0;
+    --lucid-sidebar-muted: #f5f5f0;
+    --lucid-sidebar-hover: #2a2614;
+
+    --navbar-bg: #161616;
+    --input-bg: #121212;
+    --input-border: #f5f5f0;
+    --input-border-focus-rgba: rgba(255, 210, 63, 0.35);
+    --btn-default-bg: #1f1f1f;
+    --tooltip-bg: #ffd23f;
+    --tooltip-color: #111111;
+
+    --lucid-brut-ink: #ffd23f;
+    --lucid-brut-box: #1f1f1f;
+}
+
+/* No cyan corner: the thick outline frames the cards */
+:root[data-lucid-style="brut"] :is(.lucid-layout-classic .lucid-content-card, .lucid-record .lucid-inspector-card, #main > .list-container > .list)::before {
+    display: none;
+}
+
+:root[data-lucid-style="brut"] :is(.lucid-inspector-card, .lucid-inspector > .side > .panel, .lucid-record .lucid-main, .lucid-record .lucid-content-card, #main > .list-container > .list, .lucid-composer) {
+    border-width: 2px;
+}
+
+/* Important: EspoCRM sets button borders with !important */
+:root[data-lucid-style="brut"] .btn {
+    border-width: 2px !important;
+    border-color: var(--lucid-border) !important;
+}
+
+/* Column headers on yellow, in both palettes */
+:root[data-lucid-style="brut"] :is(.list > table > thead > tr > th, :where(#main) .table > thead > tr > th) {
+    color: #111111;
+    font-weight: 700;
+    border-bottom-width: 2px;
+}
+
+:root[data-lucid-style="brut"] .lucid-identity-name {
+    font-size: var(--32px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+:root[data-lucid-style="brut"] .lucid-step .lucid-step-inner {
+    font-weight: 700;
+}
+
+:root[data-lucid-style="brut"] #navbar {
+    border-bottom: 2px solid var(--lucid-border);
+}
+
+/* Side menu: icons in outlined boxes, the current page in yellow with a hard shadow */
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar > .navbar {
+    border-right: 2px solid var(--lucid-border);
+}
+
+/* Important: EspoCRM sets the entity colour as the border of the link itself */
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar ul.tabs > li:is(.tab, .more) > a {
+    margin: 3px 12px;
+    border: 2px solid transparent !important;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar ul.tabs > li.tab > a .short-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    margin-left: -4px;
+    border: 2px solid var(--lucid-border);
+    border-radius: 6px;
+    background: var(--lucid-brut-box);
+    box-shadow: 2px 2px 0 var(--lucid-brut-ink);
+}
+
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar ul.tabs > li.tab > a:hover {
+    border-color: var(--lucid-border) !important;
+}
+
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a,
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a:hover {
+    border-color: #111111 !important;
+    box-shadow: 3px 3px 0 var(--lucid-brut-ink);
+    color: #111111;
+}
+
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a::before {
+    display: none;
+}
+
+:root[data-lucid-style="brut"] body[data-navbar="side"] #navbar ul.tabs > li.tab-divider > div > .label-text {
+    font-size: var(--11px);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}

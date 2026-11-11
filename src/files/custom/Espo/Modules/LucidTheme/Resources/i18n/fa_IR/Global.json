@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "نمایش فیلد خالی",
@@ -11,6 +10,16 @@
         "lucidScheme": "ظاهر",
         "lucidSchemeLight": "روشن",
         "lucidSchemeDark": "تیره",
-        "lucidSchemeSystem": "مطابق سیستم"
+        "lucidSchemeSystem": "مطابق سیستم",
+        "lucidStyle": "سبک",
+        "lucidMode": "حالت",
+        "lucidDensity": "تراکم",
+        "lucidDensityComfortable": "راحت",
+        "lucidDensityCompact": "فشرده",
+        "lucidDefault": "پیش‌فرض",
+        "lucidLayout": "چیدمان",
+        "lucidLayoutSplit": "دوستونه",
+        "lucidLayoutClassic": "کلاسیک",
+        "lucidMakeDefault": "سبک و چیدمان من پیش‌فرض همه شود"
     }
 }

@@ -96,7 +96,7 @@
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
     border: none;
-    border-bottom: 2px solid var(--lucid-brand);
+    border-bottom: 2px solid var(--lucid-brand-mark);
     background: transparent;
     color: var(--lucid-text);
 }

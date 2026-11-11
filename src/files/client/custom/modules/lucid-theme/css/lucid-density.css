@@ -1,0 +1,25 @@
+/**
+ * Compact density, a choice of each user: smaller text (13 px), lower rows and fields, tighter
+ * panels. Every size of EspoCRM and Lucid is set in rem, so the root size scales them all; a few
+ * paddings set in pixels are tightened here. Applies with data-lucid-density="compact" on the
+ * root element (js/appearance.js), whatever the style and the palette.
+ */
+:root[data-lucid-density="compact"] {
+    font-size: 15px;
+    --panel-padding: var(--12px);
+    --panel-heading-height: var(--40px);
+    --input-height-base: var(--34px);
+}
+
+:root[data-lucid-density="compact"] #main > .list-container > .list > table > :is(thead, tbody) > tr > :is(th, td) {
+    padding-top: var(--6px);
+    padding-bottom: var(--6px);
+}
+
+:root[data-lucid-density="compact"] .lucid-identity-name {
+    font-size: var(--24px);
+}
+
+:root[data-lucid-density="compact"] .lucid-step-inner {
+    min-height: 28px;
+}

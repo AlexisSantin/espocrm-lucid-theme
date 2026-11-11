@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Rādīt tukšo lauku",
@@ -11,6 +10,16 @@
         "lucidScheme": "Izskats",
         "lucidSchemeLight": "Gaišs",
         "lucidSchemeDark": "Tumšs",
-        "lucidSchemeSystem": "Atbilstoši sistēmai"
+        "lucidSchemeSystem": "Atbilstoši sistēmai",
+        "lucidStyle": "Stils",
+        "lucidMode": "Režīms",
+        "lucidDensity": "Blīvums",
+        "lucidDensityComfortable": "Ērts",
+        "lucidDensityCompact": "Kompakts",
+        "lucidDefault": "noklusējums",
+        "lucidLayout": "Izkārtojums",
+        "lucidLayoutSplit": "Sadalīts",
+        "lucidLayoutClassic": "Klasisks",
+        "lucidMakeDefault": "Izmantot manu stilu un izkārtojumu kā noklusējumu visiem"
     }
 }

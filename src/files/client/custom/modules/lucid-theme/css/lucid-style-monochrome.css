@@ -1,0 +1,280 @@
+/**
+ * Monochrome style: white and near-black, actions in black (white in the dark palette), tables in
+ * a full grid, a grey side menu where the current page stands out as a small raised card, and the
+ * Inter typeface. It applies when js/appearance.js sets data-lucid-style="monochrome" on the root
+ * element, from the user's choice or the administrator's default.
+ *
+ * The light block does not apply in the dark palette: the dark block then sets every value on top
+ * of css/lucid-dark.css. Text contrast is at least 4.5:1 and field borders at least 3:1.
+ */
+:root[data-lucid-style="monochrome"] {
+    --lucid-font: "Lucid Inter", -apple-system, "Segoe UI", sans-serif;
+    --lucid-radius-sm: 6px;
+    --lucid-radius: 8px;
+    --lucid-radius-md: 10px;
+    --lucid-radius-lg: 12px;
+}
+
+:root[data-lucid-style="monochrome"]:not([data-lucid-scheme="dark"]) {
+    --lucid-n-0: #ffffff;
+    --lucid-n-25: #fbfbfb;
+    --lucid-n-50: #f9f9fa;
+    --lucid-n-100: #f3f3f4;
+    --lucid-n-150: #ececee;
+    --lucid-n-200: #e2e2e5;
+    --lucid-n-300: #cfcfd4;
+    --lucid-n-400: #9a9ba1;
+    --lucid-n-500: #66686f;
+    --lucid-n-600: #4e5057;
+    --lucid-n-700: #36383d;
+    --lucid-n-800: #232529;
+    --lucid-n-900: #1c1d1f;
+
+    --lucid-canvas: #ffffff;
+    --lucid-surface: #ffffff;
+    --lucid-surface-sunken: #fbfbfb;
+    --lucid-border: #ececee;
+    --lucid-border-strong: #e2e2e5;
+    --lucid-border-input: #8e9097;
+    --lucid-text-faint: #66686f;
+
+    --lucid-brand: #1c1d1f;
+    --lucid-brand-hover: #000000;
+    --lucid-brand-active: #000000;
+    --lucid-brand-subtle: #f0f0f2;
+    --lucid-brand-border: #d9d9de;
+    --lucid-brand-subtle-hover: #e8e8eb;
+    --lucid-brand-ring: #266df0;
+    --lucid-signature: #1c1d1f;
+    --lucid-on-signature: #ffffff;
+    --lucid-on-brand: #ffffff;
+    --lucid-selection: rgba(38, 109, 240, 0.16);
+    --lucid-link: #1c1d1f;
+    --lucid-link-hover: #1f5fd6;
+
+    --lucid-success: #0f7a3d;
+    --lucid-success-bg: #e3f6ea;
+    --lucid-success-border: #bfe8cf;
+    --lucid-warning: #8f5400;
+    --lucid-warning-bg: #fff2d9;
+    --lucid-warning-border: #f6d9a3;
+    --lucid-danger: #c0262d;
+    --lucid-danger-bg: #fde8e8;
+    --lucid-danger-border: #f6c5c5;
+    --lucid-info: #5b3cc4;
+    --lucid-info-bg: #efe9fd;
+    --lucid-info-border: #d9cdf8;
+
+    --lucid-shadow-xs: 0 1px 2px rgba(16, 17, 19, 0.04);
+    --lucid-shadow-sm: 0 1px 3px rgba(16, 17, 19, 0.06);
+    --lucid-shadow-primary: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --lucid-shadow-primary-hover: 0 2px 6px rgba(0, 0, 0, 0.25);
+    --lucid-focus-halo: 0 0 0 3px rgba(38, 109, 240, 0.18);
+
+    --lucid-band-bg: #ffffff;
+    --lucid-band-text: #1c1d1f;
+    --lucid-band-muted: #66686f;
+    --lucid-band-line: #ececee;
+    --lucid-band-gradient: linear-gradient(#ffffff, #ffffff);
+    --lucid-band-glow: linear-gradient(transparent, transparent);
+    --lucid-topbar-bg: #ffffff;
+    --lucid-band-divider: #ececee;
+    --lucid-band-fill-1: #f6f6f7;
+    --lucid-band-fill-2: #f0f0f2;
+    --lucid-band-fill-3: #eaeaed;
+    --lucid-band-fill-4: #dfdfe3;
+    --lucid-band-line-strong: #cfcfd4;
+    --lucid-band-avatar-bg: #1c1d1f;
+    --lucid-band-primary-bg: #1c1d1f;
+    --lucid-band-primary-hover: #000000;
+
+    --lucid-table-head-bg: #fbfbfb;
+    --lucid-table-head-line: #ececee;
+    --lucid-table-head-hover: #f3f3f4;
+    --lucid-table-row-hover: #f8f8f9;
+
+    --lucid-sidebar-bg: #f7f7f8;
+    --lucid-sidebar-glow: linear-gradient(transparent, transparent);
+    --lucid-sidebar-line: #ececee;
+    --lucid-sidebar-text: #36383d;
+    --lucid-sidebar-muted: #66686f;
+    --lucid-sidebar-hover: #eeeef0;
+    --lucid-sidebar-active: #ffffff;
+    --lucid-sidebar-strong: #1c1d1f;
+    --lucid-sidebar-logo-filter: grayscale(1) brightness(0.35);
+    --lucid-sidebar-logo-opacity: 1;
+
+    --navbar-bg: #ffffff;
+    --input-border-focus-rgba: rgba(38, 109, 240, 0.18);
+
+    /* The style's own values */
+    --lucid-mono-line: #ececee;
+    --lucid-mono-grid: #ececee;
+    --lucid-mono-icon: #66686f;
+    --lucid-mono-active-shadow: 0 1px 2px rgba(16, 17, 19, 0.06), 0 0 0 1px #e2e2e5;
+}
+
+:root[data-lucid-style="monochrome"][data-lucid-scheme="dark"] {
+    --lucid-n-0: #161618;
+    --lucid-n-25: #141416;
+    --lucid-n-50: #0f0f11;
+    --lucid-n-100: #1e1e21;
+    --lucid-n-150: #26262a;
+    --lucid-n-200: #303035;
+    --lucid-n-300: #3d3d43;
+    --lucid-n-400: #6b6b73;
+    --lucid-n-500: #9a9aa3;
+    --lucid-n-600: #b8b8c0;
+    --lucid-n-700: #d4d4d9;
+    --lucid-n-800: #e6e6ea;
+    --lucid-n-900: #f2f2f4;
+
+    --lucid-canvas: #0f0f11;
+    --lucid-surface: #161618;
+    --lucid-surface-sunken: #141416;
+    --lucid-border-input: #75757e;
+    --lucid-text-faint: #9a9aa3;
+
+    --lucid-brand: #f2f2f4;
+    --lucid-brand-hover: #ffffff;
+    --lucid-brand-active: #dcdce0;
+    --lucid-brand-subtle: #232327;
+    --lucid-brand-border: #3d3d43;
+    --lucid-brand-subtle-hover: #2a2a2f;
+    --lucid-brand-ring: #6f9bff;
+    --lucid-on-brand: #0f0f11;
+    --lucid-signature: #f2f2f4;
+    --lucid-on-signature: #0f0f11;
+    --lucid-selection: rgba(111, 155, 255, 0.3);
+    --lucid-link: #f2f2f4;
+    --lucid-link-hover: #8fb2ff;
+
+    --lucid-success: #4ade80;
+    --lucid-success-bg: rgba(34, 197, 94, 0.14);
+    --lucid-success-border: rgba(74, 222, 128, 0.32);
+    --lucid-warning: #fbbf24;
+    --lucid-warning-bg: rgba(245, 158, 11, 0.14);
+    --lucid-warning-border: rgba(251, 191, 36, 0.32);
+    --lucid-danger: #f87171;
+    --lucid-danger-bg: rgba(239, 68, 68, 0.15);
+    --lucid-danger-border: rgba(248, 113, 113, 0.36);
+    --lucid-info: #a78bfa;
+    --lucid-info-bg: rgba(139, 92, 246, 0.16);
+    --lucid-info-border: rgba(167, 139, 250, 0.34);
+
+    --lucid-shadow-xs: none;
+    --lucid-shadow-sm: none;
+    --lucid-shadow-primary: none;
+    --lucid-shadow-primary-hover: none;
+    --lucid-focus-halo: 0 0 0 3px rgba(111, 155, 255, 0.28);
+
+    --lucid-band-bg: #0f0f11;
+    --lucid-band-text: #f2f2f4;
+    --lucid-band-muted: #9a9aa3;
+    --lucid-band-line: #26262a;
+    --lucid-band-gradient: linear-gradient(#0f0f11, #0f0f11);
+    --lucid-band-glow: linear-gradient(transparent, transparent);
+    --lucid-topbar-bg: #0f0f11;
+    --lucid-band-avatar-bg: #f2f2f4;
+    --lucid-band-avatar-text: #0f0f11;
+
+    --lucid-table-head-bg: #141416;
+    --lucid-table-head-line: #26262a;
+    --lucid-table-head-hover: #1e1e21;
+    --lucid-table-row-hover: #19191c;
+
+    --lucid-sidebar-bg: #0b0b0c;
+    --lucid-sidebar-glow: linear-gradient(transparent, transparent);
+    --lucid-sidebar-line: #1e1e21;
+    --lucid-sidebar-text: #d4d4d9;
+    --lucid-sidebar-muted: #8b8b94;
+    --lucid-sidebar-hover: #17171a;
+    --lucid-sidebar-active: #1e1e21;
+    --lucid-sidebar-strong: #f2f2f4;
+
+    --navbar-bg: #0f0f11;
+    --input-bg: #121214;
+    --input-border-focus-rgba: rgba(111, 155, 255, 0.28);
+    --btn-default-bg: #1a1a1d;
+    --tooltip-bg: #f2f2f4;
+    --tooltip-color: #0f0f11;
+
+    --lucid-mono-line: #26262a;
+    --lucid-mono-grid: #222226;
+    --lucid-mono-icon: #9a9aa3;
+    --lucid-mono-active-shadow: 0 0 0 1px #303035;
+}
+
+/* No cyan corner on the cards: the style relies on lines and greys alone */
+:root[data-lucid-style="monochrome"] :is(.lucid-layout-classic .lucid-content-card, .lucid-record .lucid-inspector-card, #main > .list-container > .list)::before {
+    display: none;
+}
+
+/* Tables: column headers in plain case, a full grid like a spreadsheet */
+:root[data-lucid-style="monochrome"] :is(.list > table > thead > tr > th, :where(#main) .table > thead > tr > th) {
+    color: var(--lucid-text-secondary);
+    font-size: var(--13px);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+:root[data-lucid-style="monochrome"] #main > .list-container > .list > table > tbody > tr > td {
+    border-right: 1px solid var(--lucid-mono-grid);
+}
+
+:root[data-lucid-style="monochrome"] .lucid-identity-name {
+    font-size: var(--26px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+:root[data-lucid-style="monochrome"] .label.label-state {
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+:root[data-lucid-style="monochrome"] .lucid-step .lucid-step-inner {
+    font-weight: 500;
+}
+
+:root[data-lucid-style="monochrome"] #navbar {
+    border-bottom: 1px solid var(--lucid-mono-line);
+}
+
+/* Side menu: grey column, grey icons, the current page raised like a small card */
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar > .navbar {
+    border-right: 1px solid var(--lucid-mono-line);
+}
+
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li:is(.tab, .more) > a {
+    margin: 1px 10px;
+    border-radius: 8px;
+    font-size: var(--13px);
+    font-weight: 500;
+}
+
+/* Important: EspoCRM sets the entity colour on the icon itself */
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab > a .short-label,
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab > a .short-label :is(.fas, .far) {
+    color: var(--lucid-mono-icon) !important;
+}
+
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a,
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a:hover {
+    box-shadow: var(--lucid-mono-active-shadow);
+}
+
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a .short-label,
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a .short-label :is(.fas, .far) {
+    color: var(--lucid-sidebar-strong) !important;
+}
+
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab.active > a::before {
+    display: none;
+}
+
+:root[data-lucid-style="monochrome"] body[data-navbar="side"] #navbar ul.tabs > li.tab-divider > div > .label-text {
+    font-size: var(--12px);
+    font-weight: 500;
+}

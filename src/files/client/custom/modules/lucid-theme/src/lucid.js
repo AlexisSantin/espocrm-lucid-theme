@@ -6,17 +6,36 @@
 export const ACTIVITY_PANELS = ['stream'];
 
 /**
- * Theme with the classic layout: fields and bottom panels on the left, side panels on the right.
- * The other theme keeps its original key, `Lucid`, and is displayed as Lucid Split.
+ * Record view layouts: `split` puts the fields on the left and the activity on the right;
+ * `classic` keeps fields and bottom panels on the left and side panels on the right, as EspoCRM.
  */
-const CLASSIC_THEME = 'LucidClassic';
+export const LAYOUTS = ['split', 'classic'];
 
 /**
  * @param {import('view').default} view
  * @return {boolean}
  */
 export function isLucidTheme(view) {
-    return ['Lucid', CLASSIC_THEME].includes(view.getThemeManager().getName());
+    return view.getThemeManager().getName() === 'Lucid';
+}
+
+/**
+ * The record view layout: the user's choice (`lucidLayout` preference), else the administrator's
+ * default (`lucidLayout` setting), else Split.
+ *
+ * @param {import('view').default} view
+ * @return {'split'|'classic'}
+ */
+export function getLayout(view) {
+    const chosen = view.getPreferences().get('lucidLayout');
+
+    if (LAYOUTS.includes(chosen)) {
+        return chosen;
+    }
+
+    const byDefault = view.getConfig().get('lucidLayout');
+
+    return LAYOUTS.includes(byDefault) ? byDefault : LAYOUTS[0];
 }
 
 /**
@@ -24,7 +43,7 @@ export function isLucidTheme(view) {
  * @return {boolean}
  */
 export function isClassicLayout(view) {
-    return view.getThemeManager().getName() === CLASSIC_THEME;
+    return getLayout(view) === 'classic';
 }
 
 /**

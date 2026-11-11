@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "إظهار الحقل الفارغ",
@@ -11,6 +10,16 @@
         "lucidScheme": "المظهر",
         "lucidSchemeLight": "فاتح",
         "lucidSchemeDark": "داكن",
-        "lucidSchemeSystem": "حسب النظام"
+        "lucidSchemeSystem": "حسب النظام",
+        "lucidStyle": "النمط",
+        "lucidMode": "الوضع",
+        "lucidDensity": "الكثافة",
+        "lucidDensityComfortable": "مريحة",
+        "lucidDensityCompact": "مضغوطة",
+        "lucidDefault": "افتراضي",
+        "lucidLayout": "التخطيط",
+        "lucidLayoutSplit": "مقسوم",
+        "lucidLayoutClassic": "كلاسيكي",
+        "lucidMakeDefault": "استخدام نمطي وتخطيطي افتراضيًا للجميع"
     }
 }

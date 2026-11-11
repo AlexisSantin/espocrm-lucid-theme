@@ -1,7 +1,7 @@
 {
     "items": {
-        "lucidColorScheme": {
-            "view": "lucid-theme:views/navbar/color-scheme",
+        "lucidAppearance": {
+            "view": "lucid-theme:views/navbar/appearance",
             "class": "dropdown lucid-scheme-container",
             "order": 12,
             "disabled": false

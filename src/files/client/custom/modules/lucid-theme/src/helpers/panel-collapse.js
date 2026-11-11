@@ -110,7 +110,7 @@ export default class PanelCollapse {
     }
 
     /**
-     * Classic layout: the fields card has the same "About" title as in Lucid Split.
+     * Classic layout: the fields card has the same "About" title as in the Split layout.
      *
      * @private
      * @param {HTMLElement} root

@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "空のフィールドを表示",
@@ -11,6 +10,16 @@
         "lucidScheme": "外観",
         "lucidSchemeLight": "ライト",
         "lucidSchemeDark": "ダーク",
-        "lucidSchemeSystem": "システム設定"
+        "lucidSchemeSystem": "システム設定",
+        "lucidStyle": "スタイル",
+        "lucidMode": "モード",
+        "lucidDensity": "表示密度",
+        "lucidDensityComfortable": "ゆったり",
+        "lucidDensityCompact": "コンパクト",
+        "lucidDefault": "既定",
+        "lucidLayout": "レイアウト",
+        "lucidLayoutSplit": "分割",
+        "lucidLayoutClassic": "クラシック",
+        "lucidMakeDefault": "自分のスタイルとレイアウトを全員の既定にする"
     }
 }

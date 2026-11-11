@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "แสดงช่องที่ว่าง",
@@ -11,6 +10,16 @@
         "lucidScheme": "ลักษณะที่ปรากฏ",
         "lucidSchemeLight": "สว่าง",
         "lucidSchemeDark": "มืด",
-        "lucidSchemeSystem": "ตามระบบ"
+        "lucidSchemeSystem": "ตามระบบ",
+        "lucidStyle": "สไตล์",
+        "lucidMode": "โหมด",
+        "lucidDensity": "ความหนาแน่น",
+        "lucidDensityComfortable": "สบายตา",
+        "lucidDensityCompact": "กะทัดรัด",
+        "lucidDefault": "ค่าเริ่มต้น",
+        "lucidLayout": "เลย์เอาต์",
+        "lucidLayoutSplit": "แบ่งสองฝั่ง",
+        "lucidLayoutClassic": "คลาสสิก",
+        "lucidMakeDefault": "ใช้สไตล์และเลย์เอาต์ของฉันเป็นค่าเริ่มต้นสำหรับทุกคน"
     }
 }

@@ -120,7 +120,7 @@
     --tooltip-bg: var(--lucid-n-800);
     --tooltip-color: #0d0f1e;
     --main-gray-lighten-40: var(--lucid-surface);
-    --select-item-active-text-color: var(--lucid-brand);
+    --select-item-active-text-color: var(--lucid-brand-text);
     /* Text on coloured badges, and the light box behind e-mails that bring their own colours */
     --white-color: #ffffff;
 

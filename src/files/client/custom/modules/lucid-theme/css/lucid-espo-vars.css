@@ -78,7 +78,7 @@
     --state-default-bg: var(--lucid-n-100);
     --state-default-text: var(--lucid-n-600);
     --state-primary-bg: var(--lucid-brand-subtle);
-    --state-primary-text: var(--lucid-brand);
+    --state-primary-text: var(--lucid-brand-text);
     --state-primary-border: var(--lucid-brand-border);
     --state-info-bg: var(--lucid-info-bg);
     --state-info-text: var(--lucid-info);
@@ -153,7 +153,7 @@
     --select-item-text-color: var(--lucid-n-800);
     --select-item-border: var(--lucid-border-strong);
     --select-item-active-bg: var(--lucid-brand-subtle);
-    --select-item-active-text-color: var(--lucid-brand);
+    --select-item-active-text-color: var(--lucid-brand-text);
 
     /* Side menu (inverse navbar) and top bar (navbar) */
     --navbar-border-width: var(--1px);
@@ -203,7 +203,7 @@
     --login-panel-heading-bg: var(--lucid-surface);
 
     /* Coloured panels: native tints, action icons at 4.5:1 or more on the tint */
-    --panel-primary-text: var(--lucid-brand);
+    --panel-primary-text: var(--lucid-brand-text);
     --panel-info-text: var(--lucid-info);
     --panel-success-text: var(--lucid-success);
     --panel-warning-text: var(--lucid-warning);

@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Pokaż puste pole",
@@ -11,6 +10,16 @@
         "lucidScheme": "Wygląd",
         "lucidSchemeLight": "Jasny",
         "lucidSchemeDark": "Ciemny",
-        "lucidSchemeSystem": "Systemowy"
+        "lucidSchemeSystem": "Systemowy",
+        "lucidStyle": "Styl",
+        "lucidMode": "Tryb",
+        "lucidDensity": "Gęstość",
+        "lucidDensityComfortable": "Wygodna",
+        "lucidDensityCompact": "Kompaktowa",
+        "lucidDefault": "domyślny",
+        "lucidLayout": "Układ",
+        "lucidLayoutSplit": "Podzielony",
+        "lucidLayoutClassic": "Klasyczny",
+        "lucidMakeDefault": "Użyj mojego stylu i układu jako domyślnych dla wszystkich"
     }
 }

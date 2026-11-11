@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Hiện trường trống",
@@ -11,6 +10,16 @@
         "lucidScheme": "Giao diện",
         "lucidSchemeLight": "Sáng",
         "lucidSchemeDark": "Tối",
-        "lucidSchemeSystem": "Theo hệ thống"
+        "lucidSchemeSystem": "Theo hệ thống",
+        "lucidStyle": "Kiểu",
+        "lucidMode": "Chế độ",
+        "lucidDensity": "Mật độ",
+        "lucidDensityComfortable": "Thoải mái",
+        "lucidDensityCompact": "Gọn",
+        "lucidDefault": "mặc định",
+        "lucidLayout": "Bố cục",
+        "lucidLayoutSplit": "Chia đôi",
+        "lucidLayoutClassic": "Cổ điển",
+        "lucidMakeDefault": "Dùng kiểu và bố cục của tôi làm mặc định cho mọi người"
     }
 }

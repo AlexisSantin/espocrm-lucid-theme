@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Toon het lege veld",
@@ -11,6 +10,16 @@
         "lucidScheme": "Weergave",
         "lucidSchemeLight": "Licht",
         "lucidSchemeDark": "Donker",
-        "lucidSchemeSystem": "Systeem"
+        "lucidSchemeSystem": "Systeem",
+        "lucidStyle": "Stijl",
+        "lucidMode": "Modus",
+        "lucidDensity": "Dichtheid",
+        "lucidDensityComfortable": "Ruim",
+        "lucidDensityCompact": "Compact",
+        "lucidDefault": "standaard",
+        "lucidLayout": "Indeling",
+        "lucidLayoutSplit": "Gesplitst",
+        "lucidLayoutClassic": "Klassiek",
+        "lucidMakeDefault": "Mijn stijl en indeling als standaard voor iedereen gebruiken"
     }
 }

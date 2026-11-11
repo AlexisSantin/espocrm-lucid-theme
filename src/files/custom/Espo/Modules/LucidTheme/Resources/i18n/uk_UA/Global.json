@@ -1,7 +1,6 @@
 {
     "themes": {
-        "Lucid": "Lucid Split",
-        "LucidClassic": "Lucid Classic"
+        "Lucid": "Lucid"
     },
     "labels": {
         "lucidShowEmptyOne": "Показати порожнє поле",
@@ -11,6 +10,16 @@
         "lucidScheme": "Вигляд",
         "lucidSchemeLight": "Світла",
         "lucidSchemeDark": "Темна",
-        "lucidSchemeSystem": "Як у системі"
+        "lucidSchemeSystem": "Як у системі",
+        "lucidStyle": "Стиль",
+        "lucidMode": "Режим",
+        "lucidDensity": "Щільність",
+        "lucidDensityComfortable": "Вільна",
+        "lucidDensityCompact": "Компактна",
+        "lucidDefault": "за замовчуванням",
+        "lucidLayout": "Макет",
+        "lucidLayoutSplit": "Розділений",
+        "lucidLayoutClassic": "Класичний",
+        "lucidMakeDefault": "Зробити мій стиль і макет стандартними для всіх"
     }
 }
