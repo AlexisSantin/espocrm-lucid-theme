@@ -7,7 +7,9 @@
  */
 (() => {
     const MENU_SELECTOR = '#navbar ul.tabs';
-    const THEME_SELECTOR = 'link[href*="modules/lucid-theme/css/lucid.css"]';
+    // The stylesheet of a Lucid theme: css/lucid.css (Lucid) or css/lucid-<style>.css (Lucid
+    // Monochrome, Lucid Brut…), the same rule as js/appearance.js.
+    const THEME_STYLESHEET = /\/lucid-theme\/css\/lucid(?:-[a-z]+)?\.css(?:[?#]|$)/;
     // The user's own link, in the top right menu. The Last Viewed panel, also in the navbar, can
     // hold links to other users, whose stored state must not be read.
     const USER_SELECTOR = '#navbar .menu-container a[href^="#User/view/"]';
@@ -69,12 +71,17 @@
         title.classList.toggle('lucid-nav-collapsed', isCollapsed);
     };
 
+    function isLucidTheme() {
+        return [...document.querySelectorAll('link[rel="stylesheet"]')]
+            .some(link => THEME_STYLESHEET.test(link.getAttribute('href') || ''));
+    }
+
     function update() {
         watch();
 
         const menu = document.querySelector(MENU_SELECTOR);
 
-        if (!menu || !document.querySelector(THEME_SELECTOR)) {
+        if (!menu || !isLucidTheme()) {
             return;
         }
 

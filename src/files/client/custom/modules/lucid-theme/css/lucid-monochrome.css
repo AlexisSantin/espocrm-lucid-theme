@@ -5,6 +5,6 @@
  * data-lucid-style on the root element; the rules of the style are in lucid-style-monochrome.css.
  * The theme name lets EspoCRM see that the stylesheet of the chosen theme is applied.
  */
-@import "lucid.css?v=0.22.0";
+@import "lucid.css?v=0.22.1";
 
 :root, body { --theme-name: LucidMonochrome !important; }

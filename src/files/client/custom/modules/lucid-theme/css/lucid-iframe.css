@@ -3,9 +3,9 @@
  * 10.1, knowledge base articles and other rich text fields).
  */
 @import "../../../../css/espo/light-iframe.css";
-@import "lucid-fonts.css?v=0.22.0";
-@import "lucid-tokens.css?v=0.22.0";
-@import "lucid-espo-vars.css?v=0.22.0";
+@import "lucid-fonts.css?v=0.22.1";
+@import "lucid-tokens.css?v=0.22.1";
+@import "lucid-espo-vars.css?v=0.22.1";
 
 /* Headings as in the page: medium weight, Lucid's tight spacing */
 h1, h2, h3, h4, h5, h6 {

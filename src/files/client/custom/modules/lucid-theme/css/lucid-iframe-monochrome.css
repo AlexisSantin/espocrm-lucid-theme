@@ -2,7 +2,7 @@
  * Lucid theme: iframe stylesheet for the Monochrome style (e-mail bodies and rich text in a frame).
  * EspoCRM picks it while the style is on (src/helpers/appearance.js).
  */
-@import "lucid-iframe.css?v=0.22.0";
+@import "lucid-iframe.css?v=0.22.1";
 
 :root {
     --lucid-font: "Lucid Inter", -apple-system, "Segoe UI", sans-serif;
