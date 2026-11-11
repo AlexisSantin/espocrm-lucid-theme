@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Výchozí rozvržení Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Rozdělené",
+            "classic": "Klasické"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Platí pro uživatele, kteří si sami nevybrali v nabídce Vzhled na horní liště."
+    }
+}

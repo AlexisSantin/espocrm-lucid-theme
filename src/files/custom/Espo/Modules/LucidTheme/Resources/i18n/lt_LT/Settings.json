@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Numatytasis Lucid išdėstymas"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Padalytas",
+            "classic": "Klasikinis"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Taikoma naudotojams, kurie patys nepasirinko viršutinės juostos meniu „Išvaizda“."
+    }
+}

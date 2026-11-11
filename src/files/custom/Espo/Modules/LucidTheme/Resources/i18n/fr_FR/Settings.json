@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Disposition Lucid par défaut"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Côte à côte",
+            "classic": "Classique"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "S'applique aux utilisateurs qui n'ont pas fait leur propre choix dans le menu Apparence de la barre du haut."
+    }
+}

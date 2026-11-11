@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Varsayılan Lucid düzeni"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Bölünmüş",
+            "classic": "Klasik"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Üst çubuktaki Görünüm menüsünde kendi seçimini yapmamış kullanıcılar için geçerlidir."
+    }
+}

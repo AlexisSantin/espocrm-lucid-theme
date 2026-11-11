@@ -1,0 +1,5 @@
+{
+    "viewSetupHandlers": {
+        "record/edit": ["__APPEND__", "lucid-theme:handlers/user-interface"]
+    }
+}

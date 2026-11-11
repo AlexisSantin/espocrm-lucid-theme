@@ -1,10 +1,10 @@
 /**
- * Appearance of the Lucid theme (style, palette, density), shared by the top bar button.
+ * Appearance of the Lucid themes (style, palette, density), shared by the top bar button.
  *
  * The appearance itself is applied by js/appearance.js, a plain script that runs before the
  * stylesheet: it sets data-lucid-style, data-lucid-scheme and data-lucid-density on the root
  * element and remembers the choices in the browser. This module asks it to apply a choice, and
- * makes EspoCRM's own theme parameters follow the style and the palette.
+ * makes EspoCRM's own theme parameters follow the palette.
  */
 
 const EVENT = 'lucid:appearance';
@@ -24,27 +24,18 @@ export function isDarkScheme() {
 }
 
 /**
- * @return {string}
- */
-export function currentStyle() {
-    return document.documentElement.dataset.lucidStyle || 'lucid';
-}
-
-/**
  * EspoCRM reads parts of its look from theme parameters: `isDark` (e-mail bodies, code editors,
- * calendar shades), the e-mail stylesheets and the chart and calendar colours. A theme declares
- * them once, while the Lucid style and palette are choices of each user, and the palette can
- * follow the operating system. The theme's metadata holds the values to use instead:
- * - `lucidStyleParams.<style>.light|dark` for a style;
- * - `lucidDark` for the dark palette, whatever the style.
- * They are returned while they apply. Views read them when they render, so a chart already shown
- * keeps its colours until it is displayed again.
+ * calendar shades), the e-mail stylesheets and the chart and calendar colours. Each Lucid theme
+ * declares them for the light palette, while the dark palette is a choice of each user that can
+ * follow the operating system. Each theme's `lucidDark` block holds the values to use in the dark
+ * palette; they are returned while it applies. Views read them when they render, so a chart
+ * already shown keeps its colours until it is displayed again.
  *
  * If a later EspoCRM version changes the theme manager, nothing is replaced: these elements then
- * keep the look of the Lucid style in the light palette.
+ * keep the look of the light palette.
  *
  * @param {import('theme-manager').default} themeManager
- * @param {function(): boolean} isActive Whether the Lucid theme is in use.
+ * @param {function(): boolean} isActive Whether a Lucid theme is in use.
  */
 export function installThemeParams(themeManager, isActive) {
     if (!themeManager || typeof themeManager.getParam !== 'function' || themeManager.lucidThemeParams) {
@@ -52,28 +43,32 @@ export function installThemeParams(themeManager, isActive) {
     }
 
     const getParam = themeManager.getParam;
-    const darkParams = asObject(getParam.call(themeManager, 'lucidDark'));
-    const styleParams = asObject(getParam.call(themeManager, 'lucidStyleParams'));
-
-    if (!darkParams && !styleParams) {
-        return;
-    }
 
     themeManager.lucidThemeParams = true;
 
-    const has = (object, name) => !!object && Object.prototype.hasOwnProperty.call(object, name);
+    // Names never taken from the dark palette; EspoCRM's getParam reads `params` and
+    // `mappedParams` for every other name.
+    const ownParams = ['lucidDark', 'lucidStyle', 'params', 'mappedParams'];
+
+    // isActive() reads theme parameters too: while it runs, they come straight from the theme.
+    let checking = false;
 
     themeManager.getParam = function (name) {
-        if (isActive()) {
-            const mode = isDarkScheme() ? 'dark' : 'light';
-            const forStyle = styleParams && asObject(styleParams[currentStyle()]);
-            const forStyleAndMode = forStyle && asObject(forStyle[mode]);
+        if (!checking && !ownParams.includes(name) && isDarkScheme()) {
+            checking = true;
 
-            if (has(forStyleAndMode, name)) {
-                return forStyleAndMode[name];
+            let active = false;
+
+            try {
+                active = isActive();
+            } finally {
+                checking = false;
             }
 
-            if (mode === 'dark' && has(darkParams, name)) {
+            // Read each time: the theme can change from the top bar without reloading the page.
+            const darkParams = active ? asObject(getParam.call(this, 'lucidDark')) : null;
+
+            if (darkParams && Object.prototype.hasOwnProperty.call(darkParams, name)) {
                 return darkParams[name];
             }
         }

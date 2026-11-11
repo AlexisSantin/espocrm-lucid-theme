@@ -1,0 +1,10 @@
+/**
+ * Lucid Brut theme: the Lucid stylesheet in the Brut style.
+ *
+ * js/appearance.js reads the style from the name of this file (lucid-<style>.css) and sets
+ * data-lucid-style on the root element; the rules of the style are in lucid-style-brut.css.
+ * The theme name lets EspoCRM see that the stylesheet of the chosen theme is applied.
+ */
+@import "lucid.css?v=0.22.0";
+
+:root, body { --theme-name: LucidBrut !important; }

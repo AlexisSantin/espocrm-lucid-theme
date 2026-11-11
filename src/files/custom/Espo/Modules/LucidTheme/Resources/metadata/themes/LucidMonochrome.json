@@ -1,0 +1,97 @@
+{
+    "lucidStyle": "monochrome",
+    "stylesheet": "client/custom/modules/lucid-theme/css/lucid-monochrome.css",
+    "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-monochrome.css",
+    "logo": "client/img/logo-light.svg",
+    "params": {
+        "navbar": {
+            "type": "enum",
+            "default": "side",
+            "options": [
+                "side",
+                "top"
+            ]
+        }
+    },
+    "mappedParams": {
+        "navbarHeight": {
+            "param": "navbar",
+            "valueMap": {
+                "side": 48,
+                "top": 43
+            }
+        }
+    },
+    "dashboardCellHeight": 40,
+    "dashboardCellMargin": 16,
+    "navbarHeight": 43,
+    "modalFooterAtTheTop": true,
+    "modalFullHeight": true,
+    "fontSize": 14,
+    "textColor": "#1c1d1f",
+    "hoverColor": "#1c1d1f",
+    "chartGridColor": "#ececee",
+    "chartTickColor": "#f3f3f4",
+    "chartSuccessColor": "#0f7a3d",
+    "chartColorList": [
+        "#1c1d1f",
+        "#266df0",
+        "#0f7a3d",
+        "#d97706",
+        "#c0262d",
+        "#5b3cc4",
+        "#6c6e75",
+        "#0e7490",
+        "#be185d"
+    ],
+    "chartColorAlternativeList": [
+        "#1c1d1f",
+        "#266df0",
+        "#d97706",
+        "#0f7a3d",
+        "#c0262d"
+    ],
+    "calendarColors": {
+        "": "#6c6e75a0",
+        "bg": "#f0f0f2a0",
+        "Call": "#c0262d",
+        "Meeting": "#1c1d1f",
+        "Task": "#0f7a3d"
+    },
+    "isDark": false,
+    "lucidDark": {
+        "isDark": true,
+        "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-monochrome-dark.css",
+        "stylesheetIframeFallback": "client/custom/modules/lucid-theme/css/lucid-iframe-monochrome.css",
+        "textColor": "#d4d4d9",
+        "hoverColor": "#f2f2f4",
+        "chartGridColor": "#26262a",
+        "chartTickColor": "#1e1e21",
+        "chartSuccessColor": "#4ade80",
+        "chartColorList": [
+            "#f2f2f4",
+            "#6f9bff",
+            "#4ade80",
+            "#fbbf24",
+            "#f87171",
+            "#a78bfa",
+            "#9a9aa3",
+            "#22d3ee",
+            "#f472b6"
+        ],
+        "chartColorAlternativeList": [
+            "#f2f2f4",
+            "#6f9bff",
+            "#fbbf24",
+            "#4ade80",
+            "#f87171"
+        ],
+        "calendarColors": {
+            "": "#9a9aa3a0",
+            "bg": "#232327b3",
+            "Call": "#b91c1c",
+            "Meeting": "#3d3d43",
+            "Task": "#15803d"
+        }
+    }
+}

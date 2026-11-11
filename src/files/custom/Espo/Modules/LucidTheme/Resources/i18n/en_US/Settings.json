@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Default Lucid layout"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Split",
+            "classic": "Classic"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Applies to the users who have not made their own choice in the Appearance menu of the top bar."
+    }
+}

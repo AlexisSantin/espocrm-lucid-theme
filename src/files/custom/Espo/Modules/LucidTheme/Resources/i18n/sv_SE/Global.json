@@ -1,6 +1,8 @@
 {
     "themes": {
-        "Lucid": "Lucid"
+        "Lucid": "Lucid",
+        "LucidMonochrome": "Lucid Monochrome",
+        "LucidBrut": "Lucid Brut"
     },
     "labels": {
         "lucidShowEmptyOne": "Visa det tomma fältet",
@@ -11,7 +13,6 @@
         "lucidSchemeLight": "Ljust",
         "lucidSchemeDark": "Mörkt",
         "lucidSchemeSystem": "System",
-        "lucidStyle": "Stil",
         "lucidMode": "Läge",
         "lucidDensity": "Täthet",
         "lucidDensityComfortable": "Bekväm",
@@ -19,7 +20,6 @@
         "lucidDefault": "standard",
         "lucidLayout": "Layout",
         "lucidLayoutSplit": "Delad",
-        "lucidLayoutClassic": "Klassisk",
-        "lucidMakeDefault": "Använd min stil och layout som standard för alla"
+        "lucidLayoutClassic": "Klassisk"
     }
 }

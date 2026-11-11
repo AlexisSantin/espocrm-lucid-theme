@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Predvolené rozloženie Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Rozdelené",
+            "classic": "Klasické"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Platí pre používateľov, ktorí si sami nevybrali v ponuke Vzhľad na hornej lište."
+    }
+}

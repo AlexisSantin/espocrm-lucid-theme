@@ -1,6 +1,8 @@
 {
     "themes": {
-        "Lucid": "Lucid"
+        "Lucid": "Lucid",
+        "LucidMonochrome": "Lucid Monochrome",
+        "LucidBrut": "Lucid Brut"
     },
     "labels": {
         "lucidShowEmptyOne": "Afișează câmpul gol",
@@ -11,7 +13,6 @@
         "lucidSchemeLight": "Luminos",
         "lucidSchemeDark": "Întunecat",
         "lucidSchemeSystem": "Sistem",
-        "lucidStyle": "Stil",
         "lucidMode": "Mod",
         "lucidDensity": "Densitate",
         "lucidDensityComfortable": "Confortabilă",
@@ -19,7 +20,6 @@
         "lucidDefault": "implicit",
         "lucidLayout": "Aspect pagină",
         "lucidLayoutSplit": "Împărțit",
-        "lucidLayoutClassic": "Clasic",
-        "lucidMakeDefault": "Folosește stilul și aspectul meu ca implicite pentru toți"
+        "lucidLayoutClassic": "Clasic"
     }
 }

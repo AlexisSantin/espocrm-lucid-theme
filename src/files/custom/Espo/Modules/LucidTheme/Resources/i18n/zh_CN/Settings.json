@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Lucid 默认布局"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "分栏",
+            "classic": "经典"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "适用于尚未在顶部栏“外观”菜单中自行选择的用户。"
+    }
+}

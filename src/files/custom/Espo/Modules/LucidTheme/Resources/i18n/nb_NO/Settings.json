@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Standardoppsett for Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Delt",
+            "classic": "Klassisk"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Gjelder brukere som ikke har gjort sitt eget valg i menyen Utseende i topplinjen."
+    }
+}

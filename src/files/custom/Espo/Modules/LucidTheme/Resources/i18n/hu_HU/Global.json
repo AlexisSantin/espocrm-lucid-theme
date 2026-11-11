@@ -1,6 +1,8 @@
 {
     "themes": {
-        "Lucid": "Lucid"
+        "Lucid": "Lucid",
+        "LucidMonochrome": "Lucid Monochrome",
+        "LucidBrut": "Lucid Brut"
     },
     "labels": {
         "lucidShowEmptyOne": "Az üres mező megjelenítése",
@@ -11,7 +13,6 @@
         "lucidSchemeLight": "Világos",
         "lucidSchemeDark": "Sötét",
         "lucidSchemeSystem": "Rendszer",
-        "lucidStyle": "Stílus",
         "lucidMode": "Mód",
         "lucidDensity": "Sűrűség",
         "lucidDensityComfortable": "Kényelmes",
@@ -19,7 +20,6 @@
         "lucidDefault": "alapértelmezett",
         "lucidLayout": "Elrendezés",
         "lucidLayoutSplit": "Osztott",
-        "lucidLayoutClassic": "Klasszikus",
-        "lucidMakeDefault": "Saját stílusom és elrendezésem legyen mindenki alapértelmezettje"
+        "lucidLayoutClassic": "Klasszikus"
     }
 }

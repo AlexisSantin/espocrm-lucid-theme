@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Tata letak Lucid bawaan"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Terbagi",
+            "classic": "Klasik"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Berlaku untuk pengguna yang belum menentukan pilihan sendiri di menu Tampilan pada bilah atas."
+    }
+}

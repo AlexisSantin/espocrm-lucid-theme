@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Standaardindeling van Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Gesplitst",
+            "classic": "Klassiek"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Geldt voor gebruikers die zelf geen keuze hebben gemaakt in het menu Weergave van de bovenbalk."
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Standardlayout von Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Geteilt",
+            "classic": "Klassisch"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Gilt für Benutzer, die im Menü „Darstellung“ der oberen Leiste keine eigene Wahl getroffen haben."
+    }
+}

@@ -1,4 +1,5 @@
 {
+    "lucidStyle": "lucid",
     "stylesheet": "client/custom/modules/lucid-theme/css/lucid.css",
     "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe.css",
     "logo": "client/img/logo-light.svg",
@@ -6,7 +7,10 @@
         "navbar": {
             "type": "enum",
             "default": "side",
-            "options": ["side", "top"]
+            "options": [
+                "side",
+                "top"
+            ]
         }
     },
     "mappedParams": {
@@ -29,8 +33,24 @@
     "chartGridColor": "#e8eaee",
     "chartTickColor": "#f0f1f4",
     "chartSuccessColor": "#079455",
-    "chartColorList": ["#292b6b", "#00b6ed", "#079455", "#f79009", "#d92d20", "#7a5af8", "#ee46bc", "#656b7c", "#0b6f96"],
-    "chartColorAlternativeList": ["#292b6b", "#00b6ed", "#f79009", "#079455", "#d92d20"],
+    "chartColorList": [
+        "#292b6b",
+        "#00b6ed",
+        "#079455",
+        "#f79009",
+        "#d92d20",
+        "#7a5af8",
+        "#ee46bc",
+        "#656b7c",
+        "#0b6f96"
+    ],
+    "chartColorAlternativeList": [
+        "#292b6b",
+        "#00b6ed",
+        "#f79009",
+        "#079455",
+        "#d92d20"
+    ],
     "calendarColors": {
         "": "#7a7db8a0",
         "bg": "#e2e5f7a0",
@@ -39,84 +59,6 @@
         "Task": "#079455"
     },
     "isDark": false,
-    "lucidStyleParams": {
-        "monochrome": {
-            "light": {
-                "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-monochrome.css",
-                "textColor": "#1c1d1f",
-                "hoverColor": "#1c1d1f",
-                "chartGridColor": "#ececee",
-                "chartTickColor": "#f3f3f4",
-                "chartSuccessColor": "#0f7a3d",
-                "chartColorList": ["#1c1d1f", "#266df0", "#0f7a3d", "#d97706", "#c0262d", "#5b3cc4", "#6c6e75", "#0e7490", "#be185d"],
-                "chartColorAlternativeList": ["#1c1d1f", "#266df0", "#d97706", "#0f7a3d", "#c0262d"],
-                "calendarColors": {
-                    "": "#6c6e75a0",
-                    "bg": "#f0f0f2a0",
-                    "Call": "#c0262d",
-                    "Meeting": "#1c1d1f",
-                    "Task": "#0f7a3d"
-                }
-            },
-            "dark": {
-                "isDark": true,
-                "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-monochrome-dark.css",
-                "stylesheetIframeFallback": "client/custom/modules/lucid-theme/css/lucid-iframe-monochrome.css",
-                "textColor": "#d4d4d9",
-                "hoverColor": "#f2f2f4",
-                "chartGridColor": "#26262a",
-                "chartTickColor": "#1e1e21",
-                "chartSuccessColor": "#4ade80",
-                "chartColorList": ["#f2f2f4", "#6f9bff", "#4ade80", "#fbbf24", "#f87171", "#a78bfa", "#9a9aa3", "#22d3ee", "#f472b6"],
-                "chartColorAlternativeList": ["#f2f2f4", "#6f9bff", "#fbbf24", "#4ade80", "#f87171"],
-                "calendarColors": {
-                    "": "#9a9aa3a0",
-                    "bg": "#232327b3",
-                    "Call": "#b91c1c",
-                    "Meeting": "#3d3d43",
-                    "Task": "#15803d"
-                }
-            }
-        },
-        "brut": {
-            "light": {
-                "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-brut.css",
-                "textColor": "#111111",
-                "hoverColor": "#111111",
-                "chartGridColor": "#e6dcc0",
-                "chartTickColor": "#f3ead2",
-                "chartSuccessColor": "#1f8a4c",
-                "chartColorList": ["#111111", "#ff5ca8", "#ffd23f", "#1a3fd1", "#2bb673", "#ff8a3d", "#8fd3ff", "#a259ff", "#6b6b6b"],
-                "chartColorAlternativeList": ["#111111", "#ff5ca8", "#ffd23f", "#1a3fd1", "#2bb673"],
-                "calendarColors": {
-                    "": "#6b6b6ba0",
-                    "bg": "#ffe066a0",
-                    "Call": "#d6336c",
-                    "Meeting": "#111111",
-                    "Task": "#1f8a4c"
-                }
-            },
-            "dark": {
-                "isDark": true,
-                "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-brut-dark.css",
-                "stylesheetIframeFallback": "client/custom/modules/lucid-theme/css/lucid-iframe-brut.css",
-                "textColor": "#ebebe5",
-                "hoverColor": "#ffd23f",
-                "chartGridColor": "#3d3d3d",
-                "chartTickColor": "#2a2a2a",
-                "chartSuccessColor": "#4ade80",
-                "chartColorList": ["#f5f5f0", "#ff5ca8", "#ffd23f", "#8fd3ff", "#4ade80", "#ff8a3d", "#c4b5fd", "#a8a8a2", "#f472b6"],
-                "chartColorAlternativeList": ["#f5f5f0", "#ff5ca8", "#ffd23f", "#8fd3ff", "#4ade80"],
-                "calendarColors": {
-                    "": "#a8a8a2a0",
-                    "bg": "#3a3216b3",
-                    "Call": "#b02a5b",
-                    "Meeting": "#3d3d3d",
-                    "Task": "#1f7a45"
-                }
-            }
-        }
-    },
     "lucidDark": {
         "isDark": true,
         "stylesheetIframe": "client/custom/modules/lucid-theme/css/lucid-iframe-dark.css",
@@ -126,8 +68,24 @@
         "chartGridColor": "#2a2e4d",
         "chartTickColor": "#20243f",
         "chartSuccessColor": "#47cd89",
-        "chartColorList": ["#8f93ff", "#00b6ed", "#47cd89", "#fdb022", "#f97066", "#b39ef7", "#f670c7", "#9298b5", "#5ccbf5"],
-        "chartColorAlternativeList": ["#8f93ff", "#00b6ed", "#fdb022", "#47cd89", "#f97066"],
+        "chartColorList": [
+            "#8f93ff",
+            "#00b6ed",
+            "#47cd89",
+            "#fdb022",
+            "#f97066",
+            "#b39ef7",
+            "#f670c7",
+            "#9298b5",
+            "#5ccbf5"
+        ],
+        "chartColorAlternativeList": [
+            "#8f93ff",
+            "#00b6ed",
+            "#fdb022",
+            "#47cd89",
+            "#f97066"
+        ],
         "calendarColors": {
             "": "#6f73c4a0",
             "bg": "#252a55b3",

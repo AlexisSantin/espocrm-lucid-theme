@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Lucid 預設版面"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "分欄",
+            "classic": "經典"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "適用於尚未在頂端列「外觀」選單中自行選擇的使用者。"
+    }
+}

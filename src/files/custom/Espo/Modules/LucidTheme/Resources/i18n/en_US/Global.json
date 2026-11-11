@@ -1,6 +1,8 @@
 {
     "themes": {
-        "Lucid": "Lucid"
+        "Lucid": "Lucid",
+        "LucidMonochrome": "Lucid Monochrome",
+        "LucidBrut": "Lucid Brut"
     },
     "labels": {
         "lucidShowEmptyOne": "Show the empty field",
@@ -11,7 +13,6 @@
         "lucidSchemeLight": "Light",
         "lucidSchemeDark": "Dark",
         "lucidSchemeSystem": "System",
-        "lucidStyle": "Style",
         "lucidMode": "Mode",
         "lucidDensity": "Density",
         "lucidDensityComfortable": "Comfortable",
@@ -19,7 +20,6 @@
         "lucidDefault": "default",
         "lucidLayout": "Layout",
         "lucidLayoutSplit": "Split",
-        "lucidLayoutClassic": "Classic",
-        "lucidMakeDefault": "Use my style and layout as everyone's default"
+        "lucidLayoutClassic": "Classic"
     }
 }

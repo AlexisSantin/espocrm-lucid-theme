@@ -2,7 +2,7 @@
  * Lucid theme: iframe stylesheet for the Brut style (e-mail bodies and rich text in a frame).
  * EspoCRM picks it while the style is on (src/helpers/appearance.js).
  */
-@import "lucid-iframe.css?v=0.21.0";
+@import "lucid-iframe.css?v=0.22.0";
 
 :root {
     --lucid-font: "Lucid Space Grotesk", "Lucid Inter", -apple-system, "Segoe UI", sans-serif;

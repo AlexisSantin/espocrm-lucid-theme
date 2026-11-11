@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Aspect pagină Lucid implicit"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Împărțit",
+            "classic": "Clasic"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Se aplică utilizatorilor care nu și-au făcut propria alegere în meniul Aspect din bara de sus."
+    }
+}

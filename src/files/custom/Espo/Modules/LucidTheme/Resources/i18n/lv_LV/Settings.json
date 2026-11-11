@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Lucid noklusējuma izkārtojums"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Sadalīts",
+            "classic": "Klasisks"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Attiecas uz lietotājiem, kuri paši nav izvēlējušies augšējās joslas izvēlnē “Izskats”."
+    }
+}

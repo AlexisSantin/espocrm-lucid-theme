@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Layout padrão do Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Dividido",
+            "classic": "Clássico"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Aplica-se aos usuários que não fizeram a própria escolha no menu Aparência da barra superior."
+    }
+}

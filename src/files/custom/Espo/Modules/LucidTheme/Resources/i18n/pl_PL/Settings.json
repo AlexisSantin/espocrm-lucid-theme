@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Domyślny układ Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Podzielony",
+            "classic": "Klasyczny"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Dotyczy użytkowników, którzy nie dokonali własnego wyboru w menu Wygląd na górnym pasku."
+    }
+}

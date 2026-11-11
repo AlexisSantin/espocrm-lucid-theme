@@ -12,11 +12,26 @@ export const ACTIVITY_PANELS = ['stream'];
 export const LAYOUTS = ['split', 'classic'];
 
 /**
+ * Whether the theme in use is a Lucid theme (Lucid, Lucid Monochrome, Lucid Brut): those declare
+ * their style in the `lucidStyle` theme parameter.
+ *
  * @param {import('view').default} view
  * @return {boolean}
  */
 export function isLucidTheme(view) {
-    return view.getThemeManager().getName() === 'Lucid';
+    return !!getStyle(view);
+}
+
+/**
+ * The style of the theme in use (`lucid`, `monochrome`, `brut`), or null under another theme.
+ *
+ * @param {import('view').default} view
+ * @return {string|null}
+ */
+export function getStyle(view) {
+    const style = view.getThemeManager().getParam('lucidStyle');
+
+    return typeof style === 'string' && style ? style : null;
 }
 
 /**

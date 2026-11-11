@@ -1,6 +1,6 @@
 /**
- * Appearance of the Lucid theme: style (Lucid, Monochrome…), palette (light, dark, or the one of
- * the operating system) and density (comfortable, compact).
+ * Appearance of the Lucid themes: style (Lucid, Monochrome, Brut: one per theme), palette (light,
+ * dark, or the one of the operating system) and density (comfortable, compact).
  *
  * A plain script, loaded before the stylesheet, so that a page opens directly in the right style
  * and palette instead of flashing the default ones. It sets on the root element:
@@ -8,10 +8,11 @@
  * - data-lucid-scheme="light|dark": the resolved palette, read by css/lucid-dark.css;
  * - data-lucid-density: the density, read by css/lucid-density.css.
  *
- * The choices are the user's preferences (the style falls back to the administrator's default);
- * the browser remembers them too, so that they apply before EspoCRM has loaded the preferences,
- * login page included. The top bar button announces a new choice with the `lucid:appearance`
- * event. Under another theme the attributes have no effect.
+ * The style is the one of the theme: its stylesheet is css/lucid.css or css/lucid-<style>.css, and
+ * EspoCRM swaps it for the user's own theme once it has loaded the preferences. The palette and the
+ * density are the user's preferences; the browser remembers all three, so that they apply before
+ * EspoCRM has loaded, login page included. The top bar button announces a new choice with the
+ * `lucid:appearance` event. Under another theme the attributes have no effect.
  */
 (() => {
     const MODES = ['light', 'dark', 'system'];
@@ -36,6 +37,9 @@
         style: 'lucid',
         density: 'comfortable',
     };
+
+    // The stylesheet of a Lucid theme: css/lucid.css (Lucid) or css/lucid-<style>.css.
+    const STYLESHEET = /\/lucid-theme\/css\/lucid(?:-([a-z]+))?\.css(?:[?#]|$)/;
 
     const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
@@ -81,6 +85,42 @@
                 apply();
             }
         });
+    }
+
+    // The style follows the theme's stylesheet, also when EspoCRM swaps it for the user's theme.
+    const followStylesheet = link => {
+        const update = () => {
+            const match = (link.getAttribute('href') || '').match(STYLESHEET);
+            const style = match ? (match[1] || DEFAULTS.style) : null;
+
+            if (style && isValid.style(style) && style !== state.style) {
+                state.style = style;
+                store('style', style);
+                apply();
+            }
+        };
+
+        update();
+
+        new MutationObserver(update).observe(link, {attributes: true, attributeFilter: ['href']});
+    };
+
+    const stylesheet = document.getElementById('main-stylesheet');
+
+    if (stylesheet) {
+        followStylesheet(stylesheet);
+    } else if (window.MutationObserver) {
+        // The page declares the stylesheet right after the scripts.
+        const observer = new MutationObserver(() => {
+            const link = document.getElementById('main-stylesheet');
+
+            if (link) {
+                observer.disconnect();
+                followStylesheet(link);
+            }
+        });
+
+        observer.observe(document.documentElement, {childList: true, subtree: true});
     }
 
     document.addEventListener('lucid:appearance', event => {

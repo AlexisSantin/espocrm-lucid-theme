@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Podrazumevani raspored Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Podeljen",
+            "classic": "Klasičan"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Primenjuje se na korisnike koji nisu sami izabrali u meniju Izgled na gornjoj traci."
+    }
+}

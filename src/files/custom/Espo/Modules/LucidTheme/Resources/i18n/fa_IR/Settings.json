@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "چیدمان پیش‌فرض Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "دوستونه",
+            "classic": "کلاسیک"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "برای کاربرانی که خودشان در منوی ظاهر نوار بالا انتخابی نکرده‌اند."
+    }
+}

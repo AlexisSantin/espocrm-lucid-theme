@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "A Lucid alapértelmezett elrendezése"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Osztott",
+            "classic": "Klasszikus"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Azokra a felhasználókra vonatkozik, akik nem választottak maguk a felső sáv Megjelenés menüjében."
+    }
+}

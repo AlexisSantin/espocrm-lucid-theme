@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Privzeta postavitev Lucid"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Razdeljena",
+            "classic": "Klasična"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Velja za uporabnike, ki niso sami izbrali v meniju Videz v zgornji vrstici."
+    }
+}

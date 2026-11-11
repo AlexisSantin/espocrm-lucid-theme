@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Bố cục Lucid mặc định"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "Chia đôi",
+            "classic": "Cổ điển"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "Áp dụng cho người dùng chưa tự chọn trong menu Giao diện trên thanh trên cùng."
+    }
+}

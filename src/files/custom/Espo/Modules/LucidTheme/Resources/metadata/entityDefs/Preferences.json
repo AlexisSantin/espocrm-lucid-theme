@@ -9,16 +9,6 @@
             ],
             "default": "light"
         },
-        "lucidStyle": {
-            "type": "enum",
-            "options": [
-                "",
-                "lucid",
-                "monochrome",
-                "brut"
-            ],
-            "default": ""
-        },
         "lucidDensity": {
             "type": "enum",
             "options": [

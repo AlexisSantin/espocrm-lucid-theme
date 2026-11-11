@@ -29,7 +29,21 @@ A click on a title of the side menu folds its group; the page you are on stays v
 
 The button next to the notifications switches the palette at once; System follows the operating system.
 
-## Two layouts, one theme
+## Three themes
+
+The extension adds three themes to EspoCRM's theme list. They share the same design and features;
+the colours, typefaces and shapes change.
+
+- **Lucid**: deep indigo actions, cyan accent, the Lexend typeface.
+- **Lucid Monochrome**: white and near-black, black actions, tables in a full grid, the Inter
+  typeface.
+- **Lucid Brut**: thick outlines, hard shadows, yellow and pink, the Space Grotesk typeface.
+
+Each one has its light and dark palette. The administrator picks the theme in **Administration >
+User Interface**, each user in **Preferences** or from the Appearance menu of the top bar, unless
+the administrator imposes the theme.
+
+## Two layouts
 
 The record view comes in two layouts, picked from the Appearance menu of the top bar. They share the
 same design and features; only the arrangement of the record view changes.
@@ -39,8 +53,8 @@ same design and features; only the arrangement of the record view changes.
 | ![Split layout: fields on the left, activity on the right](docs/screenshots/record-lead.png) | ![Classic layout: fields and bottom panels on the left, side panels on the right](docs/screenshots/record-lead-classic.png) |
 | Fields on the left, bottom panels on the right: the activity is visible as soon as the record opens | Fields and bottom panels on the left, side panels on the right, as in stock EspoCRM |
 
-An administrator makes a layout everyone's default from the same menu; each user can still pick the
-other one.
+The administrator sets the default layout in **Administration > User Interface**, below the theme;
+each user can still pick the other one.
 
 ## Screenshots
 
@@ -76,26 +90,24 @@ All data in the screenshots is fictitious.
   to 720 px (mouse, or arrow keys / Home / End; double-click to reset), remembered per user and per
   layout. The main column keeps at least 480 px.
 - **Empty fields hidden** behind a "Show N empty fields" link, all shown while editing.
-- **Readability.** One typeface for text and titles (Lexend in the Lucid style); labels as large as values; record
+- **Readability.** One typeface for text and titles (Lexend in the Lucid theme); labels as large as values; record
   links coloured so that what is clickable stands out; comfortable form fields.
 - **Light palette.** White sidebar, ice-blue top bar and record band, cards with a cyan corner mark.
   Colours are CSS tokens (`--lucid-band-*`, `--lucid-sidebar-*`, `--lucid-table-*`), easy to retune.
-- **Appearance menu.** A button in the top bar (next to the notifications; in the menu on a phone)
-  sets four things, each saved in the user's preferences and applied at once; pages then open
-  directly in them. It stays available when the administrator imposes the theme. An administrator
-  can make the current style and layout everyone's default from the same menu; users can still pick
-  others.
-  - **Style:** Lucid; **Monochrome**, white and near-black with black actions, tables in a full
-    grid and the Inter typeface; or **Brut**, thick outlines, hard shadows, yellow and pink, and
-    Space Grotesk.
-  - **Layout:** Split or Classic (see above). A record on screen is shown again in the new layout.
+- **Appearance menu.** A button in the top bar (next to the notifications; in the menu on a phone),
+  each choice saved in the user's preferences and applied at once, without reloading the page:
+  - **Theme:** Lucid, Lucid Monochrome or Lucid Brut (see above), EspoCRM's own theme preference.
+    Shown when users may choose their theme; the administrator's theme is marked as the default.
   - **Mode:** Light, Dark, or System, which follows the operating system, even when it switches at
-    nightfall. Each style has its dark palette; Lucid's tints its surfaces towards the indigo.
+    nightfall. Each theme has its dark palette; Lucid's tints its surfaces towards the indigo.
+  - **Layout:** Split or Classic (see above). A record on screen is shown again in the new layout.
+    The default layout is set in **Administration > User Interface**, below the theme.
   - **Density:** Comfortable or Compact (13 px text, lower rows and fields: about 30 % more rows
     in a list).
 
-  E-mail bodies, code editors, charts and the calendar follow the style and the palette, as with
-  EspoCRM's own Dark theme; e-mails that bring their own colours stay on a light background.
+  Mode, layout and density stay available when the administrator imposes the theme. E-mail bodies,
+  code editors, charts and the calendar follow the theme and the palette, as with EspoCRM's own
+  Dark theme; e-mails that bring their own colours stay on a light background.
 - **Marked table columns.** Tinted uppercase headers with vertical lines, a cyan tint when hovering a
   column, and a clearer row hover, in lists and in the tables of a record.
 - **Quiet loading indicator.** EspoCRM's spinner becomes a small white pill with a turning cyan ring
@@ -131,14 +143,17 @@ Requires EspoCRM 10.0 or later and PHP 8.3+ (tested on 10.0.3, 10.0.11 and 10.1.
 1. Download `lucid-theme-<version>.zip` from the
    [latest release](https://github.com/AlexisSantin/espocrm-lucid-theme/releases/latest).
 2. In EspoCRM: **Administration > Extensions > Upload**, choose the ZIP, then **Install**.
-3. Select **Lucid** in **Administration > User Interface > Theme** (default for everyone, also used
-   on the login page) or per user in **Preferences**.
-4. Pick the style and the layout from the Appearance menu of the top bar; as an administrator, make
-   them everyone's default from the same menu.
+3. Select **Lucid**, **Lucid Monochrome** or **Lucid Brut** in **Administration > User Interface >
+   Theme** (default for everyone, also used on the login page) or per user in **Preferences**.
+4. Below the theme, on the same page, choose the default record layout. Each user can then pick
+   another theme, layout, mode or density from the Appearance menu of the top bar.
 
-Updates install the same way, over the previous version. Up to 0.20, Lucid Classic and Lucid Split
-were two themes; from 0.21 on, whoever used Lucid Classic (default theme, users, portals) moves to
-Lucid with the Classic layout, and those who had chosen Lucid Split keep the Split layout.
+Updates install the same way, over the previous version, and keep everyone's look:
+- up to 0.20, Lucid Classic and Lucid Split were two themes: whoever used Lucid Classic (default
+  theme, users, portals) moves to Lucid with the Classic layout, and those who had chosen Lucid
+  Split keep the Split layout;
+- in 0.21, Monochrome and Brut were styles chosen in the Appearance menu: the default style becomes
+  the default theme (Lucid Monochrome or Lucid Brut), and each user's style becomes their theme.
 
 ## Development
 
@@ -159,41 +174,53 @@ npm run extension     # build build/lucid-theme-<version>.zip
   administrator's default), else Split; the handler picks the record template from it (`getLayout`
   in `src/lucid.js`), and the column width is remembered per layout. `src/scripts/AfterInstall.php`
   moves the former `LucidClassic` theme (system, preferences, portals) to `Lucid` with the Classic
-  layout, without replacing a layout already chosen.
+  layout, without replacing a layout already chosen, and the 0.21 styles (`lucidStyle` preference
+  and setting) to the Lucid Monochrome and Lucid Brut themes.
 - The record view is applied by a `record/detail` view setup handler that derives the bottom view
   configured for the entity instead of replacing it. If it cannot apply (an unexpected EspoCRM
   version, for instance), the record keeps the EspoCRM layout. Apart from the top bar button, an
   EspoCRM view, the module imports no EspoCRM client module, and it never uses admin-only
   translation scopes (they are not sent to regular users).
+- Themes: the three themes share one stylesheet and differ by their style. Each theme declares it
+  in its `lucidStyle` parameter (`isLucidTheme` and `getStyle` in `src/lucid.js`) and has its own
+  entry stylesheet, `css/lucid.css` or `css/lucid-<style>.css`, which imports `lucid.css` and sets
+  `--theme-name` (EspoCRM checks it to know the user's theme is applied).
 - Appearance: `js/appearance.js`, a plain script listed before the stylesheet, sets
-  `data-lucid-style`, `data-lucid-scheme` and `data-lucid-density` on the root element from the
-  choices remembered by the browser, so a page never flashes the default look. The dark palette
-  (`css/lucid-dark.css`), the density (`css/lucid-density.css`) and each style
-  (`css/lucid-style-<name>.css`) redefine the tokens under those attributes; a style's light block
-  is scoped to `:not([data-lucid-scheme="dark"])` and its dark block sets every value on top of the
-  dark palette. The top bar button stores the choices in the `lucidStyle`, `lucidLayout`,
-  `lucidColorScheme` and `lucidDensity` preferences; the administrator's defaults are the
-  `lucidStyle` and `lucidLayout` settings.
+  `data-lucid-style`, `data-lucid-scheme` and `data-lucid-density` on the root element, so a page
+  never flashes the default look. The style comes from the name of the theme's stylesheet (followed
+  when EspoCRM swaps it for the user's theme); the palette and density from the choices remembered
+  by the browser. The dark palette (`css/lucid-dark.css`), the density (`css/lucid-density.css`)
+  and each style (`css/lucid-style-<name>.css`) redefine the tokens under those attributes; a
+  style's light block is scoped to `:not([data-lucid-scheme="dark"])` and its dark block sets every
+  value on top of the dark palette. The top bar button stores the theme in EspoCRM's `theme`
+  preference (the Lucid themes share their stylesheet, so it applies without reloading) and the
+  other choices in the `lucidColorScheme`, `lucidLayout` and `lucidDensity` preferences. The
+  administrator's default layout is the `lucidLayout` setting, which `src/handlers/user-interface.js`
+  (a `record/edit` setup handler of Settings) inserts below the theme in EspoCRM's own layout of
+  Administration > User Interface, instead of replacing that layout.
   EspoCRM reads `isDark`, the e-mail stylesheets and the chart and calendar colours from theme
-  parameters: the theme manager returns the theme's `lucidStyleParams.<style>.light|dark`, then
-  `lucidDark`, values instead while they apply (`src/helpers/appearance.js`). If that cannot
-  apply, those elements keep the look of the Lucid style in the light palette.
-- A new style: a `css/lucid-style-<name>.css` file imported by `lucid.css`, its swatch in
-  `lucid-shell.css`, its entry in `src/views/navbar/appearance.js`, the option in the `lucidStyle`
-  preference and setting, and its `lucidStyleParams` in the theme file.
+  parameters: each theme declares them for the light palette, and the theme manager returns the
+  theme's `lucidDark` values instead while the dark palette applies (`src/helpers/appearance.js`).
+  If that cannot apply, those elements keep the look of the light palette.
+- A new theme: a `css/lucid-style-<name>.css` file imported by `lucid.css`, an entry stylesheet
+  `css/lucid-<name>.css`, its swatch in `lucid-shell.css`, its e-mail stylesheets, and a
+  `metadata/themes/<Theme>.json` with `"lucidStyle": "<name>"` and its `lucidDark` values; the
+  Appearance menu lists it on its own.
 
 ```
 src/files/custom/Espo/Modules/LucidTheme/Resources/
-    metadata/themes/Lucid.json          parameters, chart and calendar colours, their values per style
-                                        (lucidStyleParams) and in the dark palette (lucidDark)
+    metadata/themes/Lucid*.json         the three themes: style, parameters, chart and calendar colours,
+                                        and their values in the dark palette (lucidDark)
     metadata/app/client.json            js/appearance.js, lib/init.js (bundle loader in production)
-    metadata/app/clientNavbar.json      top bar button (style, layout, mode, density)
-    metadata/entityDefs/Preferences.json  the lucidStyle, lucidLayout, lucidColorScheme and lucidDensity preferences
-    metadata/entityDefs/Settings.json   lucidStyle and lucidLayout, the administrator's defaults
+    metadata/app/clientNavbar.json      top bar button (theme, mode, layout, density)
+    metadata/entityDefs/Preferences.json  the lucidColorScheme, lucidLayout and lucidDensity preferences
+    metadata/entityDefs/Settings.json   lucidLayout, the administrator's default layout
     metadata/clientDefs/Global.json     view setup handlers
+    metadata/clientDefs/Settings.json   the default layout on Administration > User Interface
     i18n/en_US, i18n/fr_FR              the theme's own labels
 src/files/client/custom/modules/lucid-theme/
     css/lucid.css                       entry point (imports the stock light theme, then the layers)
+    css/lucid-monochrome.css, -brut.css entry points of Lucid Monochrome and Lucid Brut
     css/lucid-tokens.css                colours, radii, shadows, band and sidebar tokens
     css/lucid-espo-vars.css             EspoCRM variables mapped to the tokens
     css/lucid-*.css                     base, shell, controls, data, record, detail, overlays, login
@@ -205,17 +232,18 @@ src/files/client/custom/modules/lucid-theme/
     res/templates/record/detail*.tpl    record view templates
     src/handlers/record-detail.js       applies the record view
     src/handlers/page-a11y.js           document language and zoom
+    src/handlers/user-interface.js      default layout on Administration > User Interface
     src/helpers/record-band.js          band: identity, people, pipeline stage path
     src/helpers/panel-collapse.js       collapsible blocks
     src/helpers/column-resizer.js       width handle for About
     src/helpers/empty-fields.js         hides empty fields
     js/nav-groups.js                    collapsible groups of the side menu (plain script)
     js/appearance.js                    applies style, palette and density before the page shows (plain script)
-    src/views/navbar/appearance.js      top bar button: style, layout, mode, density
-    src/helpers/appearance.js           EspoCRM's theme parameters for the style and the palette
+    src/views/navbar/appearance.js      top bar button: theme, mode, layout, density
+    src/helpers/appearance.js           EspoCRM's theme parameters in the dark palette
     src/mixins/detail-bottom.js         right column: tabs, quick actions, counts
     fonts/                              Lexend, Inter, Space Grotesk (OFL)
-src/scripts/AfterInstall.php            moves Lucid Classic to Lucid with the Classic layout
+src/scripts/AfterInstall.php            upgrades: Lucid Classic, then the 0.21 styles, to themes
 ```
 
 ## License

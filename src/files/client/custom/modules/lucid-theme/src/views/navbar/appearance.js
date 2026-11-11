@@ -1,23 +1,19 @@
 import View from 'view';
-import {isLucidTheme, LAYOUTS} from 'lucid-theme:lucid';
+import {getStyle, isLucidTheme, LAYOUTS} from 'lucid-theme:lucid';
 import {applyAppearance, installThemeParams} from 'lucid-theme:helpers/appearance';
 
-/** Styles: the names are proper names, the same in every language. */
-const STYLES = [
-    {value: 'lucid', label: 'Lucid'},
-    {value: 'monochrome', label: 'Monochrome'},
-    {value: 'brut', label: 'Brut'},
-];
-
-const LAYOUT_OPTIONS = [
-    {value: 'split', icon: 'fas fa-table-columns', label: 'lucidLayoutSplit'},
-    {value: 'classic', icon: 'fas fa-table-list', label: 'lucidLayoutClassic'},
-];
+/** Order of the Lucid themes in the menu, by style; a theme with another style comes last. */
+const STYLE_ORDER = ['lucid', 'monochrome', 'brut'];
 
 const MODES = [
     {value: 'light', icon: 'fas fa-sun', label: 'lucidSchemeLight'},
     {value: 'dark', icon: 'fas fa-moon', label: 'lucidSchemeDark'},
     {value: 'system', icon: 'fas fa-circle-half-stroke', label: 'lucidSchemeSystem'},
+];
+
+const LAYOUT_OPTIONS = [
+    {value: 'split', icon: 'fas fa-table-columns', label: 'lucidLayoutSplit'},
+    {value: 'classic', icon: 'fas fa-table-list', label: 'lucidLayoutClassic'},
 ];
 
 const DENSITIES = [
@@ -26,35 +22,37 @@ const DENSITIES = [
 ];
 
 const OPTIONS = {
-    style: STYLES,
-    layout: LAYOUT_OPTIONS.filter(item => LAYOUTS.includes(item.value)),
     mode: MODES,
+    layout: LAYOUT_OPTIONS.filter(item => LAYOUTS.includes(item.value)),
     density: DENSITIES,
 };
 
 /** Preference holding each choice. */
 const PREFERENCES = {
-    style: 'lucidStyle',
-    layout: 'lucidLayout',
     mode: 'lucidColorScheme',
+    layout: 'lucidLayout',
     density: 'lucidDensity',
 };
 
-/** Choices with a default set by the administrator, and the setting holding it. */
+/**
+ * Choices with a default set by the administrator, and the setting holding it (Administration >
+ * User Interface, see handlers/user-interface.js).
+ */
 const SETTINGS = {
-    style: 'lucidStyle',
     layout: 'lucidLayout',
 };
 
 /**
- * Appearance button of the top bar: style (Lucid, Monochrome, Brut), record layout (Split,
- * Classic), palette (Light, Dark, System, which follows the operating system) and density
- * (Comfortable, Compact). Each choice is a preference of the user and applies at once. Style and
- * layout fall back to the administrator's defaults (settings), which an administrator sets from
- * this menu.
+ * Appearance button of the top bar, under a Lucid theme:
+ * - Theme: Lucid, Lucid Monochrome or Lucid Brut, EspoCRM's own theme preference. Shown only when
+ *   users may choose their theme; the administrator's theme is marked as the default;
+ * - Mode: Light, Dark, or System, which follows the operating system;
+ * - Layout of the record view: Split or Classic, with a default set by the administrator;
+ * - Density: Comfortable or Compact.
  *
- * Shown under the Lucid theme only. It stays available when the administrator imposes the theme
- * (users may not choose their theme): the appearance is a personal choice, like the language.
+ * Each choice is saved in the user's preferences and applies at once, without reloading the page.
+ * Mode, layout and density stay available when the administrator imposes the theme: they are
+ * personal choices, like the language.
  */
 export default class LucidAppearanceNavbarView extends View {
 
@@ -82,19 +80,16 @@ export default class LucidAppearanceNavbarView extends View {
                 data-name="{{../name}}"
                 data-value="{{value}}"
                 aria-checked="{{#if selected}}true{{else}}false{{/if}}"
-            >{{#if swatch}}<span class="lucid-style-swatch" data-style="{{value}}" aria-hidden="true"></span>{{else}}<span class="lucid-scheme-icon {{icon}}" aria-hidden="true"></span>{{/if}}<span>{{label}}{{#if note}} <span class="lucid-scheme-note">{{note}}</span>{{/if}}</span>{{#if selected}}<span class="lucid-scheme-check fas fa-check" aria-hidden="true"></span>{{/if}}</a></li>
+            >{{#if swatch}}<span class="lucid-style-swatch" data-style="{{swatch}}" aria-hidden="true"></span>{{else}}<span class="lucid-scheme-icon {{icon}}" aria-hidden="true"></span>{{/if}}<span>{{label}}{{#if note}} <span class="lucid-scheme-note">{{note}}</span>{{/if}}</span>{{#if selected}}<span class="lucid-scheme-check fas fa-check" aria-hidden="true"></span>{{/if}}</a></li>
             {{/each}}
             {{/each}}
-            {{#if canSetDefault}}
-            <li class="divider" role="separator"></li>
-            <li><a role="menuitem" tabindex="0" data-action="lucidSetDefaults"><span class="lucid-scheme-icon fas fa-users" aria-hidden="true"></span><span>{{setDefaultLabel}}</span></a></li>
-            {{/if}}
         </ul>
         {{/if}}
     `
 
     data() {
         const label = name => this.translate(name, 'labels', 'Global');
+        const defaultNote = label('lucidDefault');
         const mode = MODES.find(item => item.value === this.getChoice('mode')) || MODES[0];
 
         const group = (name, titleLabel) => ({
@@ -103,26 +98,42 @@ export default class LucidAppearanceNavbarView extends View {
             options: OPTIONS[name].map(item => ({
                 value: item.value,
                 icon: item.icon,
-                swatch: name === 'style',
-                label: name === 'style' ? item.label : label(item.label),
-                note: name in SETTINGS && item.value === this.getDefault(name) ? label('lucidDefault') : null,
+                label: label(item.label),
+                note: name in SETTINGS && item.value === this.getDefault(name) ? defaultNote : null,
                 selected: item.value === this.getChoice(name),
             })),
         });
+
+        const groups = [];
+
+        if (this.canChooseTheme()) {
+            const current = this.getThemeManager().getName();
+            const systemTheme = this.getConfig().get('theme');
+
+            groups.push({
+                name: 'theme',
+                label: this.translate('theme', 'fields', 'Preferences'),
+                options: this.getLucidThemes().map(item => ({
+                    value: item.name,
+                    swatch: item.style,
+                    label: this.translate(item.name, 'themes', 'Global'),
+                    note: item.name === systemTheme ? defaultNote : null,
+                    selected: item.name === current,
+                })),
+            });
+        }
+
+        groups.push(
+            group('mode', 'lucidMode'),
+            group('layout', 'lucidLayout'),
+            group('density', 'lucidDensity'),
+        );
 
         return {
             enabled: this.enabled,
             title: label('lucidScheme'),
             iconClass: mode.icon,
-            groups: [
-                group('style', 'lucidStyle'),
-                group('layout', 'lucidLayout'),
-                group('mode', 'lucidMode'),
-                group('density', 'lucidDensity'),
-            ],
-            canSetDefault: this.getUser().isAdmin() &&
-                Object.keys(SETTINGS).some(name => this.getChoice(name) !== this.getDefault(name)),
-            setDefaultLabel: label('lucidMakeDefault'),
+            groups: groups,
         };
     }
 
@@ -135,7 +146,7 @@ export default class LucidAppearanceNavbarView extends View {
 
         // The stored preferences win over what the browser remembered from a previous session.
         applyAppearance({
-            style: this.getChoice('style'),
+            style: getStyle(this),
             mode: this.getChoice('mode'),
             density: this.getChoice('density'),
         });
@@ -145,14 +156,70 @@ export default class LucidAppearanceNavbarView extends View {
         this.addActionHandler('lucidSetAppearance', (e, element) => {
             e.preventDefault();
 
+            if (element.dataset.name === 'theme') {
+                this.setTheme(element.dataset.value);
+
+                return;
+            }
+
             this.setChoice(element.dataset.name, element.dataset.value);
         });
+    }
 
-        this.addActionHandler('lucidSetDefaults', e => {
-            e.preventDefault();
+    /**
+     * The installed Lucid themes, in menu order.
+     *
+     * @return {{name: string, style: string}[]}
+     */
+    getLucidThemes() {
+        const themes = this.getMetadata().get(['themes']) || {};
+        const rank = style => {
+            const index = STYLE_ORDER.indexOf(style);
 
-            this.setDefaults();
-        });
+            return index === -1 ? STYLE_ORDER.length : index;
+        };
+
+        return Object.keys(themes)
+            .filter(name => themes[name] && typeof themes[name].lucidStyle === 'string')
+            .map(name => ({name: name, style: themes[name].lucidStyle}))
+            .sort((a, b) => rank(a.style) - rank(b.style) || a.name.localeCompare(b.name));
+    }
+
+    /**
+     * Users choose their theme unless the administrator imposes it; portal users get the portal's.
+     *
+     * @return {boolean}
+     */
+    canChooseTheme() {
+        return !this.getConfig().get('userThemesDisabled') &&
+            !this.getUser().isPortal() &&
+            this.getLucidThemes().length > 1;
+    }
+
+    /**
+     * Saves the theme in EspoCRM's theme preference. The administrator's theme is saved as no
+     * theme of one's own, so that the user follows it again if it changes. The Lucid themes share
+     * their stylesheet, so the new style applies at once; the next page load uses the theme's own
+     * stylesheet, as EspoCRM does.
+     *
+     * @param {string} name
+     */
+    setTheme(name) {
+        const theme = this.getLucidThemes().find(item => item.name === name);
+
+        if (!theme || !this.canChooseTheme() || name === this.getThemeManager().getName()) {
+            return;
+        }
+
+        const value = name === this.getConfig().get('theme') ? '' : name;
+
+        applyAppearance({style: theme.style});
+
+        this.getPreferences()
+            .save({theme: value}, {patch: true})
+            .catch(() => {});
+
+        this.reRender();
     }
 
     /**
@@ -167,7 +234,7 @@ export default class LucidAppearanceNavbarView extends View {
     /**
      * The administrator's default, or the first option.
      *
-     * @param {'style'|'layout'} name
+     * @param {'layout'} name
      * @return {string}
      */
     getDefault(name) {
@@ -177,7 +244,7 @@ export default class LucidAppearanceNavbarView extends View {
     }
 
     /**
-     * @param {'style'|'layout'|'mode'|'density'} name
+     * @param {'layout'|'mode'|'density'} name
      * @return {string}
      */
     getChoice(name) {
@@ -255,28 +322,5 @@ export default class LucidAppearanceNavbarView extends View {
         }
 
         proceed();
-    }
-
-    /**
-     * Makes the current style and layout the defaults of everyone who has not chosen them.
-     * Administrators only; EspoCRM refuses the change to anyone else.
-     */
-    setDefaults() {
-        if (!this.getUser().isAdmin()) {
-            return;
-        }
-
-        const data = {};
-
-        Object.keys(SETTINGS).forEach(name => data[SETTINGS[name]] = this.getChoice(name));
-
-        // PUT: EspoCRM's settings controller only accepts it, and merges the values it receives.
-        Espo.Ajax.putRequest('Settings', data)
-            .then(() => {
-                Object.keys(data).forEach(key => this.getConfig().set(key, data[key]));
-                Espo.Ui.success(this.translate('Saved'));
-                this.reRender();
-            })
-            .catch(() => {});
     }
 }

@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "lucidLayout": "Lucid の既定のレイアウト"
+    },
+    "options": {
+        "lucidLayout": {
+            "split": "分割",
+            "classic": "クラシック"
+        }
+    },
+    "tooltips": {
+        "lucidLayout": "上部バーの「外観」メニューで自分で選択していないユーザーに適用されます。"
+    }
+}
