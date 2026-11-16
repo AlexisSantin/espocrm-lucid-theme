@@ -11,6 +11,17 @@
     --input-height-base: var(--34px);
 }
 
+/*
+ * Text fields and their add-ons grow with their text (13 px over 1.57 lines), unlike buttons and
+ * selects, which take the field height: with EspoCRM's 6 px padding they ended 3 px taller than
+ * the buttons joined to them (search bar, link and date fields). With 4 px, every control of a
+ * group is exactly the field height.
+ */
+:root[data-lucid-density="compact"] :is(input.form-control, .input-group-addon) {
+    padding-top: var(--4px);
+    padding-bottom: var(--4px);
+}
+
 :root[data-lucid-density="compact"] #main > .list-container > .list > table > :is(thead, tbody) > tr > :is(th, td) {
     padding-top: var(--6px);
     padding-bottom: var(--6px);
