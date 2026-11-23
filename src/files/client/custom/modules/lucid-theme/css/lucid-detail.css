@@ -1344,12 +1344,14 @@ body.lucid-resizing * {
     display: none;
 }
 
-/* ===== Empty fields: shown, or hidden on request (outside edit mode) ===== */
-.lucid-record-grid.lucid-hide-empty .cell.lucid-empty {
+/* ===== Empty fields: shown, or hidden on request (outside edit mode) =====
+   While editing, every field shows: also those the user may not edit, which stay empty and are
+   still marked, while the button is gone. */
+.lucid-record:not(.lucid-editing) .lucid-record-grid.lucid-hide-empty .cell.lucid-empty {
     display: none !important;
 }
 
-.lucid-record-grid.lucid-hide-empty .middle > .panel:has(.cell.lucid-empty):not(:has(.cell[data-name]:not(.lucid-empty):not(.hidden-cell))) {
+.lucid-record:not(.lucid-editing) .lucid-record-grid.lucid-hide-empty .middle > .panel:has(.cell.lucid-empty):not(:has(.cell[data-name]:not(.lucid-empty):not(.hidden-cell))) {
     display: none;
 }
 
