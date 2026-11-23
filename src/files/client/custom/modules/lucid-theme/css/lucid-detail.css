@@ -1344,36 +1344,65 @@ body.lucid-resizing * {
     display: none;
 }
 
-/* ===== Hidden empty fields (outside edit mode) ===== */
-.lucid-record-grid:not(.lucid-show-empty) .cell.lucid-empty {
+/* ===== Empty fields: shown, or hidden on request (outside edit mode) ===== */
+.lucid-record-grid.lucid-hide-empty .cell.lucid-empty {
     display: none !important;
 }
 
-.lucid-record-grid:not(.lucid-show-empty) .middle > .panel:has(.cell.lucid-empty):not(:has(.cell[data-name]:not(.lucid-empty):not(.hidden-cell))) {
+.lucid-record-grid.lucid-hide-empty .middle > .panel:has(.cell.lucid-empty):not(:has(.cell[data-name]:not(.lucid-empty):not(.hidden-cell))) {
     display: none;
 }
 
-.lucid-empty-toggle {
-    display: block;
-    margin: var(--4px) 0 var(--8px);
-    padding: 0;
+/* The button in the About title, before the collapse button: an eye, and the number of hidden
+   fields while they are hidden */
+.lucid-record .lucid-empty-toggle {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--4px);
+    min-width: 26px;
+    height: 26px;
+    margin-left: auto;
+    padding: 0 var(--6px);
     border: 0;
+    border-radius: var(--lucid-radius-sm);
     background: transparent;
-    color: var(--lucid-text-secondary);
-    font: inherit;
-    font-size: var(--13px);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    cursor: pointer;
+    box-shadow: none;
+    color: var(--lucid-text-faint);
+    font-family: var(--lucid-font);
+    font-size: var(--12px);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
 }
 
-.lucid-empty-toggle:hover {
+.lucid-record .lucid-empty-toggle:hover {
+    background: var(--lucid-hover);
     color: var(--lucid-text);
 }
 
-.lucid-content-card > .lucid-empty-toggle,
-.lucid-inspector-card > .lucid-empty-toggle {
-    margin-top: var(--8px);
+/* No lingering background after a mouse click: keyboard focus stays visible */
+.lucid-record .lucid-empty-toggle:focus:not(:focus-visible):not(:hover) {
+    background: transparent;
+}
+
+.lucid-record .lucid-empty-toggle .fas {
+    font-size: 12px;
+}
+
+.lucid-record .lucid-empty-toggle.lucid-empty-hidden {
+    color: var(--lucid-text-secondary);
+}
+
+.lucid-record .lucid-empty-toggle + .lucid-collapse {
+    margin-left: 0;
+}
+
+/* While editing every field shows (the collapse button goes too). The button stays when About is
+   folded: it also shows or hides the empty fields of Record info, which stays open. */
+.lucid-record.lucid-editing .lucid-empty-toggle {
+    display: none;
 }
 
 /* ===== Collapsible blocks (accordions) ===== */

@@ -19,7 +19,7 @@ stage moves the record along its pipeline.
 | | |
 |---|---|
 | ![Resizing the About column and folding a section](docs/screenshots/demo-resize-collapse.gif) | ![Showing and hiding empty fields](docs/screenshots/demo-empty-fields.gif) |
-| Drag the handle between the columns to widen About; fold the sections you don't need | Empty fields stay out of the way until you ask for them |
+| Drag the handle between the columns to widen About; fold the sections you don't need | Empty fields can be hidden, and shown again, from the About title |
 
 ![Folding and unfolding the groups of the side menu](docs/screenshots/demo-menu-groups.gif)
 
@@ -89,7 +89,9 @@ All data in the screenshots is fictitious.
 - **Adjustable column.** A handle between the columns sets the width of the narrow column, from 300
   to 720 px (mouse, or arrow keys / Home / End; double-click to reset), remembered per user and per
   layout. The main column keeps at least 480 px.
-- **Empty fields hidden** behind a "Show N empty fields" link, all shown while editing.
+- **Empty fields on request.** Every field shows by default; an eye in the About title hides the
+  empty ones (it then shows how many are hidden) and shows them again. The choice is remembered
+  per user; while editing, every field shows.
 - **Readability.** One typeface for text and titles (Lexend in the Lucid theme); labels as large as values; record
   links coloured so that what is clickable stands out; comfortable form fields.
 - **Light palette.** White sidebar, ice-blue top bar and record band, cards with a cyan corner mark.
@@ -113,7 +115,7 @@ All data in the screenshots is fictitious.
 - **Quiet loading indicator.** EspoCRM's spinner becomes a small white pill with a turning cyan ring
   in the top bar, and only shows when a wait is long enough to notice.
 - **Speaks every EspoCRM language.** Labels come from EspoCRM's own translations; the theme's own
-  (the Appearance menu, the empty-fields link, the Record info title) are translated into every
+  (the Appearance menu, the empty-fields button, the Record info title) are translated into every
   language EspoCRM ships.
 
 Knowledge base articles (and any entity with a rich-text `body`) keep their fields in the main
@@ -138,7 +140,7 @@ checkboxes) and are outside the scope of a theme.
 
 ## Install
 
-Requires EspoCRM 10.0 or later and PHP 8.3+ (tested on 10.0.3, 10.0.11 and 10.1.0).
+Requires EspoCRM 10.0 or later and PHP 8.3+ (tested on 10.0.3, 10.0.11, 10.1.0 and 10.1.1).
 
 1. Download `lucid-theme-<version>.zip` from the
    [latest release](https://github.com/AlexisSantin/espocrm-lucid-theme/releases/latest).
@@ -236,7 +238,7 @@ src/files/client/custom/modules/lucid-theme/
     src/helpers/record-band.js          band: identity, people, pipeline stage path
     src/helpers/panel-collapse.js       collapsible blocks
     src/helpers/column-resizer.js       width handle for About
-    src/helpers/empty-fields.js         hides empty fields
+    src/helpers/empty-fields.js         empty fields button: hides or shows them
     js/nav-groups.js                    collapsible groups of the side menu (plain script)
     js/appearance.js                    applies style, palette and density before the page shows (plain script)
     src/views/navbar/appearance.js      top bar button: theme, mode, layout, density

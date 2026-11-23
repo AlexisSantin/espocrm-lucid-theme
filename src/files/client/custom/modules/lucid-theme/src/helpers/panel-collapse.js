@@ -102,7 +102,7 @@ export default class PanelCollapse {
         const aboutContent = inspector && inspector.querySelector(':scope > .lucid-inspector-card > .middle, :scope > .side > .panel[data-name="default"]');
 
         if (aboutTitle && aboutContent) {
-            this.decorate(inspector, aboutTitle, aboutTitle.textContent.replace('+', '').trim(), ABOUT);
+            this.decorate(inspector, aboutTitle, titleText(aboutTitle), ABOUT);
         }
 
         this.decorateContentCard(root);
@@ -120,7 +120,7 @@ export default class PanelCollapse {
         const title = card && card.querySelector(':scope > .lucid-inspector-title');
 
         if (title) {
-            this.decorate(card, title, title.textContent.replace('+', '').trim(), ABOUT);
+            this.decorate(card, title, titleText(title), ABOUT);
         }
     }
 
@@ -262,4 +262,18 @@ export default class PanelCollapse {
     save() {
         this.view.getStorage().set(STORAGE_TYPE, this.storageName, [...this.collapsed]);
     }
+}
+
+/**
+ * The words of an "About" title, without its "+" mark and its buttons (collapse, empty fields).
+ *
+ * @param {HTMLElement} title
+ * @return {string}
+ */
+function titleText(title) {
+    return [...title.childNodes]
+        .filter(node => node.nodeType === Node.TEXT_NODE || !node.matches('button, .lucid-plus'))
+        .map(node => node.textContent)
+        .join('')
+        .trim();
 }
