@@ -250,6 +250,11 @@ src/scripts/AfterInstall.php            upgrades: Lucid Classic, then the 0.21 s
 
 ## License
 
-GPL-3.0-or-later. The bundled Lexend, Inter and Space Grotesk typefaces are licensed under the
+Copyright (C) 2026 Alexis SANTIN.
+
+Lucid is free software, released under the [GNU Affero General Public License v3.0 or later](LICENSE),
+the same license as EspoCRM. Versions up to 0.23.0 were published under GPL-3.0-or-later.
+
+The bundled Lexend, Inter and Space Grotesk typefaces are licensed under the
 SIL Open Font License 1.1 (`fonts/Lexend-OFL.txt`, `fonts/Inter-OFL.txt`,
 `fonts/SpaceGrotesk-OFL.txt`).
